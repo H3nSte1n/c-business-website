@@ -1,15 +1,15 @@
 <template>
   <c-container>
     <Header />
-    <info-container />
+    <stripe />
   </c-container>
 </template>
 
 <script>
 import Header from '@/components/header';
-import InfoContainer from '@/components/infoContainer';
+import stripe from '@/components/stripe';
 export default {
-  components: { Header, InfoContainer }
+  components: { Header, stripe }
 
 }
 </script>
