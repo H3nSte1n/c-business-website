@@ -1,16 +1,17 @@
 <template>
   <v-container>
     <v-row
-      justify="center"
+      justify="space-around"
       align="center"
       flex
       class="my-12"
     >
       <v-col
         cols="12"
-        sm="6"
-        xl="5"
-        :order-sm="content.order ? content.order : 'first'"
+        sm="12"
+        md="5"
+        xl="4"
+        :order-md="content.order ? content.order : 'first'"
       >
         <v-img
           :src="content.img.src"
@@ -20,8 +21,9 @@
       </v-col>
       <v-col
         cols="12"
-        sm="6"
-        xl="5"
+        sm="12"
+        md="5"
+        xl="4"
       >
         <h2 class="display-1">
           {{ content.headline }}
