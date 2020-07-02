@@ -1,17 +1,12 @@
 <template>
   <c-container>
     <Header />
-    <Stripe
-      :content="content"
-      b-color="blue"
-    />
     <Educational />
   </v-container>
 </template>
 
 <script>
 import Header from '@/components/header';
-import Stripe from '@/components/stripe.vue';
 import Educational from '@/components/educational';
 export default {
   components: { Header, Stripe, Educational },
