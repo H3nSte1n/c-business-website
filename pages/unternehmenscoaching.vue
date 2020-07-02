@@ -1,15 +1,15 @@
 <template>
-  <c-container>
+  <v-container>
     <Header />
-    <info-container />
-  </c-container>
+    <keywords />
+  </v-container>
 </template>
 
 <script>
 import Header from '@/components/header';
-import InfoContainer from '@/components/infoContainer';
+import keywords from '@/components/keywords';
 export default {
-  components: { Header, InfoContainer }
+  components: { Header, keywords }
 
 }
 </script>
