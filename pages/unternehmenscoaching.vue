@@ -1,27 +1,16 @@
 <template>
   <c-container>
     <Header />
-<<<<<<< Updated upstream
-    <info-container />
-  </c-container>
-=======
     <Stripe
       :content="content"
       b-color="blue"
     />
     <Educational />
   </v-container>
->>>>>>> Stashed changes
 </template>
 
 <script>
 import Header from '@/components/header';
-<<<<<<< Updated upstream
-import InfoContainer from '@/components/infoContainer';
-export default {
-  components: { Header, InfoContainer }
-
-=======
 import Stripe from '@/components/stripe.vue';
 import Educational from '@/components/educational';
 export default {
@@ -35,6 +24,5 @@ export default {
       }
     }
   }
->>>>>>> Stashed changes
 }
 </script>
