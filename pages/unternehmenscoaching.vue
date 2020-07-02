@@ -1,5 +1,5 @@
 <template>
-  <c-container>
+  <v-container>
     <Header />
     <Educational />
   </v-container>
@@ -9,7 +9,7 @@
 import Header from '@/components/header';
 import Educational from '@/components/educational';
 export default {
-  components: { Header, Stripe, Educational },
+  components: { Header, Educational },
   data () {
     return {
       content: {
