@@ -12,6 +12,9 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
+  "browser":{
+    "child_process": false
+    },
   "dependencies": {
     "@nuxtjs/axios": "5.11.0",
     "@nuxtjs/dotenv": "1.4.1",
