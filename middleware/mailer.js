@@ -1,6 +1,6 @@
 import express from 'express'
-import Validation from './helper/Validation'
-import MailerAction from './helper/MailerActions'
+import { Validation } from './helper/Validation'
+import { MailerActions } from './helper/MailerActions'
 
 const app = express()
 app.use(express.json())
@@ -19,7 +19,7 @@ app.post('/', (req, res) => {
     return res.status(422).json({ 'error': 'Ugh.. That looks unprocessable!' })
   }
 
-  MailerAction.sendMail(...sanitizedAttributes)
+  MailerActions.sendMail(...sanitizedAttributes)
   res.status(200).json({ 'message': 'OH YEAH' })
 })
 
