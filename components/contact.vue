@@ -3,7 +3,7 @@
     <v-container
       class="py-12"
     >
-      <form
+      <v-form
         action="/"
         method="post"
       >
@@ -75,12 +75,13 @@
             <v-btn
               class="px-7 py-5 mt-9"
               outlined
+              type="submit"
             >
               Senden
             </v-btn>
           </v-col>
         </v-row>
-      </form>
+      </v-form>
     </v-container>
   </div>
 </template>
