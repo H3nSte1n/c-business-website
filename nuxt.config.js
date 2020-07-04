@@ -31,6 +31,10 @@ export default {
   */
   plugins: [
   ],
+  // server middleware
+  serverMiddleware: [
+    { path: '~/api/unternehmenscoaching', handler: '~/middleware/mailer' },
+  ],
   /*
   ** Nuxt.js dev-modules
   */
