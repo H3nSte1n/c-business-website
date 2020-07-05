@@ -31,7 +31,7 @@ export default {
   ],
   // server middleware
   serverMiddleware: [
-    '~/server-middleware/mailer'
+    '~/api/mailer'
   ],
   /*
   ** Nuxt.js dev-modules
