@@ -4,11 +4,12 @@ import { MailerActions } from './helper/MailerActions'
 
 const app = express()
 app.use(express.json())
-
-app.post('/', (req, res) => {
+app.post('/unternehmenscoaching', (req, res) => {
   const attributes = ['name', 'email', 'msg'] // Our three form fields, all required
-
+  console.log('test');
   const sanitizedAttributes = attributes.map(n => Validation.validateAndSanitize(n, req.body[n]))
+  console.log(...sanitizedAttributes);
+  res.write(...sanitizedAttributes);
 
   const someInvalid = sanitizedAttributes.some(r => !r)
 
