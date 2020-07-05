@@ -103,6 +103,7 @@ export default {
         v => !!v || 'Pflichtfeld',
         v => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) || 'E-Mail Adresse muss gültig sein'
       ],
+      status: false,
       user: {
         name: '',
         email: '',
@@ -120,23 +121,19 @@ export default {
       bodyFormData.append('msg', this.user.msg)
 
       axios.post('unternehmenscoaching', {
-        // method: 'post',
-        // url: 'unternehmenscoaching',
-        // data: bodyFormData,
-        // headers: {'Content-Type': 'multipart/form-data' }
         name: this.user.name,
         email: this.user.email,
         msg: this.user.msg
       })
-      .then(function (response) {
+      .then(function () {
         //handle success
-        console.log(response);
+        this.status = true;
       })
       .catch(function (response) {
         //handle error
         console.log(response);
       });
-    }
+    },
   }
 }
 </script>

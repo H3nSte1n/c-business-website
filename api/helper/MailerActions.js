@@ -3,7 +3,6 @@ require('dotenv').config()
 
 export class MailerActions {
   static sendMail (name, email, msg) {
-    console.log('test', process.env.EMAIL, process.env.PW)
     const transporter = nodemailer.createTransport({
       // sendmail: true,
       // newline: 'unix',
