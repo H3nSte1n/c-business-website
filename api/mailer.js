@@ -12,10 +12,10 @@ app.post('/', (req, res) => {
   const someInvalid = sanitizedAttributes.some(r => !r)
   if (someInvalid) {
     // Throw a 422 with a neat error message if validation failed
-    return res.status(422).json({ 'message': 'Ugh.. That looks unprocessable!', 'status': 'false' })
+    return res.status(422).json({ 'message': 'Ugh.. That looks unprocessable!' })
   }
   MailerActions.sendMail(...sanitizedAttributes)
-  res.status(200).json({ 'message': 'OH YEAH', 'status': 'true' })
+  res.status(200).json({ 'message': 'OH YEAH' })
 })
 
 export default {

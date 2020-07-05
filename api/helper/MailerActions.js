@@ -4,9 +4,6 @@ require('dotenv').config()
 export class MailerActions {
   static sendMail (name, email, msg) {
     const transporter = nodemailer.createTransport({
-      // sendmail: true,
-      // newline: 'unix',
-      // path: '/usr/sbin/sendmail'
       service: 'gmail',
       auth: {
           user: process.env.EMAIL,

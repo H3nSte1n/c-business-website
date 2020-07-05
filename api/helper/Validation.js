@@ -9,7 +9,7 @@ export class Validation {
       [ 'email', v => !validator.isEmail(v) ],
       [ 'msg', v => v.length > 25 ]
     ])
-    console.log(key, value)
+
     // If map has key and function returns false, return sanitized input. Else, return false
     return rejectFunctions.has(key) && !rejectFunctions.get(key)(value) && xssFilters.inHTMLData(value)
   }
