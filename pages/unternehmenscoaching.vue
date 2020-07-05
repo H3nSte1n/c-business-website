@@ -1,15 +1,16 @@
 <template>
-  <c-container>
-    <Header />
-    <info-container />
-  </c-container>
+  <v-container
+    fluid
+    class="pa-0"
+  >
+    <Contact />
+  </v-container>
 </template>
 
 <script>
-import Header from '@/components/header';
-import InfoContainer from '@/components/infoContainer';
+import Contact from '@/components/contact';
 export default {
-  components: { Header, InfoContainer }
+  components: { Contact }
 
 }
 </script>
