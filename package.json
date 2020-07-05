@@ -12,12 +12,25 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
+  "browser": {
+    "child_process": false
+  },
   "dependencies": {
     "@mdi/js": "^5.3.45",
     "@nuxtjs/axios": "5.11.0",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.0.0-beta.20",
-    "nuxt": "2.12.2"
+    "axios": "^0.19.2",
+    "child_process": "^1.0.2",
+    "dgram": "^1.0.1",
+    "dns": "^0.2.2",
+    "fs": "0.0.2",
+    "net": "^1.0.2",
+    "nodemailer": "^6.4.10",
+    "nuxt": "2.13.3",
+    "tls": "0.0.1",
+    "validator": "^13.1.1",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

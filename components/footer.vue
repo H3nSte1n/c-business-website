@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <hr>
     <v-row justify="center">
       <v-col
-        cols="12"
+        cols="11"
         md="6"
         lg="6"
         xl="5"
@@ -73,7 +73,7 @@
         </v-row>
       </v-col>
       <v-col
-        cols="12"
+        cols="11"
         md="6"
         lg="6"
         xl="5"

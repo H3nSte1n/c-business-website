@@ -1,15 +1,23 @@
 <template>
-  <v-container>
-    <Header />
+  <v-container
+    fluid
+    class="pa-0"
+  >
     <Educational />
+    <Stripe
+      :content="content"
+      b-color="blue"
+    />
+    <Contact />
   </v-container>
 </template>
 
 <script>
-import Header from '@/components/header';
 import Educational from '@/components/educational';
+import Stripe from '@/components/stripe.vue';
+import Contact from '@/components/contact';
 export default {
-  components: { Header, Educational },
+  components: { Educational, Stripe, Contact },
   data () {
     return {
       content: {
