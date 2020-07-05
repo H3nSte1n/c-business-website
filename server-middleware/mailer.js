@@ -4,9 +4,11 @@ import { MailerActions } from './helper/MailerActions'
 
 const app = express()
 app.use(express.json())
+
 app.post('/unternehmenscoaching', (req, res) => {
   const attributes = ['name', 'email', 'msg'] // Our three form fields, all required
   console.log('test');
+  res.send('test')
   const sanitizedAttributes = attributes.map(n => Validation.validateAndSanitize(n, req.body[n]))
   console.log(...sanitizedAttributes);
   res.write(...sanitizedAttributes);
@@ -21,3 +23,8 @@ app.post('/unternehmenscoaching', (req, res) => {
   MailerActions.sendMail(...sanitizedAttributes)
   res.status(200).json({ 'message': 'OH YEAH' })
 })
+
+export default {
+  path: '~/server-middleware/mailer',
+  handler: app
+}

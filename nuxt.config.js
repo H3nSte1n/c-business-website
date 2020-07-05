@@ -33,7 +33,7 @@ export default {
   ],
   // server middleware
   serverMiddleware: [
-    { path: '~/unternehmenscoaching', handler: '~/server-middleware/mailer' },
+    '~/server-middleware/mailer'
   ],
   /*
   ** Nuxt.js dev-modules

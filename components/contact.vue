@@ -119,10 +119,11 @@ export default {
       bodyFormData.append('email', this.user.email)
       bodyFormData.append('msg', this.user.msg)
 
-      axios.post('/unternehmenscoaching', {
-        email: this.user.email,
-        name: this.user.name,
-        msg: this.user.msg
+      axios('/unternehmenscoaching', {
+        method: 'post',
+        url: '~/unternehmenscoaching',
+        data: bodyFormData,
+        headers: {'Content-Type': 'multipart/form-data' }
       })
       .then(function (response) {
         //handle success
