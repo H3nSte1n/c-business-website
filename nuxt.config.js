@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   mode: 'universal',
   /*
@@ -30,6 +28,10 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+  ],
+  // server middleware
+  serverMiddleware: [
+    '~/api/mailer'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -69,7 +71,5 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-    }
   }
 }

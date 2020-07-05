@@ -1,35 +1,38 @@
 <template>
-  <v-container>
-    <v-row
-      justify="space-around"
-      align="center"
-      flex
-      class="my-12 py-12"
-      :class="`background--${bColor}`"
-    >
-      <v-col
-        cols="12"
-        sm="12"
-        md="5"
-        xl="4"
-        class="d-flex align-self-start"
+  <div :class="`stripe--${bColor}`">
+    <v-container>
+      <v-row
+        justify="center"
+        align="center"
+        flex
+        class="my-12 py-7"
       >
-        <h2>{{ content.headline }}</h2>
-      </v-col>
-      <v-col
-        cols="12"
-        sm="12"
-        md="5"
-        xl="4"
-        :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
-      >
-        <p>{{ content.desc_1 }}</p>
-        <p v-if="content.desc_2">
-          {{ content.desc_2 }}
-        </p>
-      </v-col>
-    </v-row>
-  </v-container>
+        <v-col
+          cols="12"
+          sm="12"
+          md="4"
+          lg="5"
+          xl="4"
+          class="d-flex align-self-start"
+        >
+          <h2 class="stripe__headline">{{ content.headline }}</h2>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="12"
+          md="8"
+          lg="5"
+          xl="4"
+          :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
+        >
+          <p class="caption">{{ content.desc_1 }}</p>
+          <p class="caption" v-if="content.desc_2">
+            {{ content.desc_2 }}
+          </p>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -48,7 +51,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.background {
+.stripe {
+  &__headline {
+    font-size: 1.6rem;
+    text-align: left;
+    font-weight: 200;
+  }
   &--yellow {
     background-color: #FFDA51;
   }
