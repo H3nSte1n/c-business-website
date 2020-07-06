@@ -10,9 +10,8 @@
           <p
             class="quote__headline"
             :class="`text-${position}`"
-          >
-            {{ quote }}
-          </p>
+            v-html="quote"
+          />
           <p v-if="desc">
             {{ desc }}
           </p>
@@ -43,13 +42,19 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .quote {
   background-color: #ffffff;
   padding: 50vh 0;
   &__headline {
     font-size: 1.5rem;
     font-weight: 400;
+  }
+
+  .highlight {
+    &--light-blue {
+      color: #DDEFF4;
+    }
   }
 }
 </style>
