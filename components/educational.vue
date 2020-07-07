@@ -1,5 +1,5 @@
 <template>
-  <div class="educational mt-12">
+  <div class="educational my-1">
     <v-container>
       <h3 class="text-center h1 educational__headline">
         {{ headline }}
@@ -7,7 +7,7 @@
       <v-row
         justify="space-around"
         flex
-        class="my-12"
+        class="my-10"
       >
         <v-col
           v-for="(value, key) of iconKachelConten"

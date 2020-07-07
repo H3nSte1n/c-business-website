@@ -45,7 +45,7 @@ export default {
 <style lang="scss">
 .quote {
   background-color: #ffffff;
-  padding: 50vh 0;
+  padding: 40vh 0;
   &__headline {
     font-size: 1.5rem;
     font-weight: 400;
@@ -53,7 +53,7 @@ export default {
 
   .highlight {
     &--light-blue {
-      color: #DDEFF4;
+      color: #4494A6;
     }
   }
 }
