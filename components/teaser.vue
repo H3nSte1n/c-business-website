@@ -9,6 +9,7 @@
       <v-row justify="center">
         <v-col cols="10" md="8">
           <p>{{ content.desc }}</p>
+          <p v-if="content.desc2">{{ content.desc2 }}</p>
           <p v-if="content.quote" class="teaser__quote">
             {{ content.quote }}
           </p>
