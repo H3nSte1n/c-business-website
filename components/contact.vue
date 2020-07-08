@@ -8,7 +8,7 @@
         method="post"
         prevent-default="true"
       >
-        <v-row justify="center">
+        <v-row :justify="headlinePos">
           <v-col
             cols="10"
             md="8"
@@ -18,15 +18,24 @@
             </h3>
           </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row
+          v-if="desc"
+          justify="center"
+        >
           <v-col
             cols="10"
             md="8"
+            xl="8"
           >
-            <p>{{ desc }}</p>
+            <p class="contact__desc">
+              {{ desc }}
+            </p>
           </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row
+          justify="center"
+          class="mt-4"
+        >
           <v-col
             cols="10"
             md="4"
@@ -94,6 +103,13 @@
 import axios from 'axios'
 
 export default {
+  props: {
+    headlinePos: {
+      type: String,
+      required: false,
+      default: "center"
+    }
+  },
   data() {
     return {
       contentRules: [
@@ -139,11 +155,13 @@ export default {
 <style scoped lang="scss">
 .contact {
   background-color: #FFDA51;
-
   &__headline {
     font-size: 2rem;
     text-align: left;
-    font-weight: 200;
+    font-weight: 300;
+  }
+  &__desc {
+    max-width: 600px;
   }
 }
 </style>

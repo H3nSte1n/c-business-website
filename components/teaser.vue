@@ -1,16 +1,40 @@
 <template>
-  <div :class="`teaser--${color}`" class="py-12">
+  <div
+    :class="`teaser--${color}`"
+    class="py-12"
+  >
     <v-container class="teaser">
-      <v-row justify="center" class="mb-5">
-        <v-col cols="11" md="10">
-          <h2 class="teaser__headline">{{ content.headline }}</h2>
+      <v-row
+        justify="left"
+        class="ml-3 mb-5"
+      >
+        <v-col
+          cols="10"
+          md="8"
+          lg="6"
+          xl="4"
+        >
+          <h2
+            class="teaser__headline"
+            :class="{'teaser__headline--extends': length}"
+          >
+            {{ content.headline }}
+          </h2>
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col cols="10" md="8">
+        <v-col
+          cols="9"
+          md="8"
+        >
           <p>{{ content.desc }}</p>
-          <p v-if="content.desc2">{{ content.desc2 }}</p>
-          <p v-if="content.quote" class="teaser__quote">
+          <p v-if="content.desc2">
+            {{ content.desc2 }}
+          </p>
+          <p
+            v-if="content.quote"
+            class="teaser__quote"
+          >
             {{ content.quote }}
           </p>
         </v-col>
@@ -30,6 +54,11 @@ export default {
     content: {
       type: Object,
       required: true,
+    },
+    length: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 }
@@ -41,8 +70,11 @@ export default {
   &__headline {
     font-size: 2rem;
     text-align: left;
-    font-weight: 200;
-    max-width: 290px;
+    font-weight: 300;
+
+    &--extends {
+      max-width: 290px;
+    }
   }
   &__quote {
     font-size: 1.4rem;

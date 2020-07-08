@@ -1,35 +1,36 @@
 <template>
-  <v-container>
-    <h3 class="text-center body-1">
-      {{ headline }}
-    </h3>
-    <v-row
-      justify="space-around"
-      align="center"
-      flex
-      class="my-12"
-    >
-      <v-col
-        v-for="(value, key) of iconKachelConten"
-        :key="key"
-        cols="12"
-        sm="12"
-        md="4"
-        xl="3"
+  <div class="educational my-1">
+    <v-container>
+      <h3 class="text-center h1 educational__headline">
+        {{ headline }}
+      </h3>
+      <v-row
+        justify="space-around"
+        flex
+        class="my-10"
       >
-        <icon-kachel
-          :content="value.content"
+        <v-col
+          v-for="(value, key) of iconKachelConten"
+          :key="key"
+          cols="12"
+          sm="12"
+          md="4"
+          xl="3"
         >
-          <v-icon
-            size="52"
-            class="d-flex mx-auto"
+          <icon-kachel
+            :content="value.content"
           >
-            {{ value.icon }}
-          </v-icon>
-        </icon-kachel>
-      </v-col>
-    </v-row>
-  </v-container>
+            <v-icon
+              size="52"
+              class="d-flex mx-auto"
+            >
+              {{ value.icon }}
+            </v-icon>
+          </icon-kachel>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -71,3 +72,13 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.educational {
+  &__headline {
+    font-size: 2rem;
+    text-align: left;
+    font-weight: 300;
+  }
+}
+</style>

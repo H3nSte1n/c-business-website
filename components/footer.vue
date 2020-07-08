@@ -1,7 +1,10 @@
 <template>
   <v-container class="pa-0">
     <hr>
-    <v-row justify="center">
+    <v-row
+      justify="center"
+      class="footer"
+    >
       <v-col
         cols="11"
         md="6"
@@ -105,3 +108,9 @@ export default {
 
 }
 </script>
+
+<style scoped lang="scss">
+.footer {
+  width: 100%;
+}
+</style>

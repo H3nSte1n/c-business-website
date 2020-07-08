@@ -6,12 +6,13 @@
       </v-col>
     </v-row>
     <v-row
-      class="mb-7"
+      class="my-2"
       justify="center"
     >
       <v-col
         cols="4"
         md="8"
+        xl="7"
       >
         <p class="text-center caption">
           {{ content.desc }}
@@ -22,7 +23,7 @@
       justify="center"
     >
       <v-col
-        cols="4"
+        cols="6"
         md="8"
       >
         <h3 class="text-center h1 mb-3">
