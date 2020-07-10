@@ -7,6 +7,7 @@
       :content="stripe"
       b-color="yellow"
     />
+    <Slider />
     <Quote :quote="quote" />
     <Stripe
       :content="stripe2"
@@ -21,9 +22,10 @@
 import Stripe from '@/components/stripe.vue';
 import Contact from '@/components/contact';
 import Quote from '@/components/quote';
+import Slider from '@/components/slider';
 
 export default {
-  components: { Stripe, Contact, Quote },
+  components: { Stripe, Contact, Quote, Slider },
   data () {
     return {
       stripe: {

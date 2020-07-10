@@ -11,9 +11,9 @@
           cols="12"
           sm="12"
           md="4"
-          lg="5"
+          lg="4"
           xl="4"
-          class="d-flex align-self-start"
+          class="d-flex align-self-start mr-9"
         >
           <h2 class="stripe__headline">{{ content.headline }}</h2>
         </v-col>
@@ -21,12 +21,12 @@
           cols="12"
           sm="12"
           md="8"
-          lg="5"
+          lg="6"
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
         >
-          <p class="caption">{{ content.desc_1 }}</p>
-          <p class="caption" v-if="content.desc_2">
+          <p class="body-1">{{ content.desc_1 }}</p>
+          <p class="body-1" v-if="content.desc_2">
             {{ content.desc_2 }}
           </p>
         </v-col>
@@ -53,9 +53,9 @@ export default {
 <style scoped lang="scss">
 .stripe {
   &__headline {
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     text-align: left;
-    font-weight: 200;
+    font-weight: 300;
   }
   &--yellow {
     background-color: #FFDA51;
