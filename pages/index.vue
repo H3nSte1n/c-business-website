@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <div class="navigation navigation--closed">
+    <div class="navigation navigation-mobile--open">
       <nav class="navigation__wrapper">
         <a class="navigation__logo" href="/">Claudia Eck</a>
         <div class="navigation__link">
@@ -8,8 +8,9 @@
           <a class="navigation__link-item" href="/unternehmenscoaching">Unternehmen beleben</a>
           <a class="navigation__link-item navigation__link-item--active" href="/übermich">Über mich</a>
           <a class="navigation__link-item" href="/kontakt">Kontakt</a>
-          <a class="navigation__link-item" href="/opentel">+ 1792 242543</a>
+          <a class="navigation__link-item navigation__link-item--mobile" href="tel:+1792242543">+ 1792 242543</a><span class="navigation__link-item navigation__link-item--desktop">+ 1792 242543</span>
         </div>
+        <div class="navigation-mobile-button navigation-mobile-button--open navigation-mobile-button--closed"></div> 
       </nav>
     </div>
     <v-row
@@ -142,85 +143,157 @@ export default {
 }
 
 .navigation {
-  position: sticky;
+  position: fixed;
   background: #fff;
   padding: 20px 0;
   width: 100%;
   z-index: 99;
+  bottom: 0px;
 
   @media (min-width: 960px) {
+    position: sticky;
     top: 0px;
+  }
 
-    &__wrapper {
-      position: relative;
+  &__wrapper {
+    position: relative;
+    text-align: center;
+
+    @media(min-width: 960px) {
+      text-align: left;
     }
+  }
 
-    &__logo {
-      display: inline-block;
-      color: #343434;
-      font-size: 28px;
-      line-height: 34px;
-      text-decoration: none;
-      font-weight: bold;
+  &__logo {
+    display: inline-block;
+    color: #343434;
+    font-size: 28px;
+    line-height: 34px;
+    text-decoration: none;
+    font-weight: bold;
 
-      @media (min-width: 1264px) {
-        font-size: 38px;
-        line-height: 44px;
-      }
+    @media (min-width: 1264px) {
+      font-size: 38px;
+      line-height: 44px;
     }
+  }
 
-    &__link {
+  &__link {
+    display: none;
+
+    @media(min-width: 960px) {
       display: inline-block;
       position: absolute;
       right: 0;
       bottom: 0;
+    }
 
-      &-item {
-        color: #343434;
-        text-decoration: none;
-        padding: 0px 10px;
-        font-size: 16px;
-        line-height: 22px;
+    &-item {
+      color: #343434;
+      text-decoration: none;
+      padding: 0px 10px;
+      font-size: 16px;
+      line-height: 22px;
 
-        @media (min-width: 1264px) {
-          padding: 0px 15px;
-          font-size: 21px;
-          line-height: 24px;
+      @media (min-width: 1264px) {
+        padding: 0px 15px;
+        font-size: 21px;
+        line-height: 24px;
+      }
+
+      @media (min-width: 1904px) {
+        padding: 0px 35px;
+        font-size: 23px;
+        line-height: 27px;
+      }
+
+      &--mobile {
+        display: block;
+
+        @media (min-width: 960px) {
+          display: none;
         }
+      }
 
-        @media (min-width: 1904px) {
-          padding: 0px 35px;
-          font-size: 23px;
-          line-height: 27px;
+      &--desktop {
+        display: none;
+        
+        @media (min-width: 960px) {
+          display: inline-block;
         }
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: darkred;
+        text-decoration: underline;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+      
+      &--active {
+        text-decoration: underline;
 
         &:hover {
-          cursor: pointer;
-          color: darkred;
-          text-decoration: underline;
-        }
-
-        &:last-child {
-          padding-right: 0;
-        }
-        
-        &--active {
-          text-decoration: underline;
-
-          &:hover {
-            cursor: default;
-            color: #343434;
-          }
+          cursor: default;
+          color: #343434;
         }
       }
     }
   }
 }
 
-.navigation--closed {
-  .navigation {
-    &__link {
-      display: none;
+.navigation-mobile {
+  &-button {
+    position: absolute;
+    width: 50px;
+    right: 50px;
+    top: 17px;
+
+    @media (min-width: 960px) {
+      // display: none;
+    }
+
+    &--open {
+      &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 24px;
+        transform: rotate(45deg);
+        background-color: #343434;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 24px;
+        transform: rotate(-45deg);
+        background-color: #343434;
+      }
+    }
+
+    &--closed {
+      &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 24px;
+        transform: rotate(45deg);
+        background-color: #343434;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 24px;
+        transform: rotate(-45deg);
+        background-color: #343434;
+      }
     }
   }
 }
