@@ -25,7 +25,7 @@
         xl="5"
       >
         <v-img
-          :src="`https://picsum.photos/300/400?random=23123`"
+          :src="require('~/assets/images/claudia-eck-hero-image-l.png')"
           alt="test image"
         />
       </v-col>
@@ -53,37 +53,37 @@ export default {
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/persönlichkeitscoaching'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-persönlichkeitsentwicklung.svg'),
             alt: 'random test image'
           }
         },
         {
-          headline: 'Das persönliche Leben',
-          subline: 'Lassen Sie von sich selbst überraschen',
+          headline: 'Unternehmenscoaching',
+          subline: 'Für mehr positive Energie und gesunde Führungskultur',
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/unternehmenscoaching'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.svg'),
             alt: 'random test image'
           },
           order: 'last'
         },
         {
-          headline: 'Das persönliche Leben',
-          subline: 'Lassen Sie von sich selbst überraschen',
+          headline: 'Über mich',
+          subline: 'Wer bin ich?',
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/kontakt'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-ueber-mich.svg'),
             alt: 'random test image'
           }
         }

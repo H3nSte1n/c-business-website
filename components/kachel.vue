@@ -5,6 +5,7 @@
       align="center"
       flex
       class="my-12"
+      :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
     >
       <v-col
         cols="12"
@@ -16,7 +17,9 @@
         <v-img
           :src="content.img.src"
           :alt="content.img.alt"
-          width="100%"
+          width="40%"
+          max-width="200px"
+          class="mx-auto mb-12"
         />
       </v-col>
       <v-col
@@ -25,10 +28,10 @@
         md="5"
         xl="4"
       >
-        <h2 class="display-1">
+        <h2 class="display-1 font-weight-light">
           {{ content.headline }}
         </h2>
-        <p class="boy-1 font-weight-bold mt-2">
+        <p class="body-1 font-weight-bold mt-2 mb-5">
           {{ content.subline }}
         </p>
         <p class="body-1">
@@ -36,7 +39,7 @@
         </p>
         <router-link
           :to="content.button.link"
-          class="text-lowercase button"
+          class="text-lowercase button body-1 font-weight-bold pb-1"
         >
           {{ content.button.text }}
         </router-link>
