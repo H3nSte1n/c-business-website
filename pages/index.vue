@@ -13,10 +13,48 @@
         <h1
           class="font-weight-bold header-box__headline"
         >
-          Claudia Eck
+          <span class="word-container">
+            <span
+              class="word"
+              :class="{'word-active': isLoaded}"
+            >
+              Claudia
+            </span>
+          </span>
+          <span class="word-container">
+            <span
+              class="word word-2"
+              :class="{'word-active': isLoaded}"
+            >
+              Eck
+            </span>
+          </span>
         </h1>
         <h2 class="header-box__subline">
-          Unternehmens- & Persönlichkeitscoaching
+          <span class="word-container">
+            <span
+              class="word word-3"
+              :class="{'word-active': isLoaded}"
+            >
+              Unternehmens-
+            </span>
+          </span>
+          <span class="word-container">
+            <span
+              class="word word-4"
+              :class="{'word-active': isLoaded}"
+            >
+              &
+            </span>
+          </span>
+          <span class="word-container">
+            <span
+              class="word word-5"
+              :class="{'word-active': isLoaded}"
+            >
+              Persönlichkeitscoaching
+            </span>
+          </span>
         </h2>
       </v-col>
       <v-col
@@ -26,8 +64,21 @@
       >
         <v-img
           :src="require('~/assets/images/claudia-eck-hero-image-l.png')"
-          alt="test image"
-        />
+          alt="image"
+        >
+          <div
+            class="image__invisible"
+            :class="{'image__invisible-disable': isLoaded}"
+          />
+        </v-img>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="animated">
+        <p class="animated__text">
+          scroll
+        </p>
+        <div class="animated__line" />
       </v-col>
     </v-row>
     <kachel
@@ -46,6 +97,7 @@ export default {
   },
   data () {
     return {
+      isLoaded: false,
       tiles: [
         {
           headline: 'Das persönliche Leben',
@@ -89,6 +141,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    this.isLoaded = true;
   }
 }
 </script>
@@ -124,6 +179,80 @@ export default {
       text-align: right;
       font-size: 1.8rem;
       margin: 20px 0;
+    }
+  }
+}
+
+.animated {
+  height: 50px;
+
+  &__line {
+    height: 0px;
+    width: 2px;
+    background-color: #2C2C2C;
+    animation: lineAnimation 4s ease-in-out infinite;
+    margin: 0 auto;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  @keyframes lineAnimation {
+    0% {
+      height: 0px;
+    }
+    50% {
+      height: 40px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+}
+
+.word {
+  position: relative;
+  top: 105px;
+  transition: top 0.75s ease-out 0.5s;
+  &-2 {
+    transition: top 0.75s ease-out 1s;
+  }
+  &-3 {
+    top: 0px;
+    opacity: 0;
+    transition: opacity 1s ease-out 1.5s;
+  }
+  &-4 {
+    top: 0px;
+    opacity: 0;
+    transition: opacity 1s ease-out 1.8s;
+  }
+  &-5 {
+    top: 0px;
+    opacity: 0;
+    transition: opacity 1s ease-out 2s;
+  }
+
+  &-active {
+    top: 0px;
+    opacity: 1;
+  }
+ &-container {
+  display: inline-block;
+  overflow: hidden;
+ }
+}
+
+.image {
+  &__invisible {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 1s ease-out 2s;
+    &-disable {
+      transform: translateX(100%);
     }
   }
 }

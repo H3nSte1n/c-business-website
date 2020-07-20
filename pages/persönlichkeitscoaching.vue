@@ -25,7 +25,7 @@
 
 <script>
 import Stripe from '@/components/stripe.vue';
-import Contact from '@/components/contact';
+import Contact from '@/components/form/contact';
 import Quote from '@/components/quote';
 import Slider from '@/components/slider';
 import Header from '@/components/header';

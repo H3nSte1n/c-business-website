@@ -20,7 +20,7 @@
 
 <script>
 import Educational from '@/components/educational';
-import Contact from '@/components/contact';
+import Contact from '@/components/form/contact';
 import Teaser from '@/components/teaser';
 import Quote from '@/components/quote';
 import Keywords from '@/components/keywords';

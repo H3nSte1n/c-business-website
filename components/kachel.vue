@@ -59,11 +59,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button {
   max-width: 200px;
-  border-bottom: 1px solid black;
   color: black;
   text-decoration: none;
+
+  &:active, &:focus, &:hover, &:visited {
+    color: black;
+    cursor: none;
+  }
 }
 </style>
