@@ -1,27 +1,40 @@
 <template>
   <v-container>
-    <v-row align="center">
+    <v-row
+      align="center"
+      justify="space-around"
+      class="my-12 py-12"
+    >
       <v-col
         cols="12"
-        sm="9"
+        md="9"
         xl="7"
-        :order="$vuetify.breakpoint.sm ? 'last': 'first'"
+        :order="$vuetify.breakpoint.smAndDown ? 'last': 'first'"
+        class="pl-12"
       >
-        <h1 class="display-2 font-weight-medium">
-          Unternehmenscoaching
+        <h1
+          class="font-weight-medium header__headline"
+          :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
+        >
+          {{ content.headline }}
         </h1>
-        <p class="body-1">
-          Für mehr positive Energie und gesunde Führungskultur
+        <p
+          class="header__desc"
+          :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
+        >
+          {{ content.desc }}
         </p>
       </v-col>
       <v-col
         cols="12"
-        sm="3"
+        md="3"
         xl="3"
       >
         <v-img
-          alt="test image"
-          src="https://picsum.photos/450/300?random=23123"
+          :alt="content.img.alt"
+          :src="content.img.src"
+          :max-width="`${$vuetify.breakpoint.mdAndDown ? '210px' : '250px'}`"
+          class="mx-auto mb-12"
         />
       </v-col>
     </v-row>
@@ -30,6 +43,32 @@
 
 <script>
 export default {
-
+  props: {
+    content: {
+      type: Object,
+      required: true,
+    }
+  }
 }
 </script>
+
+<style scoped lang="scss">
+.header {
+  &__headline {
+    hyphens: auto;
+    font-size: 36px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 72px;
+    }
+  }
+  &__desc {
+    hyphens: auto;
+    font-size: 21px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 35px;
+    }
+  }
+}
+</style>

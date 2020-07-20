@@ -1,10 +1,11 @@
 <template>
   <v-container fluid class="pa-0">
+    <Header :content="header" />
     <div
       v-for="(content, key) in teasers"
       :key="key"
     >
-      <teaser
+      <Teaser
         :color="content.color"
         :content="content.content"
       />
@@ -13,12 +14,21 @@
 </template>
 
 <script>
-import teaser from '@/components/teaser';
+import Teaser from '@/components/teaser';
+import Header from '@/components/header';
 
 export default {
-  components: {teaser},
+  components: {Header, Teaser},
   data() {
     return {
+      header: {
+        headline: 'Über mich',
+        desc: 'für Ihre private und berufliche Lebensbalance',
+        img: {
+          src: require('~/assets/images/claudia-eck-ueber-mich.svg'),
+          alt: 'unternehmenscoaching'
+        }
+      },
       teasers: [
         {
           color: "yellow",
