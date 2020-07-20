@@ -1,20 +1,28 @@
 <template>
   <div class="quote">
     <v-container>
-      <v-row :justify="position">
+      <v-row justify="center">
         <v-col
           cols="11"
           sm="9"
           md="8"
+          lg="10"
         >
-          <p
-            class="quote__headline"
-            :class="`text-${position}`"
-            v-html="quote"
-          />
-          <p v-if="desc">
-            {{ desc }}
-          </p>
+          <div
+            class="quote__content"
+            :class="{'quote__content--left': position === 'left'}"
+          >
+            <p
+              class="quote__headline"
+              :class="`text-${position}`"
+              v-html="quote"
+            />
+            <p
+              v-if="desc"
+              class="quote__desc"
+              v-html="desc"
+            />
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -28,10 +36,10 @@ export default {
       type: String,
       required: true,
     },
-    // eslint-disable-next-line vue/require-default-prop
     desc: {
       type: String,
       required: false,
+      default: null
     },
     position: {
       type: String,
@@ -46,6 +54,14 @@ export default {
 .quote {
   background-color: #ffffff;
   padding: 40vh 0;
+  &__content {
+    max-width: 570px;
+    margin: 0 auto;
+
+    &--left {
+      margin: 0;
+    }
+  }
   &__headline {
     font-size: 1.5rem;
     font-weight: 400;
