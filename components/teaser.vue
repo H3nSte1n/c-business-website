@@ -1,50 +1,56 @@
+import boxHeightAnimationMixin from '@/mixins/boxHeightAnimation';
 <template>
   <div
     :class="`teaser--${color}`"
     class="py-12"
   >
     <v-container class="teaser">
+      <div>
       <v-row
         justify="left"
-        class="ml-3 mb-5"
+        class="ml-3"
       >
         <v-col
           cols="10"
           md="8"
           lg="6"
           xl="4"
-        >
-          <h2
-            class="teaser__headline"
-            :class="{'teaser__headline--extends': length}"
           >
-            {{ content.headline }}
-          </h2>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col
-          cols="9"
-          md="8"
-        >
-          <p>{{ content.desc }}</p>
-          <p v-if="content.desc2">
-            {{ content.desc2 }}
-          </p>
-          <p
-            v-if="content.quote"
-            class="teaser__quote"
+            <h2
+              class="teaser__headline"
+              :class="{'teaser__headline--extends': length}"
+            >
+              {{ content.headline }}
+            </h2>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col
+            cols="9"
+            md="8"
           >
-            {{ content.quote }}
-          </p>
-        </v-col>
-      </v-row>
+            <p>{{ content.desc }}</p>
+            <p v-if="content.desc2">
+              {{ content.desc2 }}
+            </p>
+            <p
+              v-if="content.quote"
+              class="teaser__quote"
+            >
+              {{ content.quote }}
+            </p>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
   </div>
 </template>
 
 <script>
+import boxHeightAnimationMixin from '@/mixins/boxHeightAnimation';
+
 export default {
+  mixins: [boxHeightAnimationMixin],
   props: {
     color: {
       type: String,
@@ -61,12 +67,20 @@ export default {
       default: true
     }
   },
+  methods: {
+    eventsInit() {
+      document.addEventListener(
+        'scroll',
+        () => { this.animateBoxHeight('teaser') },
+        false
+      );
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .teaser {
-  padding: 0 0 90px 0;
   &__headline {
     font-size: 2rem;
     text-align: left;
