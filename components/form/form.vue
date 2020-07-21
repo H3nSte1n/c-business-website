@@ -3,6 +3,7 @@
     class="py-12"
   >
     <v-form
+      ref="form"
       action="/"
       method="post"
       prevent-default="true"
@@ -47,7 +48,7 @@
             hide-details="auto"
             :rules="contentRules"
             :validate-on-blur="true"
-            class="required"
+            class="required input-field"
           />
         </v-col>
         <v-col
@@ -62,6 +63,7 @@
             label="E-Mail Adresse"
             :validate-on-blur="true"
             :rules="emailRules"
+            class="required input-field"
           />
         </v-col>
       </v-row>
@@ -78,15 +80,16 @@
             hide-details="auto"
             :rules="contentRules"
             :validate-on-blur="true"
-            class="required"
+            class="required input-field"
           />
         </v-col>
       </v-row>
       <v-row>
         <v-col class="d-flex justify-center">
           <v-btn
-            class="px-7 py-5 mt-9"
-            outlined
+            class="px-7 mt-9 button"
+            text
+            light
             @click="submitForm"
           >
             Senden
@@ -126,13 +129,20 @@ export default {
       desc: "Lernen Sie mich ganz unverbindlich in einem ersten kostenfreien Gespräch kennen. All Ihre Fragen zum Coaching und der Vorgehensweise können Sie hier stellen. Erzählen Sie mir Ihr Anliegen und wir überlegen gemeinsam, wie wir starten können:"
     }
   },
+  mounted() {
+    this.initCursorEvents();
+  },
   methods: {
+    validate () {
+      this.$refs.form.validate()
+    },
     submitForm() {
+      const valid = this.$refs.form.validate();
+      if(!valid) { return false }
       const bodyFormData = new FormData();
       bodyFormData.set('name', this.user.name)
       bodyFormData.append('email', this.user.email)
       bodyFormData.append('msg', this.user.msg)
-
       axios.post('unternehmenscoaching', {
         name: this.user.name,
         email: this.user.email,
@@ -148,6 +158,34 @@ export default {
         console.log(response);
       });
     },
+    initCursorEvents() {
+      document.querySelectorAll('.input-field').forEach(e => {
+        e.addEventListener('mouseover', () => {this.transformToTextCursor(e)}, true);
+        e.addEventListener('mouseleave', () => {this.resetTransformToTextCursor()}, true);
+      })
+    },
+    transformToTextCursor(inputfield) {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.width = '0px';
+      cursor.style.height = `${inputfield.offsetHeight / 2}px`;
+      cursor.style.borderWidth = "1px";
+      cursor.style.borderRadius = "1%";
+      cursor.classList.remove('cursor-dot');
+    },
+    resetTransformToTextCursor() {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.width = '3rem';
+      cursor.style.height = '3rem';
+      cursor.style.borderRadius = "50%";
+      cursor.style.borderWidth = "1px";
+      cursor.classList.add('cursor-dot');
+    }
   }
 }
 </script>
+
+<style lang="scss">
+input {
+  cursor: none;
+}
+</style>

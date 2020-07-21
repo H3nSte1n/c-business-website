@@ -98,14 +98,4 @@ export default {
     }
   }
 }
-.button {
-  max-width: 200px;
-  color: black;
-  text-decoration: none;
-
-  &:active, &:focus, &:hover, &:visited {
-    color: black;
-    cursor: none;
-  }
-}
 </style>

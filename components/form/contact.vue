@@ -22,6 +22,9 @@ export default {
       isSuccessfullSendet: null,
       success: {
         headline: 'Mail erfolgreich abgeschickt.'
+      },
+      failed: {
+        headline: 'E-Mail konnte nicht verschickt werden.'
       }
     }
   },
@@ -45,12 +48,6 @@ export default {
   }
   &__desc {
     max-width: 600px;
-  }
-  &__mail {
-    transform: translate(-50%, -50%);
-    &-space {
-      min-height: 60vh;
-    }
   }
 }
 </style>

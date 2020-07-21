@@ -11,8 +11,12 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="contact__mail-space">
-        <v-icon size="50px" class="contact__mail">
+      <v-col class="contact__mail-icon-space">
+        <v-icon
+          size="50px"
+          class="contact__mail-icon"
+          :class="{'contact__mail-icon-active': isTransmitted}"
+        >
           {{ mdiEmail }}
         </v-icon>
       </v-col>
@@ -32,8 +36,30 @@ export default {
   },
   data() {
     return {
-      mdiEmail
+      mdiEmail,
+      isTransmitted: false
     }
+  },
+  mounted() {
+    this.isTransmitted = true;
+    console.log(this.isTransmitted, 'transmitted');
   }
 }
 </script>
+
+<style scoped lang="scss">
+.contact {
+  &__mail-icon {
+    transform: translate(1vw, 60%);
+    transition: transform 1s ease-out 2s;
+
+    &-space {
+      min-height: 60vh;
+    }
+
+    &-active {
+      transform: translate(100vw, 60%);
+    }
+  }
+}
+</style>

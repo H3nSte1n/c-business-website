@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div
-      class="cursor"
+      class="cursor cursor-dot"
       :class="{'cursor--active': isLoaded}"
     />
     <v-content>
@@ -54,8 +54,8 @@ export default {
       window.addEventListener('mousewheel', this.cursorMove);
       window.addEventListener('DOMMouseScroll', this.cursorMove);
       document.querySelectorAll('.button').forEach(e => {
-        e.addEventListener('mouseover', () => {this.transformToButton(e)});
-        e.addEventListener('mouseleave', () => {this.resetTransformToButton()});
+        e.addEventListener('mouseover', () => {this.transformToButton(e)}, true);
+        e.addEventListener('mouseleave', () => {this.resetTransformToButton()}, true);
         e.addEventListener('click', () => {this.resetTransformToButton()});
       })
     },
@@ -70,6 +70,7 @@ export default {
       cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
       cursor.style.borderRadius = "25px";
       cursor.style.borderWidth = "2px";
+      console.log('test');
     },
     resetTransformToButton() {
       const cursor = document.querySelector('.cursor');
@@ -107,20 +108,34 @@ body {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
+    cursor: none;
   }
 
-  &::before {
-    content: ' ';
-    display: block;
-    background-color: black;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
+  &-dot {
+    &::before {
+      content: ' ';
+      display: block;
+      background-color: black;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+    }
+  }
+}
+
+.button {
+  max-width: 200px;
+  color: black;
+  text-decoration: none;
+
+  &:active, &:focus, &:hover, &:visited {
+    color: black;
+    cursor: none;
   }
 }
 </style>
