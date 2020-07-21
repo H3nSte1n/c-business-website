@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     updateStatus(status) {
-      console.log('status', status)
       this.isSuccessfullSendet = status;
     }
   }

@@ -149,13 +149,12 @@ export default {
         msg: this.user.msg
       })
       .then( () => {
-        this.$emit('status', true)
         //handle success
+        this.$emit('status', true)
       })
-      .catch(response => {
+      .catch(() => {
         //handle error
         this.$emit('status', false)
-        console.log(response);
       });
     },
     initCursorEvents() {
