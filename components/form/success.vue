@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted() {
-    this.isTransmitted = true;
+    setTimeout(() => {this.isTransmitted = true}, 1);
     console.log(this.isTransmitted, 'transmitted');
   }
 }
@@ -50,8 +50,9 @@ export default {
 <style scoped lang="scss">
 .contact {
   &__mail-icon {
-    transform: translate(1vw, 60%);
-    transition: transform 1s ease-out 2s;
+    transform: translate(1vw, -80%);
+    top: 50%;
+    transition: transform 2s ease-out;
 
     &-space {
       min-height: 60vh;
