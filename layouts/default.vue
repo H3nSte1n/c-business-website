@@ -60,6 +60,7 @@ export default {
       })
     },
     cursorMove(e) {
+      if(e.target.classList.contains('button')) return false
       const cursor = document.querySelector('.cursor');
       cursor.style.top = `${e.pageY}px`;
       cursor.style.left = `${e.pageX}px`;
@@ -70,7 +71,11 @@ export default {
       cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
       cursor.style.borderRadius = "25px";
       cursor.style.borderWidth = "2px";
-      console.log('test');
+
+      const buttonHeight = buttonElement.getBoundingClientRect().top + window.pageYOffset;
+      const buttonWidth = buttonElement.offsetLeft;
+      cursor.style.top = `${buttonHeight + ((buttonElement.offsetHeight) /2)}px`;
+      cursor.style.left = `${buttonWidth + ((buttonElement.offsetWidth) /2)}px`;
     },
     resetTransformToButton() {
       const cursor = document.querySelector('.cursor');
