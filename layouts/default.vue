@@ -138,6 +138,10 @@ body {
   color: black;
   text-decoration: none;
 
+  &--disabled {
+    opacity: 0.2;
+  }
+
   &:active, &:focus, &:hover, &:visited {
     color: black;
     cursor: none;
