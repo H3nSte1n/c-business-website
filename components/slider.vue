@@ -12,7 +12,6 @@
           :continuous="true"
           :inverval="500"
           :cycle="true"
-          height="350px"
         >
           <v-carousel-item
             v-for="(item,i) in items"
