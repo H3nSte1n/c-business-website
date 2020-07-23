@@ -17,16 +17,15 @@
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
           <span
-            v-for="(item, key) of content.headline.split(' ')"
+            v-for="(item, key) of preparedHeadline"
             :key="key"
             class="word-container"
           >
             <span
               class="word"
-              :class="[`word-${key}`, {'word-active': isLoaded}]"
-            >
-              {{ item }}
-            </span>
+              :class="[`word-${key + 1}`, {'word-active': isLoaded}]"
+              v-html="item"
+            />
           </span>
         </h1>
         <p
@@ -40,7 +39,7 @@
           >
             <span
               class="word"
-              :class="[`word-${key + 1}`, {'word-active': isLoaded}]"
+              :class="[`word-${key + content.headline.split(' ').length}`, {'word-active': isLoaded}]"
               v-html="item"
             />
           </span>
@@ -76,6 +75,9 @@ export default {
     }
   },
   computed: {
+    preparedHeadline() {
+      return this.content.headline.split(' ').join('&nbsp;,').split(',');
+    },
     preparedDesc() {
       return this.content.desc.split(' ').join('&nbsp;,').split(',');
     }

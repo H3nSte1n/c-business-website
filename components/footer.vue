@@ -94,25 +94,46 @@
                 class="ml-auto pa-0"
               >
                 <v-col>
-                  <v-img
-                    :src="require('~/assets/images/social-icons/facebook.svg')"
-                    alt="facebook"
-                    width="48px"
-                  />
+                  <v-btn
+                    icon
+                    href="https://www.xing.com/"
+                    class="button"
+                    target="_blank"
+                  >
+                    <v-img
+                      :src="require('~/assets/images/social-icons/facebook.svg')"
+                      alt="facebook"
+                      width="48px"
+                    />
+                  </v-btn>
                 </v-col>
                 <v-col>
-                  <v-img
-                    :src="require('~/assets/images/social-icons/twitter.svg')"
-                    alt="twitter"
-                    width="48px"
-                  />
+                  <v-btn
+                    icon
+                    href="https://www.xing.com/"
+                    class="button"
+                    target="_blank"
+                  >
+                    <v-img
+                      :src="require('~/assets/images/social-icons/twitter.svg')"
+                      alt="twitter"
+                      width="48px"
+                    />
+                  </v-btn>
                 </v-col>
                 <v-col>
-                  <v-img
-                    :src="require('~/assets/images/social-icons/xing.svg')"
-                    alt="xing"
-                    width="48px"
-                  />
+                  <v-btn
+                    icon
+                    href="https://www.xing.com/"
+                    class="button"
+                    target="_blank"
+                  >
+                    <v-img
+                      :src="require('~/assets/images/social-icons/xing.svg')"
+                      alt="xing"
+                      width="48px"
+                    />
+                  </v-btn>
                 </v-col>
               </v-row>
               <v-row>
@@ -121,7 +142,7 @@
                   class="text-left"
                 >
                   <router-link
-                    to="/"
+                    to="/impressum"
                     class="text-lowercase body-1 footer__button button"
                   >
                     Impressum
@@ -132,7 +153,7 @@
                   class="text-right"
                 >
                   <router-link
-                    to="/"
+                    to="/datenschutz"
                     class="text-lowercase body-1 footer__button button"
                   >
                     Datenschutz
