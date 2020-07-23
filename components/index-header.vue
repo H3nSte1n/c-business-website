@@ -166,10 +166,10 @@ export default {
     top: 0px;
     opacity: 1;
   }
- &-container {
-  display: inline-block;
-  overflow: hidden;
- }
+  &-container {
+    display: inline-block;
+    overflow: hidden;
+  }
 }
 
 .image {
