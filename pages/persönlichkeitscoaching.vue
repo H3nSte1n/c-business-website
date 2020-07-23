@@ -3,7 +3,7 @@
     fluid
     class="pa-0"
   >
-  <Header :content="header" />
+    <Header :content="header" />
     <Stripe
       :content="stripe"
       b-color="yellow"

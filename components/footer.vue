@@ -62,17 +62,20 @@
               md="6"
               xl="5"
             >
-              <a
-                href="tel:01792 242543"
-                target="_blank"
-                class="body-1 font-weight-medium"
-              >+ 1792 242543</a>
-              <br>
-              <a
-                href="mailto:info@claudiaeck.de"
-                target="_blank"
-                class="body-1 font-weight-medium"
-              >info@claudiaeck.de</a>
+              <p>
+                <a
+                  href="tel:01792 242543"
+                  target="_blank"
+                  class="body-1 font-weight-medium footer__button button"
+                >+ 1792 242543</a>
+              </p>
+              <p>
+                <a
+                  href="mailto:info@claudiaeck.de"
+                  target="_blank"
+                  class="body-1 font-weight-medium footer__button button"
+                >info@claudiaeck.de</a>
+              </p>
             </v-col>
           </v-row>
         </v-col>
@@ -113,18 +116,24 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="6" class="text-left">
+                <v-col
+                  cols="6"
+                  class="text-left"
+                >
                   <router-link
                     to="/"
-                    class="text-lowercase body-1 footer__button"
+                    class="text-lowercase body-1 footer__button button"
                   >
                     Impressum
                   </router-link>
                 </v-col>
-                <v-col cols="6" class="text-right">
+                <v-col
+                  cols="6"
+                  class="text-right"
+                >
                   <router-link
                     to="/"
-                    class="text-lowercase body-1 footer__button"
+                    class="text-lowercase body-1 footer__button button"
                   >
                     Datenschutz
                   </router-link>

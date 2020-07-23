@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="header">
     <v-row
       align="center"
       justify="space-around"
@@ -7,9 +7,8 @@
     >
       <v-col
         cols="12"
-        md="9"
-        xl="7"
-        :order="$vuetify.breakpoint.smAndDown ? 'last': 'first'"
+        md="12"
+        xl="10"
         class="pl-12"
       >
         <h1
@@ -30,6 +29,7 @@
           </span>
         </h1>
         <p
+          v-if="content.desc"
           class="header__desc"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
@@ -45,18 +45,6 @@
             />
           </span>
         </p>
-      </v-col>
-      <v-col
-        cols="12"
-        md="3"
-        xl="3"
-      >
-        <v-img
-          :alt="content.img.alt"
-          :src="content.img.src"
-          :max-width="`${$vuetify.breakpoint.mdAndDown ? '190px' : '200px'}`"
-          class="mx-auto mb-12"
-        />
       </v-col>
     </v-row>
   </v-container>

@@ -6,15 +6,15 @@ import boxHeightAnimationMixin from '@/mixins/boxHeightAnimation';
   >
     <v-container class="teaser">
       <div>
-      <v-row
-        justify="left"
-        class="ml-3"
-      >
-        <v-col
-          cols="10"
-          md="8"
-          lg="6"
-          xl="4"
+        <v-row
+          justify="left"
+          class="ml-3"
+        >
+          <v-col
+            cols="10"
+            md="8"
+            lg="6"
+            xl="4"
           >
             <h2
               class="teaser__headline"

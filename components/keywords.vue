@@ -8,12 +8,20 @@
       </v-col>
     </v-row>
     <v-row class="align-center justify-end">
-      <v-col cols="5" sm="4" md="3">
+      <v-col
+        cols="5"
+        sm="4"
+        md="3"
+      >
         <p class="body-1">
           {{ desc }}
         </p>
       </v-col>
-      <v-col cols="7" md="8" class="d-flex justify-center">
+      <v-col
+        cols="7"
+        md="8"
+        class="d-flex justify-center"
+      >
         <p class="keywords--big">
           {{ keywords.second }}
         </p>
