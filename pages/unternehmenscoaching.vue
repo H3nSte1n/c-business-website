@@ -3,6 +3,7 @@
     fluid
     class="pa-0"
   >
+    <Header :content="header" />
     <Teaser
       :color="teaser.color"
       :content="teaser.content"
@@ -19,15 +20,24 @@
 
 <script>
 import Educational from '@/components/educational';
-import Contact from '@/components/contact';
+import Contact from '@/components/form/contact';
 import Teaser from '@/components/teaser';
 import Quote from '@/components/quote';
 import Keywords from '@/components/keywords';
+import Header from '@/components/header';
 
 export default {
-  components: { Educational, Contact, Teaser, Quote, Keywords },
+  components: { Header, Educational, Contact, Teaser, Quote, Keywords },
   data () {
     return {
+      header: {
+        headline: 'Unternehmenscoaching',
+        desc: 'für mehr positive Energie und gesunde Führungskultur',
+        img: {
+          src: require('~/assets/images/claudia-eck-unternehmenscoaching.svg'),
+          alt: 'unternehmenscoaching'
+        }
+      },
       teaser: {
           color: "light-blue",
           content: {

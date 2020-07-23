@@ -1,11 +1,11 @@
 <template>
   <div :class="`stripe--${bColor}`">
-    <v-container>
+    <v-container class="stripe">
       <v-row
         justify="center"
         align="center"
         flex
-        class="my-12 py-7"
+        class="py-12"
       >
         <v-col
           cols="12"
@@ -15,7 +15,9 @@
           xl="4"
           class="d-flex align-self-start mr-9"
         >
-          <h2 class="stripe__headline">{{ content.headline }}</h2>
+          <h2 class="stripe__headline">
+            {{ content.headline }}
+          </h2>
         </v-col>
         <v-col
           cols="12"
@@ -25,8 +27,13 @@
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
         >
-          <p class="body-1">{{ content.desc_1 }}</p>
-          <p class="body-1" v-if="content.desc_2">
+          <p class="body-1">
+            {{ content.desc_1 }}
+          </p>
+          <p
+            v-if="content.desc_2"
+            class="body-1"
+          >
             {{ content.desc_2 }}
           </p>
         </v-col>
@@ -36,7 +43,10 @@
 </template>
 
 <script>
+import boxHeightAnimationMixin from '@/mixins/boxHeightAnimation';
+
 export default {
+  mixins: [boxHeightAnimationMixin],
   props: {
     bColor: {
       type: String,
@@ -46,11 +56,20 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    eventsInit() {
+      document.addEventListener(
+        'scroll',
+        () => { this.animateBoxHeight('stripe') },
+        false
+      );
+    }
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .stripe {
   &__headline {
     font-size: 2.1rem;

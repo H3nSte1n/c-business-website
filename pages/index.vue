@@ -1,36 +1,15 @@
 <template>
   <v-container>
-    <v-row
-      justify="center"
-      align="center"
-    >
-      <v-col
-        cols="12"
-        sm="6"
-        xl="5"
-        class="d-flex flex-column-reverse flex-sm-column pl-12 mb-12 header-box"
-      >
-        <h1
-          class="font-weight-bold header-box__headline"
-        >
-          Claudia Eck
-        </h1>
-        <h2 class="header-box__subline">
-          Unternehmens- & Persönlichkeitscoaching
-        </h2>
-      </v-col>
-      <v-col
-        cols="12"
-        sm="6"
-        xl="5"
-      >
-        <v-img
-          :src="`https://picsum.photos/300/400?random=23123`"
-          alt="test image"
-        />
+    <Index-Header />
+    <v-row>
+      <v-col class="animated">
+        <p class="animated__text">
+          scroll
+        </p>
+        <div class="animated__line" />
       </v-col>
     </v-row>
-    <kachel
+    <Kachel
       v-for="(value, key) in tiles"
       :key="key"
       :content="value"
@@ -39,11 +18,10 @@
 </template>
 
 <script>
-import kachel from '@/components/kachel';
+import Kachel from '@/components/kachel';
+import IndexHeader from '@/components/index-header';
 export default {
-  components: {
-    kachel
-  },
+  components: {IndexHeader, Kachel},
   data () {
     return {
       tiles: [
@@ -53,37 +31,37 @@ export default {
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/persönlichkeitscoaching'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-persönlichkeitsentwicklung.svg'),
             alt: 'random test image'
           }
         },
         {
-          headline: 'Das persönliche Leben',
-          subline: 'Lassen Sie von sich selbst überraschen',
+          headline: 'Unternehmenscoaching',
+          subline: 'Für mehr positive Energie und gesunde Führungskultur',
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/unternehmenscoaching'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.svg'),
             alt: 'random test image'
           },
           order: 'last'
         },
         {
-          headline: 'Das persönliche Leben',
-          subline: 'Lassen Sie von sich selbst überraschen',
+          headline: 'Über mich',
+          subline: 'Wer bin ich?',
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/'
+            link: '/kontakt'
           },
           img: {
-            src: `https://picsum.photos/450/300?random=23123`,
+            src: require('~/assets/images/claudia-eck-ueber-mich.svg'),
             alt: 'random test image'
           }
         }
@@ -94,36 +72,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-box {
-  &__headline {
-      font-size: 3.75rem;
-      font-weight: 300;
-      line-height: 3.75rem;
-      letter-spacing: -0.0083333333em;
-      font-family: "Roboto", sans-serif;
-    }
-    &__subline {
-      font-size: 1.25rem;
-      font-weight: 500;
-      line-height: 2rem;
-      letter-spacing: 0.0125em;
-      font-family: "Roboto", sans-serif;
-      margin: 8px 0;
-    }
+.animated {
+  height: 50px;
 
-  @media screen and (min-width: 768px) {
-    position: relative;
-    left: 79px;
-    z-index: 54;
-    &__headline {
-      text-align: right;
-      font-size: 7rem;
-      line-height: 6.75rem;
+  &__line {
+    height: 0px;
+    width: 2px;
+    background-color: #2C2C2C;
+    animation: lineAnimation 4s ease-in-out infinite;
+    margin: 0 auto;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  @keyframes lineAnimation {
+    0% {
+      height: 0px;
     }
-    &__subline {
-      text-align: right;
-      font-size: 1.8rem;
-      margin: 20px 0;
+    50% {
+      height: 40px;
+    }
+    100% {
+      height: 0px;
     }
   }
 }

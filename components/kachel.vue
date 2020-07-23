@@ -5,6 +5,7 @@
       align="center"
       flex
       class="my-12"
+      :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
     >
       <v-col
         cols="12"
@@ -16,7 +17,9 @@
         <v-img
           :src="content.img.src"
           :alt="content.img.alt"
-          width="100%"
+          width="40%"
+          max-width="200px"
+          class="mx-auto mb-12"
         />
       </v-col>
       <v-col
@@ -25,10 +28,14 @@
         md="5"
         xl="4"
       >
-        <h2 class="display-1">
+        <div
+          class="kachel__invisible"
+          :class="{'kachel__invisible-enable': isClicked}"
+        />
+        <h2 class="display-1 font-weight-light">
           {{ content.headline }}
         </h2>
-        <p class="boy-1 font-weight-bold mt-2">
+        <p class="body-1 font-weight-bold mt-2 mb-5">
           {{ content.subline }}
         </p>
         <p class="body-1">
@@ -36,7 +43,9 @@
         </p>
         <router-link
           :to="content.button.link"
-          class="text-lowercase button"
+          event=""
+          class="text-lowercase button body-1 font-weight-bold pb-1"
+          @click.native.prevent="initClickAnimation()"
         >
           {{ content.button.text }}
         </router-link>
@@ -52,15 +61,41 @@ export default {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      isClicked: false,
+    }
+  },
+  mounted() {
+    this.initClickAnimation();
+  },
+  methods: {
+    initClickAnimation() {
+      document.querySelectorAll('.button').forEach(e => {
+        e.addEventListener('click', () => {
+          this.isClicked = true;
+          setTimeout(() => {this.$router.push(this.content.button.link)}, 1000);
+        });
+      })
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.button {
-  max-width: 200px;
-  border-bottom: 1px solid black;
-  color: black;
-  text-decoration: none;
+<style lang="scss">
+.kachel {
+  &__invisible {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 100%;
+    transition: width 0.7s ease-out;
+    background-color: white;
+    &-enable {
+      width: 100%;
+    }
+  }
 }
 </style>

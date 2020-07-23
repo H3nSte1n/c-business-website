@@ -7,6 +7,7 @@
       <v-row
         justify="space-around"
         flex
+        align="baseline"
         class="my-10"
       >
         <v-col
@@ -20,12 +21,12 @@
           <icon-kachel
             :content="value.content"
           >
-            <v-icon
-              size="52"
+            <v-img
+              width="52"
               class="d-flex mx-auto"
-            >
-              {{ value.icon }}
-            </v-icon>
+              alt="asd"
+              :src="value.icon"
+            />
           </icon-kachel>
         </v-col>
       </v-row>
@@ -35,7 +36,6 @@
 
 <script>
 import iconKachel from '@/components/iconKachel';
-import { mdiMagnify, mdiTextBoxOutline, mdiLightbulbOnOutline } from '@mdi/js';
 
 export default {
   components: { iconKachel },
@@ -44,7 +44,7 @@ export default {
       headline: 'Von mir bekommen Sie',
       iconKachelConten: [
         {
-          icon: mdiMagnify,
+          icon: require('~/assets/images/claudia-eck-analyse.svg'),
           content: {
             desc: 'Analyse von bereits bestehenden gesundheitsfördernden Strukturen und Abläufe',
             headline: 'Führungskräftecoaching',
@@ -52,7 +52,7 @@ export default {
           }
         },
         {
-          icon: mdiTextBoxOutline,
+          icon: require('~/assets/images/claudia-eck-identifizierung.svg'),
           content: {
             desc: 'Identifizierung von organisationsinternen gesundheitsbelastenden Bedingungen',
             headline: 'Teamcoaching',
@@ -60,7 +60,7 @@ export default {
           }
         },
         {
-          icon: mdiLightbulbOnOutline,
+          icon: require('~/assets/images/claudia-eck-ideen.svg'),
           content: {
             desc: 'Vorschläge von nutzbringenden und gesundheitsfördernden Maßnahmen in Richtung „attraktiver Arbeitgeber“',
             headline: 'Einzelcoaching',

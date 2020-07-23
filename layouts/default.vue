@@ -1,5 +1,9 @@
 <template>
   <v-app>
+    <div
+      class="cursor cursor-dot"
+      :class="{'cursor--active': isLoaded}"
+    />
     <v-content>
       <v-container
         fluid
@@ -21,6 +25,7 @@ export default {
   components: { Footer, Navigation },
   data () {
     return {
+      isLoaded: false,
       clipped: false,
       drawer: false,
       fixed: false,
@@ -41,6 +46,108 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  mounted() {
+    this.isLoaded = true;
+    this.initFunctions();
+  },
+  methods: {
+    initFunctions() {
+      window.addEventListener('mousemove', this.cursorMove);
+      window.addEventListener('mousewheel', this.cursorMove);
+      window.addEventListener('DOMMouseScroll', this.cursorMove);
+      document.querySelectorAll('.button').forEach(e => {
+        e.addEventListener('mouseover', () => {this.transformToButton(e)}, true);
+        e.addEventListener('mouseleave', () => {this.resetTransformToButton()}, true);
+        e.addEventListener('click', () => {this.resetTransformToButton()});
+      })
+    },
+    cursorMove(e) {
+      if(e.target.classList.contains('button')) return false
+      const cursor = document.querySelector('.cursor');
+      cursor.style.top = `${e.pageY}px`;
+      cursor.style.left = `${e.pageX}px`;
+    },
+    transformToButton(buttonElement) {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.width = `${buttonElement.offsetWidth + 20}px`;
+      cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
+      cursor.style.borderRadius = "25px";
+      cursor.style.borderWidth = "2px";
+
+      const buttonHeight = buttonElement.getBoundingClientRect().top + window.pageYOffset;
+      const buttonWidth = buttonElement.offsetLeft;
+      cursor.style.top = `${buttonHeight + ((buttonElement.offsetHeight) /2)}px`;
+      cursor.style.left = `${buttonWidth + ((buttonElement.offsetWidth) /2)}px`;
+    },
+    resetTransformToButton() {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.width = '3rem';
+      cursor.style.height = '3rem';
+      cursor.style.borderRadius = "50%";
+      cursor.style.borderWidth = "1px";
+    }
   }
 }
 </script>
+
+<style lang="scss">
+body {
+  cursor: none;
+}
+.cursor {
+  width: 0rem;
+  height: 0rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.5s ease-out, height 1.5s ease-out;
+
+  &--active {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:active, &:focus, &:hover, &:visited {
+    color: black;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: none;
+  }
+
+  &-dot {
+    &::before {
+      content: ' ';
+      display: block;
+      background-color: black;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+    }
+  }
+}
+
+.button {
+  max-width: 200px;
+  color: black;
+  text-decoration: none;
+
+  &--disabled {
+    opacity: 0.2;
+  }
+
+  &:active, &:focus, &:hover, &:visited {
+    color: black;
+    cursor: none;
+  }
+}
+</style>
