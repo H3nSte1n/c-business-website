@@ -5,6 +5,7 @@
         fluid
         class="pa-0"
       >
+        <Navigation />
         <nuxt />
       </v-container>
     </v-content>
@@ -14,8 +15,10 @@
 
 <script>
 import Footer from '~/components/footer';
+import Navigation from '@/components/navigation'
+
 export default {
-  components: { Footer },
+  components: { Footer, Navigation },
   data () {
     return {
       clipped: false,
