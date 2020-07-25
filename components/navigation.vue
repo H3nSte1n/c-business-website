@@ -36,7 +36,7 @@
             <a
               class="navigation__links-item navigation__links-item text-center mx-auto"
               :class="{'navigation__links-item--active': isNavigationMobilActive}"
-              to="tel:+1792242543"
+              href="tel:+1792242543"
             >
               + 1792 242543
             </a>
