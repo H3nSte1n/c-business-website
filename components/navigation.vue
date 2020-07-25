@@ -1,56 +1,49 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="12">
-        <div class="navigation navigation-mobile--open">
-          <nav class="navigation__wrapper">
+    <nav class="navigation">
+      <v-row
+        justify="space-between"
+        align="center"
+      >
+        <v-col
+          cols="12"
+          lg="2"
+          class="text-center pa-0"
+        >
+          <button
+            class="navigation__logo button my-4"
+            @click="changeStatusOfNavigationActiveLever"
+          >
+            Claudia Eck
+          </button>
+        </v-col>
+        <v-col
+          cols="12"
+          lg="10"
+          xl="8"
+          class="pa-0"
+        >
+          <div class="navigation__links">
             <nuxt-link
-              class="navigation__logo"
-              exact
-              to="/"
+              v-for="(navItem, key) of navPoints"
+              :key="key"
+              class="navigation__links-item text-center mx-auto button"
+              :class="{'navigation__links-item--active': isNavigationMobilActive}"
+              :to="navItem.link"
             >
-              Claudia Eck
+              {{ navItem.name }}
             </nuxt-link>
-            <div class="navigation__link">
-              <nuxt-link
-                class="navigation__link-item"
-                to="/persöhnlichkeitscoaching"
-              >
-                Persönlichkeit entfalten
-              </nuxt-link>
-              <nuxt-link
-                class="navigation__link-item"
-                to="/unternehmenscoaching"
-              >
-                Unternehmen beleben
-              </nuxt-link>
-              <nuxt-link
-                class="navigation__link-item navigation__link-item--active"
-                to="/übermich"
-              >
-                Über mich
-              </nuxt-link>
-              <nuxt-link
-                class="navigation__link-item"
-                to="/kontakt"
-              >
-                Kontakt
-              </nuxt-link>
-              <nuxt-link
-                class="navigation__link-item navigation__link-item--mobile"
-                to="tel:+1792242543"
-              >
-                + 1792 242543
-              </nuxt-link>
-              <span class="navigation__link-item navigation__link-item--desktop">+ 1792 242543</span>
-            </div>
-            <v-icon v-if="$vuetify.breakpoint.mdAndDown" size="30px">
-              {{ mdiClose }}
-            </v-icon>
-          </nav>
-        </div>
-      </v-col>
-    </v-row>
+            <a
+              class="navigation__links-item navigation__links-item text-center mx-auto"
+              :class="{'navigation__links-item--active': isNavigationMobilActive}"
+              to="tel:+1792242543"
+            >
+              + 1792 242543
+            </a>
+          </div>
+        </v-col>
+      </v-row>
+    </nav>
   </v-container>
 </template>
 
@@ -61,7 +54,31 @@ export default {
   name: 'Navigation',
   data() {
     return {
-      mdiClose
+      mdiClose,
+      navPoints: [
+        {
+          name: 'Persönlichkeit entfalten',
+          link: '/persönlichkeitscoaching'
+        },
+        {
+          name: 'Unternehmen beleben',
+          link: '/unternehmenscoaching'
+        },
+        {
+          name: 'Über mich',
+          link: '/kontakt'
+        },
+        {
+          name: 'Kontakt',
+          link: '/kontakt'
+        },
+      ],
+      isNavigationMobilActive: false,
+    }
+  },
+  methods: {
+    changeStatusOfNavigationActiveLever() {
+      this.isNavigationMobilActive = !this.isNavigationMobilActive;
     }
   }
 }
@@ -76,7 +93,7 @@ export default {
   z-index: 99;
   bottom: 0px;
 
-  @media (min-width: 960px) {
+  @media (min-width: 1264px) {
     position: sticky;
     top: 0px;
   }
@@ -85,12 +102,13 @@ export default {
     position: relative;
     text-align: center;
 
-    @media(min-width: 960px) {
+    @media(min-width: 1264px) {
       text-align: left;
     }
   }
 
   &__logo {
+    cursor: none;
     display: inline-block;
     color: #343434;
     font-size: 28px;
@@ -104,14 +122,13 @@ export default {
     }
   }
 
-  &__link {
-    display: none;
+  &__links {
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
 
-    @media(min-width: 960px) {
+    @media(min-width: 1264px) {
       display: inline-block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
     }
 
     &-item {
@@ -120,11 +137,17 @@ export default {
       padding: 0px 10px;
       font-size: 16px;
       line-height: 22px;
+      transition: height 0.5s ease-out;
+      height: 0;
+      opacity: 0;
+      max-width: 250px;
 
       @media (min-width: 1264px) {
         padding: 0px 15px;
         font-size: 21px;
         line-height: 24px;
+        height: 40px;
+        opacity: 1;
       }
 
       @media (min-width: 1904px) {
@@ -133,92 +156,13 @@ export default {
         line-height: 27px;
       }
 
-      &--mobile {
-        display: block;
-
-        @media (min-width: 960px) {
-          display: none;
-        }
-      }
-
-      &--desktop {
-        display: none;
-
-        @media (min-width: 960px) {
-          display: inline-block;
-        }
-      }
-
-      &:hover {
-        cursor: pointer;
-        color: darkred;
-        text-decoration: underline;
-      }
-
       &:last-child {
         padding-right: 0;
       }
 
       &--active {
-        text-decoration: underline;
-
-        &:hover {
-          cursor: default;
-          color: #343434;
-        }
-      }
-    }
-  }
-}
-
-.navigation-mobile {
-  &-button {
-    position: absolute;
-    width: 50px;
-    right: 50px;
-    top: 17px;
-
-    @media (min-width: 960px) {
-      // display: none;
-    }
-
-    &--open {
-      &::before {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 24px;
-        transform: rotate(45deg);
-        background-color: #343434;
-      }
-
-      &::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 24px;
-        transform: rotate(-45deg);
-        background-color: #343434;
-      }
-    }
-
-    &--closed {
-      &::before {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 24px;
-        transform: rotate(45deg);
-        background-color: #343434;
-      }
-
-      &::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 24px;
-        transform: rotate(-45deg);
-        background-color: #343434;
+        height: 40px;
+        opacity: 1;
       }
     }
   }
