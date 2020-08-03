@@ -27,7 +27,7 @@
             <nuxt-link
               v-for="(navItem, key) of navPoints"
               :key="key"
-              class="navigation__links-item text-center mx-auto button"
+              class="navigation__links-item text-center mx-auto"
               :class="{'navigation__links-item--active': isNavigationMobilActive}"
               :to="navItem.link"
             >
@@ -90,12 +90,14 @@ export default {
   background: #fff;
   padding: 20px 0;
   width: 100%;
-  z-index: 99;
+  z-index: 99999;
   bottom: 0px;
+  left: 0px;
 
   @media (min-width: 1264px) {
     position: sticky;
     top: 0px;
+    z-index: 1;
   }
 
   &__wrapper {
@@ -119,6 +121,10 @@ export default {
     @media (min-width: 1264px) {
       font-size: 38px;
       line-height: 44px;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
@@ -158,6 +164,11 @@ export default {
 
       &:last-child {
         padding-right: 0;
+      }
+
+      &:focus {
+        padding-bottom: 5px;
+        border-bottom: 2px solid black;
       }
 
       &--active {
