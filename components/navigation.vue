@@ -9,12 +9,20 @@
           cols="12"
           lg="2"
           class="text-center pa-0"
+          :class="$vuetify.breakpoint.mdAndDown ? 'order-last' : 'order-first'"
         >
           <button
             class="navigation__logo button my-4"
             @click="changeStatusOfNavigationActiveLever"
           >
             Claudia Eck
+            <v-icon
+              v-if="$vuetify.breakpoint.mdAndDown"
+              class="ml-6"
+              size="28px"
+            >
+              {{ mdiNavIcon }}
+            </v-icon>
           </button>
         </v-col>
         <v-col
@@ -23,12 +31,15 @@
           xl="8"
           class="pa-0"
         >
-          <div class="navigation__links">
+          <div
+            class="navigation__links"
+            :class="$vuetify.breakpoint.mdAndDown && isNavigationMobilActive ? 'py-12' : 'py-0'"
+          >
             <nuxt-link
               v-for="(navItem, key) of navPoints"
               :key="key"
               class="navigation__links-item text-center mx-auto"
-              :class="{'navigation__links-item--active': isNavigationMobilActive}"
+              :class="[{'navigation__links-item--active': isNavigationMobilActive}, `navigation__links-item-${key}`]"
               :to="navItem.link"
             >
               {{ navItem.name }}
@@ -48,13 +59,12 @@
 </template>
 
 <script>
-import { mdiClose } from '@mdi/js';
+import { mdiClose, mdiFormatAlignLeft } from '@mdi/js';
 
 export default {
   name: 'Navigation',
   data() {
     return {
-      mdiClose,
       navPoints: [
         {
           name: 'Persönlichkeit entfalten',
@@ -74,11 +84,41 @@ export default {
         },
       ],
       isNavigationMobilActive: false,
+      prevScrollpos: 0,
+      getTopFromNav: 0,
     }
+  },
+  computed: {
+    mdiNavIcon() {
+      return this.isNavigationMobilActive ? mdiClose : mdiFormatAlignLeft;
+    }
+  },
+  mounted() {
+    this.eventsInit();
+    this.getTopFromNav = document.querySelector(".navigation").clientHeight;
   },
   methods: {
     changeStatusOfNavigationActiveLever() {
       this.isNavigationMobilActive = !this.isNavigationMobilActive;
+    },
+    detectScrolling() {
+      if(this.isNavigationMobilActive) return false;
+      let currentScrollPos = window.pageYOffset;
+      if (this.prevScrollpos > currentScrollPos) {
+        document.querySelector(".navigation").style.bottom = '0px';
+      } else {
+        document.querySelector(".navigation").style.bottom = `${-this.getTopFromNav}px`;
+      }
+      this.prevScrollpos = currentScrollPos;
+    },
+    eventsInit() {
+      if(window.innerWidth < 1264) {
+        document.addEventListener(
+          'scroll',
+          this.detectScrolling,
+          false
+        );
+      }
     }
   }
 }
@@ -88,11 +128,12 @@ export default {
 .navigation {
   position: fixed;
   background: #fff;
-  padding: 20px 0;
   width: 100%;
   z-index: 99999;
   bottom: 0px;
   left: 0px;
+  width: 100%;
+  transition: bottom 0.3s ease-in-out;
 
   @media (min-width: 1264px) {
     position: sticky;
@@ -111,14 +152,21 @@ export default {
 
   &__logo {
     cursor: none;
-    display: inline-block;
     color: #343434;
     font-size: 28px;
     line-height: 34px;
     text-decoration: none;
     font-weight: bold;
+    z-index: 999;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 
     @media (min-width: 1264px) {
+      display: inline-block;
       font-size: 38px;
       line-height: 44px;
     }
@@ -147,6 +195,7 @@ export default {
       height: 0;
       opacity: 0;
       max-width: 250px;
+      font-weight: 600;
 
       @media (min-width: 1264px) {
         padding: 0px 15px;
@@ -166,9 +215,23 @@ export default {
         padding-right: 0;
       }
 
-      &:focus {
-        padding-bottom: 5px;
-        border-bottom: 2px solid black;
+      &-1 {
+        transition: height 0.6s ease-in-out;
+      }
+      &-2 {
+        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.2s;
+      }
+      &-3 {
+        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.4s;
+      }
+      &-4 {
+        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.6s;
+      }
+      &-5 {
+        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.8s;
+      }
+      &-6 {
+        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 1s;
       }
 
       &--active {
@@ -176,6 +239,16 @@ export default {
         opacity: 1;
       }
     }
+  }
+}
+
+.nuxt-link-active {
+  text-decoration: underline;
+
+  @media (min-width: 1264px) {
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
   }
 }
 </style>
