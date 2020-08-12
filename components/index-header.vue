@@ -3,6 +3,7 @@
     <v-row
       justify="center"
       align="center"
+      :class="$vuetify.breakpoint.xl ? 'mt-6' : 'mt-0'"
     >
       <v-col
         cols="12"
@@ -62,10 +63,15 @@
         cols="12"
         sm="6"
         xl="5"
+        class="pa-0"
       >
         <v-img
           :src="require('~/assets/images/claudia-eck-hero-image-l.png')"
           alt="image"
+          height="100%"
+          width="100%"
+          :max-width="$vuetify.breakpoint.lg ? '330px' : '590px'"
+          class="ma-0 pa-0"
         >
           <div
             class="image__invisible"
@@ -128,13 +134,24 @@ export default {
     }
     &__headline {
       text-align: right;
-      font-size: 7rem;
-      line-height: 6.75rem;
+      font-size: 5rem;
+      line-height: 5.5rem;
+
+      @media screen and (min-width: 1904){
+        font-size: 7rem;
+        line-height: 6.75rem;
+      }
     }
     &__subline {
       text-align: right;
-      font-size: 1.8rem;
       margin: 20px 0;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+
+      @media screen and (min-width: 1904){
+        font-size: 1.8rem;
+        line-height: 2rem;
+      }
     }
   }
 }

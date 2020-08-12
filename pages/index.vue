@@ -2,7 +2,7 @@
   <v-container>
     <Index-Header />
     <v-row>
-      <v-col class="animated">
+      <v-col class="animated pt-7">
         <p class="animated__text">
           scroll
         </p>
@@ -74,6 +74,11 @@ export default {
 <style lang="scss" scoped>
 .animated {
   height: 50px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 1264px) {
+    margin-bottom: 140px;
+  }
 
   &__line {
     height: 0px;
