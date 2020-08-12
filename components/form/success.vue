@@ -12,21 +12,21 @@
     </v-row>
     <v-row>
       <v-col class="contact__mail-icon-space">
-        <v-icon
-          size="50px"
+        <v-img
+          width="50px"
           class="contact__mail-icon"
           :class="{'contact__mail-icon-active': isTransmitted}"
+          :src="require('@/assets/images/icon-brief.svg')"
         >
-          {{ mdiEmail }}
-        </v-icon>
+          {{ $vuetify.icons.mail }}
+        </v-img>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { mdiEmail } from '@mdi/js';
-
+import mailIcon from '@/assets/images/icon-brief.svg';
 export default {
   props: {
     headline: {
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      mdiEmail,
+      mailIcon,
       isTransmitted: false
     }
   },
