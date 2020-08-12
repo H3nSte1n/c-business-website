@@ -93,6 +93,7 @@ export default {
   &__headline {
     hyphens: auto;
     font-size: 36px;
+    word-break: break-all;
 
     @media screen and (min-width: 1264px) {
       font-size: 72px;
