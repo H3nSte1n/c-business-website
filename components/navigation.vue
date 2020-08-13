@@ -17,7 +17,7 @@
           >
             Claudia Eck
             <v-icon
-              v-if="$vuetify.breakpoint.mdAndDown"
+              v-show="$vuetify.breakpoint.mdAndDown"
               class="ml-6"
               size="28px"
             >
@@ -186,6 +186,7 @@ export default {
     }
 
     &-item {
+      cursor: none;
       color: #343434;
       text-decoration: none;
       padding: 0px 10px;
