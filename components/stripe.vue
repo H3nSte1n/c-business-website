@@ -5,7 +5,7 @@
         justify="center"
         align="center"
         flex
-        class="py-12"
+        class="py-12 px-3"
       >
         <v-col
           cols="12"
@@ -22,7 +22,7 @@
         <v-col
           cols="12"
           sm="12"
-          md="8"
+          md="6"
           lg="6"
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"

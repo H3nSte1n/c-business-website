@@ -1,6 +1,6 @@
 <template>
   <v-container class="slider">
-    <v-row>
+    <v-row class="pa-0 ma-0">
       <v-col
         cols="12"
         md="8"

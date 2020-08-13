@@ -1,4 +1,3 @@
-import boxHeightAnimationMixin from '@/mixins/boxHeightAnimation';
 <template>
   <div
     :class="`teaser--${color}`"
