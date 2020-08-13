@@ -68,7 +68,7 @@ export default {
     }
   },
   mounted() {
-    this.initClickAnimation();
+    // this.initClickAnimation();
   },
   methods: {
     initClickAnimation() {
