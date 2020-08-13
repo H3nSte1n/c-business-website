@@ -85,11 +85,21 @@
         </v-col>
       </v-row>
       <v-row>
+        <v-col>
+          <recaptcha
+            @error="onError"
+            @success="onSuccess"
+            @expired="onExpired"
+          />
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col class="d-flex justify-center">
           <v-btn
             class="px-7 mt-9 button"
             text
             light
+            :disabled="recaptchaSucceed"
             @click="submitForm"
           >
             Senden
@@ -102,8 +112,10 @@
 
 <script>
 import axios from 'axios'
+import recaptcha from '@/mixins/recaptcha';
 
 export default {
+  mixins: [recaptcha],
   props: {
     headlinePos: {
       type: String,
@@ -113,6 +125,7 @@ export default {
   },
   data() {
     return {
+      recaptchaSucceed: false,
       contentRules: [
         v => !!v || 'Pflichtfeld'
       ],

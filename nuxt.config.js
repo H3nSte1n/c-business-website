@@ -1,3 +1,6 @@
+require('dotenv').config()
+console.log(process.env.NODE_ENV);
+
 export default {
   mode: 'universal',
   /*
@@ -49,8 +52,15 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/recaptcha'
   ],
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: process.env.NODE_ENV == 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
+    version: 3, // Version
+    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
