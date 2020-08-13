@@ -1,5 +1,5 @@
 <template>
-  <v-container class="contact">
+  <v-container class="contact__container">
     <v-row justify="center">
       <v-col
         cols="12"
@@ -49,13 +49,16 @@ export default {
 
 <style scoped lang="scss">
 .contact {
+  &__container {
+    align-self: center;
+  }
   &__mail-icon {
     transform: translate(1vw, -80%);
     top: 50%;
     transition: transform 2s ease-out;
 
     &-space {
-      min-height: 60vh;
+      min-height: 50px;
     }
 
     &-active {

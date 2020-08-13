@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact d-flex">
     <Form
       v-if="isSuccessfullSendet === null"
       @status="updateStatus"
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss">
 .contact {
-  min-height: 80vh;
+  min-height: 400px;
   background-color: #FFDA51;
   &__headline {
     font-size: 2rem;
