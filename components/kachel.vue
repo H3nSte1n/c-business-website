@@ -32,7 +32,7 @@
           class="kachel__invisible"
           :class="{'kachel__invisible-enable': isClicked}"
         />
-        <h2 class="display-1 font-weight-light text-wrap">
+        <h2 class="display-1 font-weight-light kachel__headline">
           {{ content.headline }}
         </h2>
         <p class="body-1 font-weight-bold mt-2 mb-5">
@@ -85,6 +85,10 @@ export default {
 
 <style lang="scss">
 .kachel {
+  &__headline {
+    word-break: break-word;
+    hyphens: auto;
+  }
   &__invisible {
     position: absolute;
     left: 0px;
