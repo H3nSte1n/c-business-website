@@ -3,14 +3,14 @@
     <v-row
       align="center"
       justify="space-around"
-      :class="$vuetify.breakpoint.smAndDown ? 'my-0 py-0' : 'my-12 py-12'"
+      class="header"
     >
       <v-col
         cols="12"
         md="9"
         xl="7"
         :order="$vuetify.breakpoint.smAndDown ? 'last': 'first'"
-        class="pl-12"
+        :class="$vuetify.breakpoint.smAndDown ? '' : 'pl-12'"
       >
         <h1
           class="font-weight-medium header__headline"
@@ -90,10 +90,15 @@ export default {
 
 <style scoped lang="scss">
 .header {
+  min-height: calc(100vh - 100px);
   &__headline {
     hyphens: auto;
-    font-size: 36px;
+    font-size: 30px;
     word-break: break-all;
+
+    @media screen and (min-width: 640px) {
+      font-size: 36px;
+    }
 
     @media screen and (min-width: 1264px) {
       font-size: 72px;
