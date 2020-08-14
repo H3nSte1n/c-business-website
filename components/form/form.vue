@@ -181,7 +181,6 @@ export default {
       cursor.style.width = '0px';
       cursor.style.height = `${inputfield.offsetHeight / 2}px`;
       cursor.style.borderWidth = "1px";
-      cursor.style.borderRadius = "1%";
       cursor.classList.remove('cursor-dot');
     },
     resetTransformToTextCursor() {
