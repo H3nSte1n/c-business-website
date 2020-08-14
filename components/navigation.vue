@@ -88,6 +88,11 @@ export default {
       getTopFromNav: 0,
     }
   },
+  watch: {
+    $route () {
+      this.isNavigationMobilActive = false;
+    }
+  },
   computed: {
     mdiNavIcon() {
       return this.isNavigationMobilActive ? mdiClose : mdiFormatAlignLeft;
@@ -98,6 +103,10 @@ export default {
     this.getTopFromNav = document.querySelector(".navigation").clientHeight;
   },
   methods: {
+    resetNavigationStatus() {
+      console.log('test');
+      this.isNavigationMobilActive = false;
+    },
     changeStatusOfNavigationActiveLever() {
       this.isNavigationMobilActive = !this.isNavigationMobilActive;
     },
