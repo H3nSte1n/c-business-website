@@ -32,7 +32,7 @@
           class="kachel__invisible"
           :class="{'kachel__invisible-enable': isClicked}"
         />
-        <h2 class="display-1 font-weight-light">
+        <h2 class="display-1 font-weight-light text-wrap">
           {{ content.headline }}
         </h2>
         <p class="body-1 font-weight-bold mt-2 mb-5">
