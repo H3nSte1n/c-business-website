@@ -89,6 +89,15 @@ export default {
       const buttonWidth = buttonElement.offsetLeft;
       cursor.style.top = `${buttonHeight + ((buttonElement.offsetHeight) /2)}px`;
       cursor.style.left = `${buttonWidth + ((buttonElement.offsetWidth) /2)}px`;
+
+      if(buttonElement.classList.contains('nuxt-link-active')) {
+        cursor.style.borderColor = "rgba(0,0,0,0)"
+        cursor.style.width = '3rem';
+        cursor.style.height = '3rem';
+        cursor.style.borderRadius = "50%";
+      } else {
+        cursor.style.borderColor = "rgba(0,0,0,1)"
+      }
     },
     resetTransformToButton() {
       const cursor = document.querySelector('.cursor');
@@ -96,6 +105,7 @@ export default {
       cursor.style.height = '3rem';
       cursor.style.borderRadius = "50%";
       cursor.style.borderWidth = "1px";
+      cursor.style.borderColor = "rgba(0,0,0,1)"
     }
   }
 }
@@ -114,7 +124,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 9999;
   pointer-events: none;
-  transition: width 0.5s ease-out, height 1.5s ease-out;
+  transition: width 0.5s ease-out, height 1.5s ease-out, border-color 0.2s ease-out;
 
   &--active {
     width: 3rem;

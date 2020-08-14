@@ -38,14 +38,14 @@
             <nuxt-link
               v-for="(navItem, key) of navPoints"
               :key="key"
-              class="navigation__links-item text-center mx-auto"
+              class="navigation__links-item text-center button"
               :class="[{'navigation__links-item--active': isNavigationMobilActive}, `navigation__links-item-${key}`]"
               :to="navItem.link"
             >
               {{ navItem.name }}
             </nuxt-link>
             <a
-              class="navigation__links-item navigation__links-item text-center mx-auto"
+              class="navigation__links-item navigation__links-item text-center mx-auto button"
               :class="{'navigation__links-item--active': isNavigationMobilActive}"
               href="tel:+1792242543"
             >
@@ -198,7 +198,7 @@ export default {
       cursor: none;
       color: #343434;
       text-decoration: none;
-      padding: 0px 10px;
+      padding: 0px 6px;
       font-size: 16px;
       line-height: 22px;
       transition: height 0.5s ease-out;
@@ -208,7 +208,7 @@ export default {
       font-weight: 600;
 
       @media (min-width: 1264px) {
-        padding: 0px 15px;
+        margin: 0px 15px;
         font-size: 21px;
         line-height: 24px;
         height: 40px;
@@ -216,7 +216,7 @@ export default {
       }
 
       @media (min-width: 1904px) {
-        padding: 0px 35px;
+        margin: 0px 35px;
         font-size: 23px;
         line-height: 27px;
       }
@@ -257,8 +257,9 @@ export default {
 
   @media (min-width: 1264px) {
     text-decoration: none;
-    padding-bottom: 10px;
-    border-bottom: 2px solid black;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
   }
 }
 </style>
