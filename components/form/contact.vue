@@ -40,6 +40,7 @@ export default {
 .contact {
   min-height: 400px;
   background-color: #FFDA51;
+  overflow: hidden;
   &__headline {
     font-size: 2rem;
     text-align: left;

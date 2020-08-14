@@ -53,7 +53,7 @@ export default {
     align-self: center;
   }
   &__mail-icon {
-    transform: translate(1vw, -80%);
+    transform: translate(1vw, 60%);
     top: 50%;
     transition: transform 2s ease-out;
 
