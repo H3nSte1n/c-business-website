@@ -1,9 +1,5 @@
 <template>
-  <v-app>
-    <div
-      class="cursor cursor-dot"
-      :class="{'cursor--active': isLoaded}"
-    />
+  <v-app ref="app">
     <v-content>
       <v-container
         fluid
@@ -49,10 +45,12 @@ export default {
   },
   mounted() {
     this.isLoaded = true;
-    this.initFunctions();
+    if (this.is_touch_device()) return false;
+    this.createMouse();
+    this.initButtonEvents();
   },
   methods: {
-    initFunctions() {
+    initButtonEvents() {
       window.addEventListener('mousemove', this.cursorMove);
       window.addEventListener('mousewheel', this.cursorMove);
       window.addEventListener('DOMMouseScroll', this.cursorMove);
@@ -61,6 +59,18 @@ export default {
         e.addEventListener('mouseleave', () => {this.resetTransformToButton()}, true);
         e.addEventListener('click', () => {this.resetTransformToButton()});
       })
+    },
+    is_touch_device() {
+      // eslint-disable-next-line no-undef
+      if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) return true;
+    },
+    createMouse() {
+      const customCursor = document.createElement('div');
+      customCursor.classList.add('cursor');
+      customCursor.classList.add('cursor-dot');
+      customCursor.classList.add('cursor--active');
+      console.log();
+      this.$refs.app.$el.appendChild(customCursor)
     },
     cursorMove(e) {
       if(e.target.classList.contains('button')) return false
