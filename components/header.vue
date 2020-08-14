@@ -3,7 +3,7 @@
     <v-row
       align="center"
       justify="space-around"
-      class="my-12 py-12"
+      :class="$vuetify.breakpoint.smAndDown ? 'my-0 py-0' : 'my-12 py-12'"
     >
       <v-col
         cols="12"
@@ -53,7 +53,7 @@
         <v-img
           :alt="content.img.alt"
           :src="content.img.src"
-          :max-width="`${$vuetify.breakpoint.mdAndDown ? '190px' : '200px'}`"
+          :max-width="`${$vuetify.breakpoint.mdAndDown ? '130px' : '200px'}`"
           class="mx-auto mb-12"
         />
       </v-col>
