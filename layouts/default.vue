@@ -73,7 +73,7 @@ export default {
       this.$refs.app.$el.appendChild(customCursor)
     },
     cursorMove(e) {
-      if(e.target.classList.contains('button')) return false
+      // if(e.target.classList.contains('button')) return false
       const cursor = document.querySelector('.cursor');
       cursor.style.top = `${e.pageY}px`;
       cursor.style.left = `${e.pageX}px`;
