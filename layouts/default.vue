@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     this.isLoaded = true;
-    if (this.is_touch_device()) return false;
+    if (this.is_touch_device()) { this.touchSettings(); return false; }
     this.createMouse();
     this.initButtonEvents();
   },
@@ -63,6 +63,13 @@ export default {
     is_touch_device() {
       // eslint-disable-next-line no-undef
       if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) return true;
+    },
+    touchSettings() {
+      document.querySelectorAll('.button_touch').forEach(e => {
+        e.style.borderRadius = '25px';
+        e.style.border = "1px solid #2E88B9";
+        e.style.padding = "10px";
+      });
     },
     createMouse() {
       const customCursor = document.createElement('div');

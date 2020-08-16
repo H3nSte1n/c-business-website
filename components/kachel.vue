@@ -44,7 +44,7 @@
         <router-link
           :to="content.button.link"
           event=""
-          class="text-lowercase button body-1 font-weight-bold pb-1"
+          class="text-lowercase button button_touch body-1 font-weight-bold"
           @click.native.prevent="initClickAnimation()"
         >
           {{ content.button.text }}

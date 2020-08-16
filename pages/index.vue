@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <Index-Header />
-    <v-row>
+    <v-row v-if="$vuetify.breakpoint.mdAndUp">
       <v-col class="animated pt-7">
         <p class="animated__text">
           scroll
