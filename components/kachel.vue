@@ -35,10 +35,10 @@
         <h2 class="display-1 font-weight-light kachel__headline">
           {{ content.headline }}
         </h2>
-        <p class="body-1 font-weight-bold mt-2 mb-5">
+        <p class="body-1 font-weight-bold mt-2 mb-10">
           {{ content.subline }}
         </p>
-        <p class="body-1">
+        <p class="body-1 mb-6">
           {{ content.text }}
         </p>
         <router-link

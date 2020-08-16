@@ -84,6 +84,7 @@ export default {
       cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
       cursor.style.borderRadius = "25px";
       cursor.style.borderWidth = "2px";
+      document.querySelector('.cursor-dot').classList.add('cursor-dot-active');
 
       if(buttonElement.classList.contains('nuxt-link-active')) {
         cursor.style.borderColor = "rgba(0,0,0,0)"
@@ -92,7 +93,7 @@ export default {
         cursor.style.borderRadius = "50%";
         return false;
       } else {
-        cursor.style.borderColor = "rgba(0,0,0,1)"
+        cursor.style.borderColor = "#2E88B9"
       }
 
       // fix button position
@@ -108,6 +109,7 @@ export default {
       cursor.style.borderRadius = "50%";
       cursor.style.borderWidth = "1px";
       cursor.style.borderColor = "rgba(0,0,0,1)"
+      document.querySelector('.cursor-dot').classList.remove('cursor-dot-active');
     }
   }
 }
@@ -155,19 +157,24 @@ body {
       transform: translate(-50%, -50%);
       z-index: 99999;
     }
+    &-active {
+      &::before {
+        background-color: #FFFFFF;
+      }
+    }
   }
 }
 
 .button {
   max-width: 200px;
-  color: black;
+  color: #2E88B9;
   text-decoration: none;
 
   &--disabled {
     opacity: 0.2;
   }
 
-  &:active, &:focus, &:hover, &:visited {
+  &:active, &:focus, &:visited, &:hover {
     color: black;
     cursor: none;
   }
