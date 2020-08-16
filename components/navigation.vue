@@ -1,6 +1,9 @@
 <template>
   <v-container>
-    <nav class="navigation">
+    <nav
+      class="navigation"
+      :class="[{'navigation--mobil-active': isNavigationMobilActive }, $vuetify.breakpoint.mdAndDown ? 'd-flex align-end' : '']"
+    >
       <v-row
         justify="space-between"
         align="center"
@@ -8,16 +11,26 @@
         <v-col
           cols="12"
           lg="2"
-          class="text-center pa-0"
+          class="text-center pa-0 d-flex justify-space-between"
           :class="$vuetify.breakpoint.mdAndDown ? 'order-last' : 'order-first'"
         >
-          <button
-            class="navigation__logo button my-4"
+          <router-link
+            class="navigation__logo button my-5"
+            to="/"
+            exact
+            :max-width="$vuetify.breakpoint.lg ? '80%' : '100%'"
             @click="changeStatusOfNavigationActiveLever"
           >
-            Claudia Eck
+            <v-img
+              :src="require('@/assets/images/logo-claudia-eck.svg')"
+            />
+          </router-link>
+          <button
+            v-show="$vuetify.breakpoint.mdAndDown"
+            class="navigation__mobil_opener button my-5 mr-7"
+            @click="changeStatusOfNavigationActiveLever"
+          >
             <v-icon
-              v-show="$vuetify.breakpoint.mdAndDown"
               class="ml-6"
               size="28px"
             >
@@ -33,7 +46,7 @@
         >
           <div
             class="navigation__links"
-            :class="$vuetify.breakpoint.mdAndDown && isNavigationMobilActive ? 'py-12' : 'py-0'"
+            :class="$vuetify.breakpoint.mdAndDown ? 'py-12 mr-7 align-end' : ''"
           >
             <nuxt-link
               v-for="(navItem, key) of navPoints"
@@ -45,10 +58,15 @@
               {{ navItem.name }}
             </nuxt-link>
             <a
-              class="navigation__links-item navigation__links-item text-center mx-auto button"
-              :class="{'navigation__links-item--active': isNavigationMobilActive}"
+              class="navigation__links-item navigation__links-item text-center button d-inline-flex align-center"
+              :class="{'navigation__links-item--active': isNavigationMobilActive, 'align-end': $vuetify.breakpoint.mdAndDown}"
               href="tel:+1792242543"
             >
+              <img
+                class="mr-2"
+                width="18px"
+                :src="require('assets/images/claudia-eck-kontakt-telefon.svg')"
+              >
               + 1792 242543
             </a>
           </div>
@@ -88,14 +106,14 @@ export default {
       getTopFromNav: 0,
     }
   },
-  watch: {
-    $route () {
-      this.isNavigationMobilActive = false;
-    }
-  },
   computed: {
     mdiNavIcon() {
       return this.isNavigationMobilActive ? mdiClose : mdiFormatAlignLeft;
+    }
+  },
+  watch: {
+    $route () {
+      this.isNavigationMobilActive = false;
     }
   },
   mounted() {
@@ -142,12 +160,18 @@ export default {
   bottom: 0px;
   left: 0px;
   width: 100%;
-  transition: bottom 0.3s ease-in-out;
+  height: 80px;
+  transition: bottom 0.3s ease-in-out, height 0.5s ease-out;
 
   @media (min-width: 1264px) {
     position: sticky;
     top: 0px;
     z-index: 1;
+    height: none;
+  }
+
+  &--mobil-active {
+    height: 100vh;
   }
 
   &__wrapper {
@@ -172,12 +196,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin-left: calc(50% - 100px);
 
     @media (min-width: 1264px) {
       display: inline-block;
       font-size: 38px;
       line-height: 44px;
+      max-width: 80%;
+    }
+    @media (min-width: 1904px) {
+      max-width: 100%;
     }
 
     &:focus {
@@ -198,27 +226,27 @@ export default {
       cursor: none;
       color: #343434;
       text-decoration: none;
-      padding: 0px 6px;
       font-size: 16px;
       line-height: 22px;
       transition: height 0.5s ease-out;
-      height: 0;
+      height: 40px;
       opacity: 0;
       max-width: 250px;
       font-weight: 600;
 
       @media (min-width: 1264px) {
+        padding: 0px 6px;
         margin: 0px 15px;
-        font-size: 21px;
-        line-height: 24px;
+        font-size: 19px;
+        line-height: 22px;
         height: 40px;
         opacity: 1;
       }
 
       @media (min-width: 1904px) {
-        margin: 0px 35px;
-        font-size: 23px;
-        line-height: 27px;
+        margin: 0px 30px;
+        font-size: 21px;
+        line-height: 25px;
       }
 
       &:last-child {
@@ -226,26 +254,25 @@ export default {
       }
 
       &-1 {
-        transition: height 0.6s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
       }
       &-2 {
-        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.2s;
+        transition: opacity 0.2s ease-out 0.2s;
       }
       &-3 {
-        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.4s;
+        transition: opacity 0.2s ease-out 0.4s;
       }
       &-4 {
-        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.6s;
+        transition: opacity 0.2s ease-out 0.6s;
       }
       &-5 {
-        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 0.8s;
+        transition: opacity 0.2s ease-out 0.8s;
       }
       &-6 {
-        transition: height 0.6s ease-in-out, opacity 0.3s ease-out 1s;
+        transition: opacity 0.2s ease-out 1s;
       }
 
       &--active {
-        height: 40px;
         opacity: 1;
       }
     }
