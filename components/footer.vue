@@ -15,37 +15,37 @@
           <v-row class="mt-4">
             <v-col
               cols="12"
-              md="6"
-              xl="5"
+              md="7"
+              xl="6"
             >
               <p class="body-1 font-weight-medium">
                 Persönlichkeitscoaching &
               </p>
               <p class="body-1 font-weight-medium">
-                Unternehmenscoaching Bonn
+                Unternehmenscoaching
               </p>
             </v-col>
             <v-col
               cols="12"
-              sm="6"
-              xl="5"
+              sm="5"
+              xl="4"
             >
               <p class="body-1 font-weight-medium">
                 Claudia Eck
               </p>
               <p class="body-1 font-weight-medium">
-                Systemischer Coach
+                Samlandstraße 4
               </p>
               <p class="body-1 font-weight-medium">
-                Dipl. Oecotrophologin
+                53225 Bonn
               </p>
             </v-col>
           </v-row>
           <v-row align="end">
             <v-col
               cols="12"
-              md="6"
-              xl="5"
+              md="7"
+              xl="6"
             >
               <p class="body-1 font-weight-medium">
                 Claudia Eck
@@ -59,8 +59,8 @@
             </v-col>
             <v-col
               cols="12"
-              md="6"
-              xl="5"
+              md="5"
+              xl="4"
             >
               <p>
                 <a
@@ -93,7 +93,7 @@
               <v-row
                 class="ml-auto pa-0"
               >
-                <v-col>
+                <v-col class="d-flex justify-center">
                   <v-btn
                     icon
                     href="https://www.xing.com/"
@@ -107,7 +107,7 @@
                     />
                   </v-btn>
                 </v-col>
-                <v-col>
+                <v-col class="d-flex justify-center">
                   <v-btn
                     icon
                     href="https://www.xing.com/"
@@ -121,7 +121,7 @@
                     />
                   </v-btn>
                 </v-col>
-                <v-col>
+                <v-col class="d-flex justify-center">
                   <v-btn
                     icon
                     href="https://www.xing.com/"
@@ -138,23 +138,23 @@
               </v-row>
               <v-row>
                 <v-col
-                  cols="6"
+                  cols="5"
                   class="text-left"
                 >
                   <router-link
                     to="/impressum"
-                    class="text-lowercase body-1 footer__button button"
+                    class="body-1 footer__button button"
                   >
                     Impressum
                   </router-link>
                 </v-col>
                 <v-col
-                  cols="6"
+                  cols="7"
                   class="text-right"
                 >
                   <router-link
                     to="/datenschutz"
-                    class="text-lowercase body-1 footer__button button"
+                    class="body-1 footer__button button"
                   >
                     Datenschutz
                   </router-link>
