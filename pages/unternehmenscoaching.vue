@@ -14,7 +14,11 @@
     />
     <Educational />
     <keywords />
-    <Contact />
+    <Contact
+      :content="content_contact"
+      :center-headline="true"
+      :small-headline="true"
+    />
   </v-container>
 </template>
 
@@ -46,7 +50,10 @@ export default {
             desc2: 'Führungskräfte wissen oft gar nicht, dass sie an der Gesundheit ihrer Mitarbeiter einen großen Anteil haben. Führen auf einem hohen Level heißt, die eigene innere Haltung und mentale Gesundheit so weiter zu entwickeln, dass andere gerne folgen. Den anvertrauten Mitarbeitern gelingt es dann leichter, die eigene Orientierung und Selbstbestimmung zu finden. Es kann daher für Unternehmen sinnvoll sein, auf die Führungskultur, das Stressmanagement, die Work-Life-Balance und die Burnout-Prävention zu schauen, um mögliche gesundheitsfördernde Strukturen, Abläufe und Maßnahmen für Führungskräfte, Teams oder auch einzelne Mitarbeiter zu entdecken.'
         }
       },
-      quote: 'Gerne helfe ich Ihnen dabei oder lernen Sie mich über meinen Vortag <span class="highlight--light-blue">„Was kann ich tun, um den Krankenstand der Mitarbeiter zu reduzieren?“</span> kennen.'
+      quote: 'Gerne helfe ich Ihnen dabei oder lernen Sie mich über meinen Vortag <span class="highlight--light-blue">„Was kann ich tun, um den Krankenstand der Mitarbeiter zu reduzieren?“</span> kennen.',
+      content_contact: {
+        headline: 'Gerne unterbreite ich Ihnen ein Individuelles Angebot:'
+      }
     }
   }
 }

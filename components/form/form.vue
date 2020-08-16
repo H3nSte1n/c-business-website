@@ -8,18 +8,24 @@
       method="post"
       prevent-default="true"
     >
-      <v-row :justify="headlinePos">
+      <v-row justify="center">
         <v-col
           cols="10"
-          md="8"
+          :sm="smallHeadline ? '8' : '10'"
+          :md="smallHeadline ? '6' : '8'"
+          :lg="smallHeadline ? '5' : '8'"
+          :xl="smallHeadline ? '3' : '8'"
         >
-          <h3 class="contact__headline">
-            {{ headline }}
+          <h3
+            class="contact__headline"
+            :class="{'contact__headline--center': centerHeadline}"
+          >
+            {{ content.headline }}
           </h3>
         </v-col>
       </v-row>
       <v-row
-        v-if="desc"
+        v-if="content.desc"
         justify="center"
       >
         <v-col
@@ -28,7 +34,7 @@
           xl="8"
         >
           <p class="contact__desc">
-            {{ desc }}
+            {{ content.desc }}
           </p>
         </v-col>
       </v-row>
@@ -117,10 +123,20 @@ import recaptcha from '@/mixins/recaptcha';
 export default {
   mixins: [recaptcha],
   props: {
-    headlinePos: {
-      type: String,
+    centerHeadline: {
+      type: Boolean,
       required: false,
-      default: "center"
+      default: false
+    },
+    smallHeadline: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    content: {
+      type: Object,
+      required: true,
+      default: () => {}
     }
   },
   data() {
@@ -138,8 +154,6 @@ export default {
         email: '',
         msg: ''
       },
-      headline: "Sie wollen durchstarten?",
-      desc: "Lernen Sie mich ganz unverbindlich in einem ersten kostenfreien Gespräch kennen. All Ihre Fragen zum Coaching und der Vorgehensweise können Sie hier stellen. Erzählen Sie mir Ihr Anliegen und wir überlegen gemeinsam, wie wir starten können:"
     }
   },
   mounted() {

@@ -19,7 +19,7 @@
       :desc="quote2.desc"
       position="left"
     />
-    <Contact />
+    <Contact :content="content_contact" />
   </v-container>
 </template>
 
@@ -56,6 +56,10 @@ export default {
       quote2: {
         quote: 'Mein Honorar für ein Einzelcoaching von Privatpersonen liegt bei 80 Euro pro Stunde.',
         desc: 'Wenn Ihre finanzielle Situation das nicht zulässt, dann lassen Sie uns darüber sprechen. Meist reichen schon <strong>zwei bis drei Coachings</strong> je 90 Minuten und Sie sehen wieder Licht am Ende des Tunnels.'
+      },
+      content_contact: {
+        headline: "Sie wollen durchstarten?",
+        desc: "Lernen Sie mich ganz unverbindlich in einem ersten kostenfreien Gespräch kennen. All Ihre Fragen zum Coaching und der Vorgehensweise können Sie hier stellen. Erzählen Sie mir Ihr Anliegen und wir überlegen gemeinsam, wie wir starten können:"
       }
     }
   }
