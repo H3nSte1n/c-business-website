@@ -94,7 +94,7 @@ export default {
         },
         {
           name: 'Über mich',
-          link: '/kontakt'
+          link: '/über-mich'
         },
         {
           name: 'Kontakt',

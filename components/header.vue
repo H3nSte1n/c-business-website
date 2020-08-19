@@ -29,6 +29,7 @@
           </span>
         </h1>
         <p
+          v-if="content.desc"
           class="header__desc"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >

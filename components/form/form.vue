@@ -14,7 +14,7 @@
           :sm="smallHeadline ? '8' : '10'"
           :md="smallHeadline ? '6' : '8'"
           :lg="smallHeadline ? '5' : '8'"
-          :xl="smallHeadline ? '3' : '8'"
+          :xl="smallHeadline ? '4' : '8'"
         >
           <h3
             class="contact__headline"
