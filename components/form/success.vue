@@ -11,15 +11,38 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="contact__mail-icon-space">
-        <v-img
-          width="50px"
-          class="contact__mail-icon"
-          :class="{'contact__mail-icon-active': isTransmitted}"
-          :src="require('@/assets/images/icon-brief.svg')"
+      <v-col class="d-flex justify-center mt-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="122"
+          height="122"
+          viewBox="0 0 192 192"
         >
-          {{ $vuetify.icons.mail }}
-        </v-img>
+          <g
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <circle
+              class="circle"
+              :class="{'circle--active': isTransmitted}"
+              cx="96"
+              cy="96"
+              r="95"
+              stroke="#000"
+              stroke-width="2"
+            />
+            <polyline
+              class="tick"
+              :class="{'tick--active': isTransmitted}"
+              stroke="#000"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              points="43 70 43 105.66 148.431 105.66"
+              transform="rotate(-45 95.715 87.83)"
+            />
+          </g>
+        </svg>
       </v-col>
     </v-row>
   </v-container>
@@ -41,8 +64,7 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {this.isTransmitted = true}, 1);
-    console.log(this.isTransmitted, 'transmitted');
+    setTimeout(() => {this.isTransmitted = true}, 2);
   }
 }
 </script>
@@ -52,18 +74,25 @@ export default {
   &__container {
     align-self: center;
   }
-  &__mail-icon {
-    transform: translate(1vw, 60%);
-    top: 50%;
-    transition: transform 2s ease-out;
 
-    &-space {
-      min-height: 50px;
-    }
+  .circle {
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+    transition: all 2s ease-out;
 
-    &-active {
-      transform: translate(100vw, 60%);
-    }
+    &--active {
+        stroke-dashoffset: 0;
+      }
+  }
+
+  .tick {
+    stroke-dashoffset: 200;
+    stroke-dasharray: 200;
+    transition: all 1s ease-out;
+
+    &--active {
+        stroke-dasharray: 350;
+      }
   }
 }
 </style>

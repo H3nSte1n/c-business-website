@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <g fill="none" fill-rule="evenodd">
+    <circle class="circle" cx="96" cy="96" r="95" stroke="#000" stroke-width="2"/>
+    <polyline class="tick" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="43 70 43 105.66 148.431 105.66" transform="rotate(-45 95.715 87.83)"/>
+  </g>
+</svg>
