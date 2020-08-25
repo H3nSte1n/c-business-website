@@ -174,7 +174,7 @@ body {
 
 .button {
   max-width: 200px;
-  color: #2E88B9;
+  color: black;
   text-decoration: none;
 
   &--disabled {
