@@ -15,12 +15,13 @@
 
 <script>
 import Footer from '~/components/footer';
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/navigation';
 
 export default {
   components: { Footer, Navigation },
   data () {
     return {
+      mouseIsCreated: false,
       isLoaded: false,
       clipped: false,
       drawer: false,
@@ -44,9 +45,9 @@ export default {
     }
   },
   mounted() {
+    console.log(this);
     this.isLoaded = true;
-    if (this.is_touch_device()) { this.touchSettings(); return false; }
-    this.createMouse();
+    if (this.is_touch_device()) return;
     this.initButtonEvents();
   },
   methods: {
@@ -64,26 +65,41 @@ export default {
       // eslint-disable-next-line no-undef
       if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) return true;
     },
-    touchSettings() {
-      document.querySelectorAll('.button_touch').forEach(e => {
-        e.style.borderRadius = '25px';
-        e.style.border = "1px solid #2E88B9";
-        e.style.padding = "10px";
-      });
-    },
-    createMouse() {
+    createMouse(e) {
+      if(this.mouseIsCreated) return;
+      window.moveTo(window.innerWidth / 2, window.innerHeight / 2);
       const customCursor = document.createElement('div');
       customCursor.classList.add('cursor');
       customCursor.classList.add('cursor-dot');
       customCursor.classList.add('cursor--active');
-      console.log();
+      customCursor.style.left = `${e.pageX}px`;
+      customCursor.style.top = `${e.pageY}px`;
       this.$refs.app.$el.appendChild(customCursor)
+      this.mouseIsCreated = true;
+    },
+    setCursorPos(pos) {
+      const cursor = document.querySelector('.cursor');
+      console.log(pos, 'dasdas');
+      console.log(window.innerWidth);
+      if(pos.pageY) cursor.style.top = `${pos.pageY}px`;
+      if(pos.pageX) cursor.style.left = `${pos.pageX}px`;
+    },
+    validateCursorPos(e) {
+      const cursor = document.querySelector('.cursor');
+      let cursorPos = {
+        pageX: null,
+        pageY: null
+      };
+      if(e.pageX > window.innerWidth - (cursor.offsetWidth / 2)) cursorPos.pageX = window.innerWidth - (cursor.offsetWidth / 2);
+      if(e.pageX < 0 + (cursor.offsetWidth / 2)) cursorPos.pageX = 0 + (cursor.offsetWidth / 2);
+      if(e.pageY < 0 + (cursor.offsetHeight / 2)) cursorPos.pageY = 0 + (cursor.offsetHeight / 2);
+      if(e.pageY > document.body.offsetHeight - (cursor.offsetHeight / 2)) cursorPos.pageY = document.body.offsetHeight - (cursor.offsetHeight / 2);
+      return cursorPos.pageX || cursorPos.pageY ? cursorPos : false;
     },
     cursorMove(e) {
       // if(e.target.classList.contains('button')) return false
-      const cursor = document.querySelector('.cursor');
-      cursor.style.top = `${e.pageY}px`;
-      cursor.style.left = `${e.pageX}px`;
+      this.createMouse(e);
+      this.validateCursorPos(e) ? this.setCursorPos(this.validateCursorPos(e)) : this.setCursorPos(e);
     },
     transformToButton(buttonElement) {
       const cursor = document.querySelector('.cursor');
@@ -98,9 +114,9 @@ export default {
         cursor.style.width = '3rem';
         cursor.style.height = '3rem';
         cursor.style.borderRadius = "50%";
-        return false;
+        return;
       } else {
-        cursor.style.borderColor = "#2E88B9"
+        cursor.style.borderColor = "black";
       }
 
       // fix button position
