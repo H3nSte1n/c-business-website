@@ -1,29 +1,41 @@
 <template>
-  <v-container>
-    <Index-Header />
-    <v-row v-if="$vuetify.breakpoint.mdAndUp">
-      <v-col class="animated pt-7">
-        <p class="animated__text">
-          scroll
-        </p>
-        <div class="animated__line" />
-      </v-col>
-    </v-row>
-    <Kachel
-      v-for="(value, key) in tiles"
-      :key="key"
-      :content="value"
-    />
-  </v-container>
+  <Preload :loading="loading">
+    <v-container>
+      <Index-Header
+        :is-loaded="!loading"
+        :img="headerImg"
+      />
+      <v-row v-if="$vuetify.breakpoint.mdAndUp">
+        <v-col class="animated pt-7">
+          <p class="animated__text">
+            scroll
+          </p>
+          <div class="animated__line" />
+        </v-col>
+      </v-row>
+      <Kachel
+        v-for="(value, key) in tiles"
+        :key="key"
+        :content="value"
+      />
+    </v-container>
+  </Preload>
 </template>
 
 <script>
 import Kachel from '@/components/kachel';
 import IndexHeader from '@/components/index-header';
+import Preload from '@/components/preloader';
 export default {
-  components: {IndexHeader, Kachel},
+
+  components: {IndexHeader, Kachel, Preload},
   data () {
     return {
+      loading: true,
+      headerImg: {
+        src: require('~/assets/images/claudia-eck-hero-image-l.png?sqip'),
+        alt: 'personal photo'
+      },
       tiles: [
         {
           headline: 'Das persönliche Leben',
@@ -34,7 +46,7 @@ export default {
             link: '/persönlichkeitscoaching'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-persönlichkeitsentwicklung.svg'),
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
             alt: 'random test image'
           }
         },
@@ -47,7 +59,7 @@ export default {
             link: '/unternehmenscoaching'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-unternehmenscoaching.svg'),
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
             alt: 'random test image'
           },
           order: 'last'
@@ -61,12 +73,15 @@ export default {
             link: '/kontakt'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-ueber-mich.svg'),
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
             alt: 'random test image'
           }
         }
       ]
     }
+  },
+  mounted() {
+    this.loading = false;
   }
 }
 </script>
