@@ -241,6 +241,7 @@ export default {
         font-size: 19px;
         line-height: 22px;
         opacity: 1;
+        pointer-events: auto;
       }
 
       @media (min-width: 1904px) {
