@@ -82,7 +82,7 @@ export default {
       opacityStatus: true,
       items: [
         {
-          src: 'https://picsum.photos/450/300?random=23123',
+          src: 'https://picsum.photos/450/300?random=23123?sqip',
           alt: 'test picsum image',
           text: {
             tag: 'Sehen,',
@@ -90,7 +90,7 @@ export default {
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=2351123',
+          src: 'https://picsum.photos/450/300?random=2351123?sqip',
           alt: 'test picsum image',
           text: {
             tag: 'Hören,',
@@ -98,7 +98,7 @@ export default {
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=2311223',
+          src: 'https://picsum.photos/450/300?random=2311223?sqip',
           alt: 'test picsum image',
           text: {
             tag: 'Fühlen,',
@@ -106,7 +106,7 @@ export default {
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=23312123',
+          src: 'https://picsum.photos/450/300?random=23312123?sqip',
           alt: 'test picsum image',
           text: {
             tag: 'Schmecken,',
@@ -114,7 +114,7 @@ export default {
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=23312123',
+          src: 'https://picsum.photos/450/300?random=23312123?sqip',
           alt: 'test picsum image',
           text: {
             tag: 'Schmecken,',
