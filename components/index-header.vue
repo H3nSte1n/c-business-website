@@ -66,8 +66,8 @@
         class="pa-0"
       >
         <v-img
-          :src="require('~/assets/images/claudia-eck-hero-image-l.png')"
-          alt="image"
+          :src="img.src"
+          :alt="img.alt"
           height="100%"
           width="100%"
           :max-width="$vuetify.breakpoint.lg ? '330px' : '590px'"
@@ -85,13 +85,21 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isLoaded: false
+  props: {
+    isLoaded: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    img: {
+      type: Object,
+      required: true,
+      default: () => {}
     }
   },
-  mounted() {
-    this.isLoaded = true;
+  data() {
+    return {
+    }
   }
 }
 </script>

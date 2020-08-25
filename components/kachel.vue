@@ -17,8 +17,8 @@
         <v-img
           :src="content.img.src"
           :alt="content.img.alt"
-          width="40%"
-          max-width="200px"
+          :width="$vuetify.breakpoint.smAndDown ? '40%': '100%'"
+          :max-width="$vuetify.breakpoint.smAndDown ? '200px': 'none'"
           class="mx-auto mb-12"
         />
       </v-col>

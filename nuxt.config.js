@@ -18,6 +18,13 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  // render: {
+  //   bundleRenderer: {
+  //     shouldPrefetch: ()=> {
+  //        return false
+  //     }
+  //   }
+  // },
   /*
   ** Customize the progress-bar color
   */
@@ -31,6 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/lazyLoadingImages.client.js'
   ],
   // server middleware
   serverMiddleware: [
@@ -40,7 +48,6 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
   ],
@@ -48,12 +55,11 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/component-cache',
   ],
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
@@ -81,5 +87,64 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   // eslint-disable-next-line no-unused-vars
+   extend(config, {isDev, _isClient}) {
+      const imgTest = '/\\.(png|jpe?g|gif|svg|webp)$/i'
+
+      config.module.rules.forEach(rule => {
+        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          rule.use.push({
+            loader: 'image-webpack-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  // https://css-tricks.com/scale-svg/
+                  { removeViewBox: false },
+                  { removeDimensions: true }
+                ]
+              }
+            }
+          })
+        }
+      })
+      config.module.rules = config.module.rules.filter(r => r.test && r.test.toString() !== imgTest)
+
+      // ?sqip: low quality image placeholder
+      config.module.rules.push({
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        oneOf: [
+          {
+            resourceQuery: new RegExp('sqip'),
+            use: [
+              {
+                loader: 'sqip-loader',
+                options: {
+                  numberOfPrimitives: 50,
+                  mode: 1
+                }
+              },
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 1000,
+                  name: '[path][name].[ext]'
+                }
+              }
+            ],
+          },
+          {
+            use: [
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 1000,
+                  name: '[path][name].[ext]'
+                }
+              }
+            ]
+          }
+        ]
+      })
+    }
   }
 }
