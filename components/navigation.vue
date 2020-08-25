@@ -233,13 +233,13 @@ export default {
       opacity: 0;
       max-width: 250px;
       font-weight: 600;
+      pointer-events: none;
 
       @media (min-width: 1264px) {
         padding: 0px 6px;
         margin: 0px 15px;
         font-size: 19px;
         line-height: 22px;
-        height: 40px;
         opacity: 1;
       }
 
@@ -274,6 +274,7 @@ export default {
 
       &--active {
         opacity: 1;
+        pointer-events: auto;
       }
     }
   }
