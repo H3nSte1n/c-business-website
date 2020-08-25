@@ -86,7 +86,7 @@ export default {
       navPoints: [
         {
           name: 'Persönlichkeit entfalten',
-          link: '/persönlichkeitscoaching'
+          link: '/persoenlichkeitscoaching'
         },
         {
           name: 'Unternehmen beleben',
@@ -94,7 +94,7 @@ export default {
         },
         {
           name: 'Über mich',
-          link: '/über-mich'
+          link: '/ueber-mich'
         },
         {
           name: 'Kontakt',
