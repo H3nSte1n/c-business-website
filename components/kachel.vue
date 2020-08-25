@@ -4,7 +4,6 @@
       justify="space-around"
       align="center"
       flex
-      class="my-12"
       :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
     >
       <v-col
@@ -13,13 +12,14 @@
         md="5"
         xl="4"
         :order-md="content.order ? content.order : 'first'"
+        class="my-9 kachel__img-container"
       >
         <v-img
           :src="content.img.src"
           :alt="content.img.alt"
           :width="$vuetify.breakpoint.smAndDown ? '40%': '100%'"
           :max-width="$vuetify.breakpoint.smAndDown ? '200px': 'none'"
-          class="mx-auto mb-12"
+          class="mx-auto my-12"
         />
       </v-col>
       <v-col
@@ -100,6 +100,9 @@ export default {
     &-enable {
       width: 100%;
     }
+  }
+  &__img-container {
+    background-color: aliceblue;
   }
 }
 </style>

@@ -17,6 +17,7 @@
         v-for="(value, key) in tiles"
         :key="key"
         :content="value"
+        :class="key !== 0 ? '' : 'mt-12'"
       />
     </v-container>
   </Preload>
