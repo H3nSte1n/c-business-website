@@ -5,17 +5,14 @@ export default {
     },
     async onSubmit() {
       try {
-        const token = await this.$recaptcha.getResponse()
-        console.log('ReCaptcha token:', token)
+        await this.$recaptcha.getResponse()
         await this.$recaptcha.reset()
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log('Login error:', error)
       }
     },
-    onSuccess(token) {
-      console.log('Succeeded:', token)
-      // here you submit the form
+    onSuccess() {
       this.recaptchaSucceed = true;
     },
     onExpired() {

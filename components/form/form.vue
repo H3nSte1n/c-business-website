@@ -6,7 +6,7 @@
       ref="form"
       action="/"
       method="post"
-      prevent-default="true"
+      @submit.prevent="onSubmit"
     >
       <v-row justify="center">
         <v-col
@@ -105,8 +105,7 @@
             class="px-7 mt-9 button"
             text
             light
-            :disabled="recaptchaSucceed"
-            @click="submitForm"
+            type="submit"
           >
             Senden
           </v-btn>
@@ -154,6 +153,11 @@ export default {
         email: '',
         msg: ''
       },
+    }
+  },
+  watch: {
+    recaptchaSucceed() {
+      this.submitForm();
     }
   },
   mounted() {
