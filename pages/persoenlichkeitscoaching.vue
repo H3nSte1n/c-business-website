@@ -29,9 +29,11 @@ import Contact from '@/components/form/contact';
 import Quote from '@/components/quote';
 import Slider from '@/components/slider';
 import Header from '@/components/header';
+import ButtonEvents from '@/mixins/buttonEvents';
 
 export default {
   components: { Header, Stripe, Contact, Quote, Slider },
+  mixins: [ButtonEvents],
   data () {
     return {
       header: {

@@ -58,7 +58,7 @@
               {{ navItem.name }}
             </nuxt-link>
             <a
-              class="navigation__links-item navigation__links-item text-center button d-inline-flex align-center"
+              class="navigation__links-item navigation__links-item text-center d-inline-flex align-center button"
               :class="{'navigation__links-item--active': isNavigationMobilActive, 'align-end': $vuetify.breakpoint.mdAndDown}"
               href="tel:+1792242543"
             >
@@ -122,7 +122,6 @@ export default {
   },
   methods: {
     resetNavigationStatus() {
-      console.log('test');
       this.isNavigationMobilActive = false;
     },
     changeStatusOfNavigationActiveLever() {
@@ -278,17 +277,6 @@ export default {
         pointer-events: auto;
       }
     }
-  }
-}
-
-.nuxt-link-active {
-  text-decoration: underline;
-
-  @media (min-width: 1264px) {
-    text-decoration: none;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 25px;
   }
 }
 </style>

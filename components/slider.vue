@@ -136,7 +136,6 @@ export default {
       this.opacityStatus = true;
     },
     currentSlide(event) {
-      console.log(event);
       this.currentItem = event;
     },
     navigateForward() {

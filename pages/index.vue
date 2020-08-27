@@ -27,9 +27,11 @@
 import Kachel from '@/components/kachel';
 import IndexHeader from '@/components/index-header';
 import Preload from '@/components/preloader';
-export default {
+import ButtonEvents from '@/mixins/buttonEvents';
 
+export default {
   components: {IndexHeader, Kachel, Preload},
+  mixins: [ButtonEvents],
   data () {
     return {
       loading: true,
@@ -44,7 +46,7 @@ export default {
           text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.',
           button: {
             text: 'mehr erfahren',
-            link: '/persönlichkeitscoaching'
+            link: '/persoenlichkeitscoaching'
           },
           img: {
             src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),

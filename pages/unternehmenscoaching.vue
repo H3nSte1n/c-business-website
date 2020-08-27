@@ -29,9 +29,11 @@ import Teaser from '@/components/teaser';
 import Quote from '@/components/quote';
 import Keywords from '@/components/keywords';
 import Header from '@/components/header';
+import ButtonEvents from '@/mixins/buttonEvents';
 
 export default {
   components: { Header, Educational, Contact, Teaser, Quote, Keywords },
+  mixins: [ButtonEvents],
   data () {
     return {
       header: {

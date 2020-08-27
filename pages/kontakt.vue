@@ -23,9 +23,11 @@
 import Header from '@/components/header';
 import Contact from '@/components/form/contact';
 import Wrapper from '@/components/wrapper';
+import ButtonEvents from '@/mixins/buttonEvents';
 
 export default {
   components: {Header, Contact, Wrapper},
+  mixins: [ButtonEvents],
   data() {
     return {
       header: {
