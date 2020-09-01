@@ -63,7 +63,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 9999;
   pointer-events: none;
-  transition: width 0.5s ease-out, height 1.5s ease-out, border-color 0.2s ease-out;
+  transition: width 0.25s ease-out, height 1s ease-out, border-color 0.2s ease-out;
 
   &--active {
     width: 3rem;
@@ -94,7 +94,7 @@ body {
     }
     &-active {
       &::before {
-        background-color: #FFFFFF;
+        background-color: black;
       }
     }
   }
