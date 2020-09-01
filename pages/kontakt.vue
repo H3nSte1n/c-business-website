@@ -34,7 +34,7 @@ export default {
         headline: 'Kontakt',
         desc: 'Hierüber können Sie mich erreichen',
         img: {
-          src: require('~/assets/images/claudia-eck-persönlichkeitsentwicklung.svg'),
+          src: require('~/assets/images/claudia-eck-kontakt.png'),
           alt: 'unternehmenscoaching'
         }
       },

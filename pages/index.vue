@@ -49,7 +49,7 @@ export default {
             link: '/persoenlichkeitscoaching'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
+            src: require('~/assets/images/claudia-eck-persoenlichkeitcoaching.gif?sqip'),
             alt: 'random test image'
           }
         },
@@ -76,7 +76,7 @@ export default {
             link: '/kontakt'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
+            src: require('~/assets/images/claudia-eck-ueber-mich.gif?sqip'),
             alt: 'random test image'
           }
         }
