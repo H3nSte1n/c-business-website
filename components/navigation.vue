@@ -235,7 +235,6 @@ export default {
       pointer-events: none;
 
       @media (min-width: 1264px) {
-        padding: 0px 6px;
         margin: 0px 15px;
         font-size: 19px;
         line-height: 22px;

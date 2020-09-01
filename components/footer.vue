@@ -187,15 +187,4 @@ export default {
     text-decoration: none;
   }
 }
-
-.nuxt-link-active {
-  text-decoration: underline;
-
-  @media (min-width: 1264px) {
-    text-decoration: none;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 25px;
-  }
-}
 </style>
