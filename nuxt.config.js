@@ -59,6 +59,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/recaptcha',
+    '@nuxtjs/component-cache',
   ],
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
