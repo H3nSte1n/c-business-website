@@ -85,7 +85,7 @@ export default {
   },
   mounted() {
     this.loading = false;
-  }
+  },
 }
 </script>
 

@@ -7,6 +7,11 @@ export default {
     if (this.is_touch_device()) return;
     this.initButtonEvents();
   },
+  updated() {
+    this.isLoaded = true;
+    if (this.is_touch_device()) return;
+    this.initButtonEvents();
+  },
   methods: {
     initButtonEvents() {
       document.querySelectorAll('.button').forEach(e => {
