@@ -27,7 +27,7 @@
           </router-link>
           <button
             v-show="$vuetify.breakpoint.mdAndDown"
-            class="navigation__mobil_opener button my-5 mr-7"
+            class="navigation__mobil-opener button my-5 mr-7"
             @click="changeStatusOfNavigationActiveLever"
           >
             <v-icon
@@ -182,6 +182,12 @@ export default {
     }
   }
 
+  &__mobil-opener {
+    &:focus {
+      outline: none;
+    }
+  }
+
   &__logo {
     cursor: none;
     color: #343434;
@@ -225,8 +231,8 @@ export default {
       cursor: none;
       color: #343434;
       text-decoration: none;
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 22px;
+      line-height: 28px;
       transition: height 0.5s ease-out;
       height: 40px;
       opacity: 0;
@@ -250,25 +256,29 @@ export default {
 
       &:last-child {
         padding-right: 0;
+
+        @media screen and (max-width: 1264px) {
+          font-size: 19px;
+        }
       }
 
       &-1 {
         transition: opacity 0.2s ease-in-out;
       }
       &-2 {
-        transition: opacity 0.2s ease-out 0.2s;
+        transition: opacity 0.2s ease-out 0.1s;
       }
       &-3 {
-        transition: opacity 0.2s ease-out 0.4s;
+        transition: opacity 0.2s ease-out 0.2s;
       }
       &-4 {
-        transition: opacity 0.2s ease-out 0.6s;
+        transition: opacity 0.2s ease-out 0.3s;
       }
       &-5 {
-        transition: opacity 0.2s ease-out 0.8s;
+        transition: opacity 0.2s ease-out 0.35s;
       }
       &-6 {
-        transition: opacity 0.2s ease-out 1s;
+        transition: opacity 0.2s ease-out 0.4s;
       }
 
       &--active {
