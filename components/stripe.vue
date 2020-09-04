@@ -77,10 +77,10 @@ export default {
     font-weight: 300;
   }
   &--yellow {
-    background-color: #FFDA51;
+    background-color: $yellow;
   }
   &--blue {
-    background-color: #DDEFF4;
+    background-color: $light-blue-2;
   }
 }
 </style>

@@ -202,7 +202,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: $white;
     transition: all 0.75s ease-out 2s;
     &-disable {
       transform: translateX(100%);

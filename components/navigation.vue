@@ -190,7 +190,7 @@ export default {
 
   &__logo {
     cursor: none;
-    color: #343434;
+    color: $dark-3;
     font-size: 28px;
     line-height: 34px;
     text-decoration: none;
@@ -229,7 +229,7 @@ export default {
 
     &-item {
       cursor: none;
-      color: #343434;
+      color: $dark-3;
       text-decoration: none;
       font-size: 22px;
       line-height: 28px;

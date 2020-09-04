@@ -4,3 +4,13 @@
 // $font-size-root: 20px;
 
 .v-window { &-x-transition, &-x-reverse-transition, &-y-transition, &-y-reverse-transition { &-enter-active, &-leave-active { transition: .9s cubic-bezier(.25, .8, .50, 1) !important; } } }
+
+
+$white: #ffffff;
+$black: #000000;
+$dark-2: #2C2C2C;
+$dark-3: #343434;
+$light-blue: #4494A6;
+$light-blue-2: #DDEFF4;
+$light-blue-3: aliceblue;
+$yellow: #FFDA51;

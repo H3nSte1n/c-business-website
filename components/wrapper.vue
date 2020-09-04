@@ -44,10 +44,10 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   &--yellow {
-    background-color: #FFDA51;
+    background-color: $yellow
   }
   &--light-blue {
-    background-color: #DDEFF4;
+    background-color: $light-blue-2;
   }
   &__headline {
     font-size: 2rem;

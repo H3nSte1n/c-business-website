@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
 .quote {
-  background-color: #ffffff;
+  background-color: $white;
   padding: 40vh 0;
   &__content {
     max-width: 570px;
@@ -69,7 +69,7 @@ export default {
 
   .highlight {
     &--light-blue {
-      color: #4494A6;
+      color: $light-blue;
     }
   }
 }

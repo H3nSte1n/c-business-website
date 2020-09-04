@@ -21,7 +21,7 @@ export default {
 <style scoped lang="scss">
 .loader {
   border: 6px solid #f3f3f3;
-  border-top: 16px solid black;
+  border-top: 16px solid $black;
   border-radius: 50%;
   width: 120px;
   height: 120px;

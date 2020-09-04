@@ -59,7 +59,7 @@ export default {
 <style lang="scss">
 .contact {
   min-height: 400px;
-  background-color: #FFDA51;
+  background-color: $yellow;
   overflow: hidden;
   &__headline {
     font-size: 2rem;

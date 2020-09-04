@@ -96,7 +96,7 @@ export default {
     width: 0px;
     height: 100%;
     transition: width 0.7s ease-out;
-    background-color: white;
+    background-color: $white;
     &-enable {
       width: 100%;
     }

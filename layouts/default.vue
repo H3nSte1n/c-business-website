@@ -58,7 +58,7 @@ body {
   width: 0rem;
   height: 0rem;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid $black;
   position: absolute;
   transform: translate(-50%, -50%);
   z-index: 9999;
@@ -71,7 +71,7 @@ body {
   }
 
   &:active, &:focus, &:hover, &:visited {
-    color: black;
+    color: $black;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
@@ -82,7 +82,7 @@ body {
     &::before {
       content: ' ';
       display: block;
-      background-color: black;
+      background-color: $black;
       width: 0.4rem;
       height: 0.4rem;
       border-radius: 50%;
@@ -94,7 +94,7 @@ body {
     }
     &-active {
       &::before {
-        background-color: black;
+        background-color: $black;
       }
     }
   }
@@ -102,7 +102,7 @@ body {
 
 .button {
   max-width: 200px;
-  color: black;
+  color: $black;
   text-decoration: none;
 
   &--disabled {
@@ -110,7 +110,7 @@ body {
   }
 
   &:active, &:focus, &:visited, &:hover {
-    color: black;
+    color: $black;
     cursor: none;
   }
 }
@@ -121,7 +121,7 @@ body {
   @media (min-width: 1264px) {
     text-decoration: none;
     padding: 10px;
-    border: 2px solid black;
+    border: 2px solid $black;
     border-radius: 25px;
   }
 }

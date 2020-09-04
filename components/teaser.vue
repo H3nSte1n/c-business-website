@@ -95,10 +95,10 @@ export default {
   }
 
   &--yellow {
-    background-color: #FFDA51;
+    background-color: $yellow;
   }
   &--light-blue {
-    background-color: #DDEFF4;
+    background-color: $light-blue-2;
   }
 }
 </style>

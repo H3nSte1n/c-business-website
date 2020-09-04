@@ -101,7 +101,7 @@ export default {
   &__line {
     height: 0px;
     width: 2px;
-    background-color: #2C2C2C;
+    background-color: $dark-2;
     animation: lineAnimation 4s ease-in-out infinite;
     margin: 0 auto;
   }

@@ -183,7 +183,7 @@ export default {
   }
 
   &__button {
-    color: #2C2C2C;
+    color: $dark-2;
     text-decoration: none;
   }
 }

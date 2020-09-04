@@ -51,7 +51,7 @@ export default {
 .kontakt {
   &__tel {
     font-size: 3rem;
-    color: black;
+    color: $black;
     text-align: center;
     text-decoration: none;
   }
