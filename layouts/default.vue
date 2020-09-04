@@ -113,6 +113,15 @@ body {
     color: $black;
     cursor: none;
   }
+
+  &--mobile-active {
+    @media screen and (max-width: 1264px) {
+      text-decoration: none;
+      padding: 10px;
+      border: 2px solid $black;
+      border-radius: 25px;
+    }
+  }
 }
 
 .nuxt-link-active {

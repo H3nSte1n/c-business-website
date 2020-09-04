@@ -44,7 +44,7 @@
         <router-link
           :to="content.button.link"
           event=""
-          class="text-lowercase button body-1 font-weight-bold"
+          class="text-lowercase button button--mobile-active body-1 font-weight-bold"
           @click.native.prevent="initClickAnimation()"
         >
           {{ content.button.text }}
@@ -102,7 +102,7 @@ export default {
     }
   }
   &__img-container {
-    background-color: aliceblue;
+    background-color: $light-blue-3;
   }
 }
 </style>
