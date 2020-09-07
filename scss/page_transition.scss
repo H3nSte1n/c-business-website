@@ -10,14 +10,14 @@
   z-index: 9999999;
 }
 .swipe-leave {
-  left: 0%;
+  transform: translateX(0%);
 }
 .swipe-leave-to {
-  left: 100%;
+  transform: translateX(100%);
 }
 .swipe-enter {
-  left: 100%;
+  transform: translateX(100%);
 }
 .swipe-enter-to {
-  left: 0%;
+  transform: translateX(0%);
 }
