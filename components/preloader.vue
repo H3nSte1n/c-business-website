@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .loader {
   border: 6px solid #f3f3f3;
   border-top: 16px solid $black;

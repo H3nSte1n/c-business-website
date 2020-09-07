@@ -105,6 +105,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .header-box {
   &__headline {
       font-size: 3.75rem;

@@ -36,7 +36,7 @@ export default {
     return {
       loading: true,
       headerImg: {
-        src: require('~/assets/images/claudia-eck-hero-image-l.png?sqip'),
+        src: require('~/assets/images/claudia-eck-hero-image-l.png'),
         alt: 'personal photo'
       },
       tiles: [
@@ -49,7 +49,7 @@ export default {
             link: '/persoenlichkeitscoaching'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-persoenlichkeitcoaching.gif?sqip'),
+            src: require('~/assets/images/claudia-eck-persoenlichkeitcoaching.gif'),
             alt: 'random test image'
           }
         },
@@ -62,7 +62,7 @@ export default {
             link: '/unternehmenscoaching'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif?sqip'),
+            src: require('~/assets/images/claudia-eck-unternehmenscoaching.gif'),
             alt: 'random test image'
           },
           order: 'last'
@@ -76,7 +76,7 @@ export default {
             link: '/kontakt'
           },
           img: {
-            src: require('~/assets/images/claudia-eck-ueber-mich.gif?sqip'),
+            src: require('~/assets/images/claudia-eck-ueber-mich.gif'),
             alt: 'random test image'
           }
         }
@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/colors.scss';
+
 .animated {
   height: 50px;
   margin-bottom: 30px;

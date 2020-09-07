@@ -151,6 +151,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .navigation {
   position: fixed;
   background: #fff;

@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/colors.scss';
+
 body {
   cursor: none;
 }

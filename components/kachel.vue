@@ -84,6 +84,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/colors.scss';
+
 .kachel {
   &__headline {
     word-break: break-word;

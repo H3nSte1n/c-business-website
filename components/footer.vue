@@ -175,6 +175,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .footer {
   width: 100%;
 

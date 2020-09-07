@@ -70,6 +70,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/colors.scss';
+
 .stripe {
   &__headline {
     font-size: 2.1rem;

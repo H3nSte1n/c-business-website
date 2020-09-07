@@ -57,6 +57,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/scss/colors.scss';
+
 .contact {
   min-height: 400px;
   background-color: $yellow;

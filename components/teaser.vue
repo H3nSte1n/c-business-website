@@ -79,6 +79,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .teaser {
   &__headline {
     font-size: 2rem;

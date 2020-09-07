@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .wrapper {
   &--yellow {
     background-color: $yellow

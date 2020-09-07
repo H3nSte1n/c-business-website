@@ -18,13 +18,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  // render: {
-  //   bundleRenderer: {
-  //     shouldPrefetch: ()=> {
-  //        return false
-  //     }
-  //   }
-  // },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => ['script', 'style'].includes(type),
+    }
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -33,7 +31,6 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/colors.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -62,6 +59,7 @@ export default {
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
   ],
+
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
     siteKey: process.env.NODE_ENV == 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
@@ -90,62 +88,6 @@ export default {
     */
    // eslint-disable-next-line no-unused-vars
    extend(config, {isDev, _isClient}) {
-      const imgTest = '/\\.(png|jpe?g|gif|svg|webp)$/i'
-
-      config.module.rules.forEach(rule => {
-        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-          rule.use.push({
-            loader: 'image-webpack-loader',
-            options: {
-              svgo: {
-                plugins: [
-                  // https://css-tricks.com/scale-svg/
-                  { removeViewBox: false },
-                  { removeDimensions: true }
-                ]
-              }
-            }
-          })
-        }
-      })
-      config.module.rules = config.module.rules.filter(r => r.test && r.test.toString() !== imgTest)
-
-      // ?sqip: low quality image placeholder
-      config.module.rules.push({
-        test: /\.(png|jpe?g|gif|svg|webp)$/i,
-        oneOf: [
-          {
-            resourceQuery: new RegExp('sqip'),
-            use: [
-              {
-                loader: 'sqip-loader',
-                options: {
-                  numberOfPrimitives: 50,
-                  mode: 1
-                }
-              },
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 1000,
-                  name: '[path][name].[ext]'
-                }
-              }
-            ],
-          },
-          {
-            use: [
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 1000,
-                  name: '[path][name].[ext]'
-                }
-              }
-            ]
-          }
-        ]
-      })
-    }
+   }
   }
 }

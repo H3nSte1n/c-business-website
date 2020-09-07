@@ -48,6 +48,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/scss/colors.scss';
+
 .kontakt {
   &__tel {
     font-size: 3rem;
