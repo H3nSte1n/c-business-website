@@ -1,7 +1,10 @@
 require('dotenv').config()
-console.log(process.env.NODE_ENV);
 
 export default {
+  generate: {
+    dir: 'public',
+    fallback: '404.html',
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -11,8 +14,9 @@ export default {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
+      { name: 'msapplication-TileColor', content: '#ffffff' },
+      { name: 'theme-color', content: '#ffffff' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
