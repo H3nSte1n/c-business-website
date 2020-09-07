@@ -104,7 +104,8 @@ export default {
     }
   }
   &__img-container {
-    background-color: $light-blue-3;
+    background-image: url('~assets/images/claudia-eck-teaser-background.png');
+    background-repeat: repeat;
   }
 }
 </style>
