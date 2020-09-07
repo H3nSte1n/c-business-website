@@ -114,9 +114,15 @@ export default {
   watch: {
     $route () {
       this.isNavigationMobilActive = false;
-      document.querySelector(".navigation").style.bottom = `${-this.getTopFromNav}px`;
-      document.querySelector(".navigation").style.bottom = '0px';
+      if(!this.isNavigationMobilActive) return false;
+      console.log('test');
+      document.querySelector(".navigation").style.transform = 'translateY(0px)';
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    if(!this.isNavigationMobilActive) return next();
+    document.querySelector(".navigation").style.transform = `translateY(${this.getTopFromNav}px)`;
+    next()
   },
   mounted() {
     this.eventsInit();
@@ -135,9 +141,9 @@ export default {
       if(this.isNavigationMobilActive) return false;
       let currentScrollPos = window.pageYOffset;
       if (this.prevScrollpos > currentScrollPos) {
-        document.querySelector(".navigation").style.bottom = '0px';
+        document.querySelector(".navigation").style.transform = 'translateY(0px)';
       } else {
-        document.querySelector(".navigation").style.bottom = `${-this.getTopFromNav}px`;
+        document.querySelector(".navigation").style.transform = `translateY(${this.getTopFromNav}px)`;
       }
       this.prevScrollpos = currentScrollPos;
     },
@@ -166,7 +172,7 @@ export default {
   left: 0px;
   width: 100%;
   height: 80px;
-  transition: bottom 0.3s ease-in-out, height 0.5s ease-out;
+  transition: bottom 0.3s ease-in-out, transform 0.5s ease-out, height 0.5s ease-out;
 
   @media (min-width: 1264px) {
     position: sticky;
