@@ -172,7 +172,7 @@ export default {
   left: 0px;
   width: 100%;
   height: 80px;
-  transition: bottom 0.3s ease-in-out, transform 0.5s ease-out, height 0.5s ease-out;
+  transition: bottom 0.3s ease-in-out, transform 0.2s ease-out, height 0.5s ease-out;
 
   @media (min-width: 1264px) {
     position: sticky;
