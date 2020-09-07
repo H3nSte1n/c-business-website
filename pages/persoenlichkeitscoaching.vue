@@ -41,7 +41,7 @@ export default {
         headline: 'Persönlichkeitscoaching',
         desc: 'für Ihre private und berufliche Lebensbalance',
         img: {
-          src: require('~/assets/images/claudia-eck-persönlichkeitsentwicklung.svg'),
+          src: require('~/assets/images/claudia-eck-persoenlichkeitscoaching.svg'),
           alt: 'unternehmenscoaching'
         }
       },
