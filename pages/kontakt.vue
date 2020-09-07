@@ -28,6 +28,7 @@ import ButtonEvents from '@/mixins/buttonEvents';
 export default {
   components: {Header, Contact, Wrapper},
   mixins: [ButtonEvents],
+  transition: "swipe",
   data() {
     return {
       header: {
@@ -49,6 +50,8 @@ export default {
 
 <style scoped lang="scss">
 @import '@/scss/colors.scss';
+@import '@/scss/page_transition.scss';
+
 
 .kontakt {
   &__tel {

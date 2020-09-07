@@ -34,6 +34,7 @@ import ButtonEvents from '@/mixins/buttonEvents';
 export default {
   components: { Header, Educational, Contact, Teaser, Quote, Keywords },
   mixins: [ButtonEvents],
+  transition: "swipe",
   data () {
     return {
       header: {
@@ -60,3 +61,7 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '@/scss/page_transition.scss';
+</style>

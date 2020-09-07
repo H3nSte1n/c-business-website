@@ -22,6 +22,7 @@ import Header from '@/components/header';
 
 export default {
   components: {Header, Teaser},
+  transition: "swipe",
   data() {
     return {
       header: {
@@ -67,3 +68,7 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '@/scss/page_transition.scss';
+</style>
