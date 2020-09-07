@@ -114,11 +114,15 @@ export default {
   watch: {
     $route () {
       this.isNavigationMobilActive = false;
+      document.querySelector(".navigation").style.bottom = `${-this.getTopFromNav}px`;
+      document.querySelector(".navigation").style.bottom = '0px';
     }
   },
   mounted() {
     this.eventsInit();
     this.getTopFromNav = document.querySelector(".navigation").clientHeight;
+  },
+  update() {
   },
   methods: {
     resetNavigationStatus() {
