@@ -122,6 +122,7 @@ body {
       padding: 10px;
       border: 2px solid $black;
       border-radius: 25px;
+      color: $black;
     }
   }
 }
