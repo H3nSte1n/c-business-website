@@ -43,9 +43,7 @@
         </p>
         <router-link
           :to="content.button.link"
-          event=""
           class="text-lowercase button button--mobile-active body-1 font-weight-bold"
-          @click.native.prevent="initClickAnimation()"
         >
           {{ content.button.text }}
         </router-link>
@@ -67,19 +65,6 @@ export default {
       isClicked: false,
     }
   },
-  mounted() {
-    // this.initClickAnimation();
-  },
-  methods: {
-    initClickAnimation() {
-      document.querySelectorAll('.button').forEach(e => {
-        e.addEventListener('click', () => {
-          this.isClicked = true;
-          setTimeout(() => {this.$router.push(this.content.button.link)}, 1000);
-        });
-      })
-    }
-  }
 }
 </script>
 

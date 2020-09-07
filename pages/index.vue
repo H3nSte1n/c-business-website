@@ -32,6 +32,7 @@ import ButtonEvents from '@/mixins/buttonEvents';
 export default {
   components: {IndexHeader, Kachel, Preload},
   mixins: [ButtonEvents],
+  transition: "swipe",
   data () {
     return {
       loading: true,
@@ -91,6 +92,30 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/scss/colors.scss';
+
+.swipe-enter-active,
+.swipe-leave-active {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 9999999;
+}
+.swipe-leave {
+  left: 0%;
+}
+.swipe-leave-to {
+  left: 100%;
+}
+.swipe-enter {
+  left: 100%;
+}
+.swipe-enter-to {
+  left: 0%;
+}
 
 .animated {
   height: 50px;
