@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="133" viewBox="0 0 200 133">
+  <g fill="none" fill-rule="evenodd" stroke="#000" font-family="Roboto-Medium, Roboto" font-size="100" font-weight="400" letter-spacing="10" transform="translate(1 1)">
+    <text fill="#E20074">
+      <tspan x=".082" y="96">4</tspan>
+    </text>
+    <text fill="#FFDA51">
+      <tspan x="131.082" y="96">4</tspan>
+    </text>
+    <text fill="#4494A6" transform="rotate(45 110.5 65.5)">
+      <tspan x="77.082" y="100">0</tspan>
+    </text>
+  </g>
+</svg>
