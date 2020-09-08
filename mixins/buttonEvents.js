@@ -26,7 +26,6 @@ export default {
       cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
       cursor.style.borderRadius = "25px";
       cursor.style.borderWidth = "2px";
-      document.querySelector('.cursor-dot').classList.add('cursor-dot-active');
 
       if(buttonElement.classList.contains('nuxt-link-active')) {
         cursor.style.borderColor = "rgba(0,0,0,0)"

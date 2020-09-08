@@ -22,7 +22,6 @@ import scrollEvents from '@/mixins/scrollEvents';
 export default {
   components: { Footer, Navigation },
   mixins: [ButtonEvents, scrollEvents],
-  transition: "swipe",
 
   data () {
     return {

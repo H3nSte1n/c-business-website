@@ -32,7 +32,6 @@ import ButtonEvents from '@/mixins/buttonEvents';
 export default {
   components: {IndexHeader, Kachel, Preload},
   mixins: [ButtonEvents],
-  transition: "swipe",
   data () {
     return {
       loading: true,
@@ -92,7 +91,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/scss/colors.scss';
-@import '@/scss/page_transition.scss';
 
 .animated {
   height: 50px;
