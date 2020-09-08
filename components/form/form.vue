@@ -101,14 +101,12 @@
       </v-row>
       <v-row>
         <v-col class="d-flex justify-center">
-          <v-btn
+          <button
             class="px-7 mt-9 button"
-            text
-            light
             type="submit"
           >
             Senden
-          </v-btn>
+          </button>
         </v-col>
       </v-row>
     </v-form>
