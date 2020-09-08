@@ -35,6 +35,7 @@ export default {
         cursor.style.borderRadius = "50%";
         return;
       } else {
+        cursor.classList.remove('cursor-dot');
         cursor.style.borderColor = "black";
       }
 
@@ -46,6 +47,7 @@ export default {
     },
     resetTransformToButton() {
       const cursor = document.querySelector('.cursor');
+      if(!cursor.classList.contains('cursor-dot')) cursor.classList.add('cursor-dot');
       cursor.style.width = '3rem';
       cursor.style.height = '3rem';
       cursor.style.borderRadius = "50%";
