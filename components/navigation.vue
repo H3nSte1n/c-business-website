@@ -116,20 +116,21 @@ export default {
     $route () {
       this.isNavigationMobilActive = false;
       if(!this.isNavigationMobilActive) return false;
-      console.log('test');
-      document.querySelector(".navigation").style.transform = 'translateY(0px)';
+
     }
   },
   beforeRouteLeave(to, from, next) {
     if(!this.isNavigationMobilActive) return next();
     document.querySelector(".navigation").style.transform = `translateY(${this.getTopFromNav}px)`;
-    next()
+    next();
   },
   mounted() {
     this.eventsInit();
     this.getTopFromNav = document.querySelector(".navigation").clientHeight;
+    document.querySelector(".navigation").style.transform = 'translateY(0px)';
   },
   update() {
+    document.querySelector(".navigation").style.transform = 'translateY(0px)';
   },
   methods: {
     resetNavigationStatus() {
