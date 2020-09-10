@@ -306,7 +306,9 @@ export default {
     }
 
     &-container {
-      height: 0px;
+      @media screen and (max-width: 1264px) {
+        height: 0px;
+      }
 
       &--active {
         height: 100%;
