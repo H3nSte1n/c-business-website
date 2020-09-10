@@ -82,43 +82,35 @@ export default {
       opacityStatus: true,
       items: [
         {
-          src: 'https://picsum.photos/450/300?random=23123',
+          src: require("~/assets/images/slider-1-sehen.jpg"),
           alt: 'test picsum image',
           text: {
             tag: 'Sehen,',
-            content: 'was ihnen wirklich wichtig ist'
+            content: 'was Ihnen wirklich wichtig ist.'
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=2351123',
-          alt: 'test picsum image',
-          text: {
-            tag: 'Hören,',
-            content: 'was ihnen wirklich wichtig ist'
-          }
-        },
-        {
-          src: 'https://picsum.photos/450/300?random=2311223',
+          src: require("~/assets/images/slider-2-fuehlen.jpg"),
           alt: 'test picsum image',
           text: {
             tag: 'Fühlen,',
-            content: 'was ihnen wirklich wichtig ist'
+            content: 'was Ihnen gut tut.'
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=23312123',
+          src: require("~/assets/images/slider-3-erfahren.jpg"),
           alt: 'test picsum image',
           text: {
-            tag: 'Schmecken,',
-            content: 'was ihnen wirklich wichtig ist'
+            tag: 'Erfahren,',
+            content: 'was Sie können.'
           }
         },
         {
-          src: 'https://picsum.photos/450/300?random=23312123',
+          src: require("~/assets/images/slider-4-wissen.jpg"),
           alt: 'test picsum image',
           text: {
-            tag: 'Schmecken,',
-            content: 'was ihnen wirklich wichtig ist'
+            tag: 'Wissen,',
+            content: 'was Sie brauchen.'
           }
         },
       ],

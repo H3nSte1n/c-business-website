@@ -27,12 +27,12 @@
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
         >
-          <p class="body-1">
+          <p class="stripe__desc">
             {{ content.desc_1 }}
           </p>
           <p
             v-if="content.desc_2"
-            class="body-1"
+            class="stripe__desc"
           >
             {{ content.desc_2 }}
           </p>
@@ -74,9 +74,12 @@ export default {
 
 .stripe {
   &__headline {
-    font-size: 2.1rem;
+    font-size: 2.8rem;
     text-align: left;
     font-weight: 300;
+  }
+  &__desc {
+    font-size: 1.2rem;
   }
   &--yellow {
     background-color: $yellow;

@@ -4,10 +4,9 @@
     class="pa-0"
   >
     <Header :content="header" />
-    <Teaser
-      :color="teaser.color"
-      :content="teaser.content"
-      :length="false"
+    <Stripe
+      :content="stripe.content"
+      b-color="blue"
     />
     <Quote
       :quote="quote"
@@ -37,7 +36,7 @@
 
 <script>
 import Contact from '@/components/form/contact';
-import Teaser from '@/components/teaser';
+import Stripe from '@/components/stripe';
 import Quote from '@/components/quote';
 import Keywords from '@/components/keywords';
 import Header from '@/components/header';
@@ -47,7 +46,7 @@ import assetCard from '@/components/asset-card';
 import offerCard from '@/components/offer-card';
 
 export default {
-  components: { Header, Wall, assetCard, offerCard, Contact, Teaser, Quote, Keywords },
+  components: { Header, Wall, assetCard, offerCard, Contact, Stripe, Quote, Keywords },
   mixins: [ButtonEvents],
   transition: "swipe",
   data () {
@@ -60,12 +59,12 @@ export default {
           alt: 'unternehmenscoaching'
         }
       },
-      teaser: {
+      stripe: {
           color: "light-blue",
           content: {
             headline: 'Gesundes Betriebsklima als gemeinsames Entwicklungsziel',
-            desc: 'Unternehmen, denen im Rahmen der Prävention die gesundheitliche Fürsorge der Mitarbeiter am Herzen liegt, biete ich Betriebliches Gesundheitsmanagement BGM an. Die Arbeitszeit macht einen großen Teil der Lebenszeit aus. Da lohnt es sich, wenn die Mitarbeiter zufrieden sind, die Qualität der Arbeit halten oder sogar noch verbessern.',
-            desc2: 'Führungskräfte wissen oft gar nicht, dass sie an der Gesundheit ihrer Mitarbeiter einen großen Anteil haben. Führen auf einem hohen Level heißt, die eigene innere Haltung und mentale Gesundheit so weiter zu entwickeln, dass andere gerne folgen. Den anvertrauten Mitarbeitern gelingt es dann leichter, die eigene Orientierung und Selbstbestimmung zu finden. Es kann daher für Unternehmen sinnvoll sein, auf die Führungskultur, das Stressmanagement, die Work-Life-Balance und die Burnout-Prävention zu schauen, um mögliche gesundheitsfördernde Strukturen, Abläufe und Maßnahmen für Führungskräfte, Teams oder auch einzelne Mitarbeiter zu entdecken.'
+            desc_1: 'Unternehmen, denen im Rahmen der Prävention die gesundheitliche Fürsorge der Mitarbeiter am Herzen liegt, biete ich Betriebliches Gesundheitsmanagement BGM an. Die Arbeitszeit macht einen großen Teil der Lebenszeit aus. Da lohnt es sich, wenn die Mitarbeiter zufrieden sind, die Qualität der Arbeit halten oder sogar noch verbessern.',
+            desc_2: 'Führungskräfte wissen oft gar nicht, dass sie an der Gesundheit ihrer Mitarbeiter einen großen Anteil haben. Führen auf einem hohen Level heißt, die eigene innere Haltung und mentale Gesundheit so weiter zu entwickeln, dass andere gerne folgen. Den anvertrauten Mitarbeitern gelingt es dann leichter, die eigene Orientierung und Selbstbestimmung zu finden. Es kann daher für Unternehmen sinnvoll sein, auf die Führungskultur, das Stressmanagement, die Work-Life-Balance und die Burnout-Prävention zu schauen, um mögliche gesundheitsfördernde Strukturen, Abläufe und Maßnahmen für Führungskräfte, Teams oder auch einzelne Mitarbeiter zu entdecken.'
         }
       },
       quote: 'Gerne helfe ich Ihnen dabei oder lernen Sie mich über meinen Vortag <span class="highlight--light-blue">„Was kann ich tun, um den Krankenstand der Mitarbeiter zu reduzieren?“</span> kennen.',

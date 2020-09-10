@@ -13,7 +13,7 @@
             :class="{'quote__content--left': position === 'left'}"
           >
             <p
-              class="quote__headline"
+              class="quote__headline mb-7"
               :class="`text-${position}`"
               v-html="quote"
             />
@@ -57,16 +57,24 @@ export default {
   background-color: $white;
   padding: 40vh 0;
   &__content {
-    max-width: 570px;
+    max-width: 780px;
     margin: 0 auto;
 
     &--left {
       margin: 0;
     }
   }
+
+  &__desc {
+    font-size: 1.2rem;
+  }
   &__headline {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 400;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 35px;
+    }
   }
 
   .highlight {

@@ -3,7 +3,7 @@
     <v-row class="asset_card__content">
       <v-col>
         <v-img
-          width="52"
+          width="42"
           class="d-flex mx-auto mb-6"
           :src="content.icon.src"
           :alt="content.icon.alt"
@@ -32,15 +32,15 @@ export default {
 
 .asset_card {
   &__wrapper {
-    min-width: 360px;
-    height: 360px;
+    min-width: 300px;
+    height: 300px;
     background-color: $yellow-2;
     border-radius: 100%;
 
     @media screen and (min-width: 640px) {
-      min-width: 390px;
-      width: 390px;
-      height: 390px;
+      min-width: 360px;
+      width: 360px;
+      height: 360px;
     }
   }
 
@@ -48,12 +48,17 @@ export default {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    padding: 0 10px;
+    padding: 0 30px;
   }
 
   &__desc {
-    font-size: 22px;
-    line-height: 34px;
+    font-size: 15px;
+    line-height: 23px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 18px;
+      line-height: 30px;
+    }
   }
 }
 </style>

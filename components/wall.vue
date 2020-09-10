@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="wall__container">
+  <v-container fluid class="wall__container my-4">
     <h3
       class="wall__title text-center"
       v-html="title"
@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/colors.scss';
 .wall {
   display: flex;
   flex-wrap: unset;
@@ -45,6 +46,7 @@ export default {
   &__container {
     min-height: 80vh;
     padding: 100px 0;
+    background-color: $light-grey;
   }
 
   &__wrapper {

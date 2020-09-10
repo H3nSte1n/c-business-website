@@ -28,9 +28,9 @@ export default {
 
 .asset_card {
   &__wrapper {
-    min-width: 360px;
-    height: 300px;
-    background-color: $light-blue-3;
+    min-width: 340px;
+    height: 280px;
+    background-color: $light-blue-4;
 
     @media screen and (min-width: 640px) {
       min-width: 390px;
@@ -47,18 +47,33 @@ export default {
   }
 
   &__pagination {
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 25px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
 
   &__headline {
-    font-size: 30px;
-    line-height: 34px;
+    font-size: 20px;
+    line-height: 25px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
 
   &__desc {
-    font-size: 22px;
-    line-height: 34px;
+    font-size: 15px;
+    line-height: 23px;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 18px;
+      line-height: 30px;
+    }
   }
 }
 </style>
