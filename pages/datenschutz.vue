@@ -16,8 +16,11 @@
 <script>
 import HeaderLite from '@/components/header-lite';
 import ContentBox from '@/components/content-box';
+import ButtonEvents from '@/mixins/buttonEvents';
+
 export default {
   components: {HeaderLite, ContentBox},
+  mixins: [ButtonEvents],
   data() {
     return {
       content: {

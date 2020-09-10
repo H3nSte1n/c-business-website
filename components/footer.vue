@@ -141,23 +141,23 @@
                   cols="5"
                   class="text-left"
                 >
-                  <router-link
-                    to="/impressum"
+                  <a
+                    href="/impressum"
                     class="body-1 footer__button button"
                   >
                     Impressum
-                  </router-link>
+                  </a>
                 </v-col>
                 <v-col
                   cols="7"
                   class="text-right"
                 >
-                  <router-link
-                    to="/datenschutz"
+                  <a
+                    href="/datenschutz"
                     class="body-1 footer__button button"
                   >
                     Datenschutz
-                  </router-link>
+                  </a>
                 </v-col>
               </v-row>
             </v-col>
