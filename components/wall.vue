@@ -1,5 +1,5 @@
 <template>
-  <div class="my-1 wall__container">
+  <v-container fluid class="wall__container">
     <h3
       class="wall__title text-center"
       v-html="title"
@@ -16,7 +16,7 @@
         </v-col>
       </v-row>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -43,7 +43,8 @@ export default {
   }
 
   &__container {
-    height: 80vh;
+    min-height: 80vh;
+    padding: 100px 0;
   }
 
   &__wrapper {
