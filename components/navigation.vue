@@ -43,6 +43,7 @@
           lg="10"
           xl="8"
           class="pa-0"
+          :class="$vuetify.breakpoint.mdAndDown ? '' : 'my-9'"
         >
           <div
             class="navigation__links"
