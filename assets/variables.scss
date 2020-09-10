@@ -4,3 +4,6 @@
 // $font-size-root: 20px;
 
 .v-window { &-x-transition, &-x-reverse-transition, &-y-transition, &-y-reverse-transition { &-enter-active, &-leave-active { transition: .9s cubic-bezier(.25, .8, .50, 1) !important; } } }
+.v-application a {
+  color: #000000;
+}
