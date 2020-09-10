@@ -42,8 +42,8 @@
           cols="12"
           lg="10"
           xl="8"
-          class="pa-0"
-          :class="$vuetify.breakpoint.mdAndDown ? '' : 'my-9'"
+          class="pa-0 navigation__links-container"
+          :class="[{'navigation__links-container--active': isNavigationMobilActive, 'my-9': !$vuetify.breakpoint.mdAndDown}]"
         >
           <div
             class="navigation__links"
@@ -202,6 +202,9 @@ export default {
     }
   }
 
+  &__container {
+  }
+
   &__logo {
     cursor: none;
     color: $dark-3;
@@ -299,6 +302,14 @@ export default {
       &--active {
         opacity: 1;
         pointer-events: auto;
+      }
+    }
+
+    &-container {
+      height: 0px;
+
+      &--active {
+        height: 100%;
       }
     }
   }
