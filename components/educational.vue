@@ -42,32 +42,7 @@ export default {
   data() {
     return {
       headline: 'Von mir bekommen Sie',
-      iconKachelConten: [
-        {
-          icon: require('~/assets/images/claudia-eck-analyse.svg'),
-          content: {
-            desc: 'Analyse von bereits bestehenden gesundheitsfördernden Strukturen und Abläufe',
-            headline: 'Führungskräftecoaching',
-            subline: 'Trotz steigender Komplexität und Arbeitsbelastung angstfrei, sicher, und gesunderhaltend führen?'
-          }
-        },
-        {
-          icon: require('~/assets/images/claudia-eck-identifizierung.svg'),
-          content: {
-            desc: 'Identifizierung von organisationsinternen gesundheitsbelastenden Bedingungen',
-            headline: 'Teamcoaching',
-            subline: 'Gruppendynamische Prozesse erkennen und unterschiedliche Rollen gewinnbringend nutzen'
-          }
-        },
-        {
-          icon: require('~/assets/images/claudia-eck-ideen.svg'),
-          content: {
-            desc: 'Vorschläge von nutzbringenden und gesundheitsfördernden Maßnahmen in Richtung „attraktiver Arbeitgeber“',
-            headline: 'Einzelcoaching',
-            subline: 'Die individuelle Persönlichkeit als Stärke authentisch und klar positionieren'
-          }
-        }
-      ]
+
     }
   }
 }

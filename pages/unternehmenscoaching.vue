@@ -12,7 +12,20 @@
     <Quote
       :quote="quote"
     />
-    <Educational />
+    <Wall :title="title__asset_card">
+      <asset-card
+        v-for="(value, key) in assetCardContent"
+        :key="key"
+        :content="value.content"
+      />
+    </Wall>
+    <Wall :title="title__offer_card">
+      <offer-card
+        v-for="(value, key) in offerCardContent"
+        :key="key"
+        :content="value.content"
+      />
+    </Wall>
     <keywords />
     <Contact
       :content="content_contact"
@@ -23,16 +36,18 @@
 </template>
 
 <script>
-import Educational from '@/components/educational';
 import Contact from '@/components/form/contact';
 import Teaser from '@/components/teaser';
 import Quote from '@/components/quote';
 import Keywords from '@/components/keywords';
 import Header from '@/components/header';
 import ButtonEvents from '@/mixins/buttonEvents';
+import Wall from '@/components/wall';
+import assetCard from '@/components/asset-card';
+import offerCard from '@/components/offer-card';
 
 export default {
-  components: { Header, Educational, Contact, Teaser, Quote, Keywords },
+  components: { Header, Wall, assetCard, offerCard, Contact, Teaser, Quote, Keywords },
   mixins: [ButtonEvents],
   transition: "swipe",
   data () {
@@ -56,7 +71,62 @@ export default {
       quote: 'Gerne helfe ich Ihnen dabei oder lernen Sie mich über meinen Vortag <span class="highlight--light-blue">„Was kann ich tun, um den Krankenstand der Mitarbeiter zu reduzieren?“</span> kennen.',
       content_contact: {
         headline: 'Gerne unterbreite ich Ihnen ein Individuelles Angebot:'
-      }
+      },
+      title__asset_card: 'Von mir <nobr>bekommen Sie</nobr>',
+      title__offer_card: 'Angebote',
+      assetCardContent: [
+        {
+
+          content: {
+            desc: 'Analyse von bereits bestehenden gesundheitsfördernden Strukturen und Abläufe',
+            icon: {
+              src: require('~/assets/images/claudia-eck-analyse.svg'),
+              alt: 'analyse icon'
+            }
+          }
+        },
+        {
+          content: {
+            desc: 'Identifizierung von organisationsinternen gesundheitsbelastenden Bedingungen',
+            icon: {
+              src: require('~/assets/images/claudia-eck-identifizierung.svg'),
+              alt: 'identifizierung icon'
+            }
+          }
+        },
+        {
+          content: {
+            desc: 'Vorschläge von nutzbringenden und gesundheitsfördernden Maßnahmen in Richtung „attraktiver Arbeitgeber“',
+            icon: {
+              src: require('~/assets/images/claudia-eck-ideen.svg'),
+              alt: 'ideen icon'
+            }
+          }
+        }
+      ],
+      offerCardContent: [
+        {
+          content: {
+            pagination: '01',
+            headline: 'Führungskräftecoaching',
+            desc: 'Trotz steigender Komplexität und Arbeitsbelastung angstfrei, sicher, und gesunderhaltend führen?'
+          }
+        },
+        {
+          content: {
+            pagination: '02',
+            headline: 'Teamcoaching',
+            desc: 'Gruppendynamische Prozesse erkennen und unterschiedliche Rollen gewinnbringend nutzen'
+          }
+        },
+        {
+          content: {
+            pagination: '03',
+            headline: 'Einzelcoaching',
+            desc: 'Die individuelle Persönlichkeit als Stärke authentisch und klar positionieren'
+          }
+        }
+      ]
     }
   }
 }
