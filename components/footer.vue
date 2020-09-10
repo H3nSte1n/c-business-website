@@ -95,7 +95,7 @@
                 <v-col class="d-flex justify-center">
                   <v-btn
                     icon
-                    href="https://www.xing.com/"
+                    href="https://de-de.facebook.com/claudia.eck.56"
                     class="button"
                     target="_blank"
                   >
@@ -109,7 +109,7 @@
                 <v-col class="d-flex justify-center">
                   <v-btn
                     icon
-                    href="https://www.xing.com/"
+                    href="https://twitter.com/MissClaudieck"
                     class="button"
                     target="_blank"
                   >
@@ -123,7 +123,7 @@
                 <v-col class="d-flex justify-center">
                   <v-btn
                     icon
-                    href="https://www.xing.com/"
+                    href="https://www.xing.com/profile/Claudia_Eck"
                     class="button"
                     target="_blank"
                   >
