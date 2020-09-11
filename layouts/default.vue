@@ -115,6 +115,7 @@ body {
   &:active, &:focus, &:visited, &:hover {
     color: $black;
     cursor: none;
+    outline: none;
   }
 
   &--mobile-active {
