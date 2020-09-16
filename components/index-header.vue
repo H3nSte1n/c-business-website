@@ -9,55 +9,40 @@
         cols="12"
         sm="6"
         xl="5"
-        class="d-flex flex-column-reverse flex-sm-column pl-12 mb-12 header-box"
-        :class="{'header-box-active': isLoaded}"
+        class="d-flex flex-column-reverse flex-sm-column pl-12 mb-12 header"
+        :class="{'header-active': isLoaded}"
       >
         <h1
-          class="font-weight-bold header-box__headline"
+          class="font-weight-bold header__headline"
         >
-          <span class="word-container">
+          <span
+            v-for="(item, key) of preparedHeadline"
+            :key="key"
+            class="word-container"
+          >
             <span
               class="word"
-              :class="{'word-active': isLoaded}"
-            >
-              Claudia
-            </span>
-          </span>
-          <span class="word-container">
-            <span
-              class="word word-2"
-              :class="{'word-active': isLoaded}"
-            >
-              Eck
-            </span>
+              :class="[`word-${key}`, {'word-active': isLoaded}]"
+              v-html="item"
+            />
           </span>
         </h1>
-        <h2 class="header-box__subline">
-          <span class="word-container">
+        <p
+          v-if="content.desc"
+          class="header__subline"
+        >
+          <span
+            v-for="(item, key) of preparedDescription"
+            :key="key"
+            class="word-container"
+          >
             <span
-              class="word word-3"
-              :class="{'word-active': isLoaded}"
-            >
-              Unternehmens-
-            </span>
+              class="word"
+              :class="[`word-${preparedHeadline.length + 1}`, {'word-active': isLoaded}]"
+              v-html="item"
+            />
           </span>
-          <span class="word-container">
-            <span
-              class="word word-4"
-              :class="{'word-active': isLoaded}"
-            >
-              &
-            </span>
-          </span>
-          <span class="word-container">
-            <span
-              class="word word-5"
-              :class="{'word-active': isLoaded}"
-            >
-              Persönlichkeitscoaching
-            </span>
-          </span>
-        </h2>
+        </p>
       </v-col>
       <v-col
         cols="12"
@@ -95,10 +80,19 @@ export default {
       type: Object,
       required: true,
       default: () => {}
+    },
+    content: {
+      type: Object,
+      required: true,
+      default: () => {}
     }
   },
-  data() {
-    return {
+  computed: {
+    preparedHeadline() {
+      return this.content.headline.split(' ').join('&nbsp;,').split(',');
+    },
+    preparedDescription() {
+      return this.content.desc.split(' ').join('&nbsp;,').split(',');
     }
   }
 }
@@ -107,7 +101,7 @@ export default {
 <style scoped lang="scss">
 @import '@/scss/colors.scss';
 
-.header-box {
+.header {
   &__headline {
       font-size: 3.75rem;
       font-weight: 300;
@@ -169,24 +163,28 @@ export default {
 .word {
   position: relative;
   top: 105px;
+  opacity: 0;
   transition: top 0.75s ease-out 0.5s;
   &-2 {
     transition: top 0.75s ease-out 1s;
   }
   &-3 {
-    top: 0px;
-    opacity: 0;
-    transition: opacity 1s ease-out 1.5s;
+    transition: top 1s ease-out 1.2s;
   }
   &-4 {
-    top: 0px;
-    opacity: 0;
-    transition: opacity 1s ease-out 1.8s;
+    transition: top 1s ease-out 1.5s;
   }
   &-5 {
-    top: 0px;
-    opacity: 0;
-    transition: opacity 1s ease-out 2s;
+    transition: top 1s ease-out 1.8s;
+  }
+  &-6 {
+    transition: top 1s ease-out 2s;
+  }
+  &-7 {
+    transition: top 1s ease-out 2.2s;
+  }
+  &-8 {
+    transition: top 1s ease-out 2.3s;
   }
 
   &-active {

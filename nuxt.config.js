@@ -78,6 +78,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
+    '@nuxtjs/strapi',
   ],
 
   recaptcha: {
