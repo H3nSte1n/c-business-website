@@ -44,10 +44,11 @@ import ButtonEvents from '@/mixins/buttonEvents';
 import Wall from '@/components/wall';
 import assetCard from '@/components/asset-card';
 import offerCard from '@/components/offer-card';
+import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
   components: { Header, Wall, assetCard, offerCard, Contact, Stripe, Quote, Keywords },
-  mixins: [ButtonEvents],
+  mixins: [ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {
     return {

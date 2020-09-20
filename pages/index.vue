@@ -2,7 +2,6 @@
   <Preload :loading="loading">
     <v-container>
       <Index-Header
-        v-if="Header"
         :is-loaded="!loading"
         :img="Header.img"
         :content="Header.content"
@@ -33,7 +32,7 @@ export default {
   data () {
     return {
       loading: true,
-      Header: null,
+      Header: {},
       Teaser: [],
     }
   },

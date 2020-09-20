@@ -27,15 +27,7 @@
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
         >
-          <p class="stripe__desc">
-            {{ content.desc_1 }}
-          </p>
-          <p
-            v-if="content.desc_2"
-            class="stripe__desc"
-          >
-            {{ content.desc_2 }}
-          </p>
+          <p class="stripe__desc" v-html="content.desc_1" />
         </v-col>
       </v-row>
     </v-container>

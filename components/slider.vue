@@ -32,7 +32,8 @@
               class="slider__text"
               :class="{'slider__text-active': opacityStatus }"
             >
-              <span class="slider__text--bold">{{ items[currentItem].text.tag }}</span><br>{{ items[currentItem].text.content }}
+              <span class="slider__text--bold" v-html="items[currentItem].text.tag" /><br>
+              <span v-html="items[currentItem].text.content" />
             </p>
           </v-col>
         </v-row>
@@ -77,43 +78,16 @@
 
 <script>
 export default {
+  props: {
+    items: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
   data() {
     return {
       opacityStatus: true,
-      items: [
-        {
-          src: require("~/assets/images/slider-1-sehen.jpg"),
-          alt: 'test picsum image',
-          text: {
-            tag: 'Sehen,',
-            content: 'was Ihnen wirklich wichtig ist.'
-          }
-        },
-        {
-          src: require("~/assets/images/slider-2-fuehlen.jpg"),
-          alt: 'test picsum image',
-          text: {
-            tag: 'Fühlen,',
-            content: 'was Ihnen gut tut.'
-          }
-        },
-        {
-          src: require("~/assets/images/slider-3-erfahren.jpg"),
-          alt: 'test picsum image',
-          text: {
-            tag: 'Erfahren,',
-            content: 'was Sie können.'
-          }
-        },
-        {
-          src: require("~/assets/images/slider-4-wissen.jpg"),
-          alt: 'test picsum image',
-          text: {
-            tag: 'Wissen,',
-            content: 'was Sie brauchen.'
-          }
-        },
-      ],
       currentItem: 0,
     }
   },

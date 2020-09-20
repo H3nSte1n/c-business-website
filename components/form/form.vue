@@ -33,9 +33,7 @@
           md="8"
           xl="8"
         >
-          <p class="contact__desc">
-            {{ content.desc }}
-          </p>
+          <p class="contact__desc" v-html="content.desc" />
         </v-col>
       </v-row>
       <v-row

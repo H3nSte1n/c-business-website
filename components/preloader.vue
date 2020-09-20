@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="loader__wrapper">
     <div v-if="loading" class="loader">
     </div>
     <slot v-else />
@@ -28,9 +28,13 @@ export default {
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-  position: relative;
+  position: absolute;
   left: 50%;
   top: 50%;
+
+  &__wrapper {
+    min-height: calc(100vh - 100px);
+  }
 }
 
 @keyframes spin {
