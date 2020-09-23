@@ -45,12 +45,6 @@ export default {
   data () {
     return {
       loading: true,
-      header: {},
-      article: [],
-      quote: null,
-      presentation: {},
-      contact: {},
-      slider: []
     }
   },
   mounted() {
@@ -59,11 +53,11 @@ export default {
   methods: {
     async loadData() {
       const data = await this.$strapi.find('Persoenlichkeitscoaching');
-      this.passHeaderData(data);
-      this.passArticleData(data);
-      this.passQuoteData(data);
+      this.passHeaderData(data.Header);
+      this.passArticleData(data.Article);
+      this.passQuoteData(data.Quote);
       this.passPresentationData(data);
-      this.passContactData(data);
+      this.passContactData(data.Contact);
       this.passSliderData(data);
       this.loading = false;
     }

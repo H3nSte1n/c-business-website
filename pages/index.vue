@@ -42,7 +42,6 @@ export default {
   methods: {
     async loadData() {
       const HomepageData = await this.$strapi.find('Homepage');
-      console.log('tsdasd', HomepageData, process.env.BASE_URL_STRAPI);
       this.passHeaderData(HomepageData);
       this.passTeaserData(HomepageData);
       this.loading = false;
@@ -79,7 +78,6 @@ export default {
         }
         this.Teaser.push(teaserItem)
       });
-      console.log(this.Teaser);
     }
   }
 }
