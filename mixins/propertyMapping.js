@@ -1,17 +1,27 @@
 export default {
+  data() {
+    return {
+      header: {},
+      article: [],
+      quote: null,
+      presentation: {},
+      contact: {},
+      slider: []
+    }
+  },
   methods: {
-    passHeaderData(PersoenlichkeitscoachingData) {
+    passHeaderData(HeaderData) {
       this.header = {
-        headline: PersoenlichkeitscoachingData.Header.Headline,
-        desc: PersoenlichkeitscoachingData.Header.Subline,
+        headline: HeaderData.Headline,
+        desc: HeaderData.Subline,
         img: {
-          src: process.env.BASE_URL_STRAPI + PersoenlichkeitscoachingData.Header.Image.url,
-          alt: PersoenlichkeitscoachingData.Header.Image.alternativeText
+          src: process.env.BASE_URL_STRAPI + HeaderData.Image.url,
+          alt: HeaderData.Image.alternativeText
         },
       }
     },
-    passArticleData(PersoenlichkeitscoachingData) {
-      PersoenlichkeitscoachingData.Article.forEach(item => {
+    passArticleData(ArticleData) {
+      ArticleData.forEach(item => {
         let articleItem = {
           headline: item.Headline,
           desc_1: item.description,
@@ -19,8 +29,8 @@ export default {
         this.article.push(articleItem)
       });
     },
-    passQuoteData(PersoenlichkeitscoachingData) {
-      this.quote = PersoenlichkeitscoachingData.Quote;
+    passQuoteData(QuoteData) {
+      this.quote = QuoteData;
     },
     passPresentationData(PersoenlichkeitscoachingData) {
         this.presentation = {
@@ -28,10 +38,10 @@ export default {
           desc: PersoenlichkeitscoachingData.Presentation.Description,
       }
     },
-    passContactData(PersoenlichkeitscoachingData) {
+    passContactData(ContactData) {
         this.contact = {
-          headline: PersoenlichkeitscoachingData.Contact.headline,
-          desc: PersoenlichkeitscoachingData.Contact.subline,
+          headline: ContactData.headline,
+          desc: ContactData.subline,
       }
     },
     passSliderData(PersoenlichkeitscoachingData) {
