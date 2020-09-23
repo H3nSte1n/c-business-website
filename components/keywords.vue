@@ -13,9 +13,7 @@
         sm="4"
         md="3"
       >
-        <p class="body-1">
-          {{ desc }}
-        </p>
+        <p class="body-1" v-html="keywords.desc" />
       </v-col>
       <v-col
         cols="7"
@@ -39,14 +37,10 @@
 
 <script>
 export default {
-  data () {
-    return {
-      desc: 'Mein Coaching-Stil ist dabei wertschätzend und auf Augenhöhe mit Ihnen zu arbeiten.',
-      keywords: {
-        first: 'kompetenzaktivierend',
-        second: 'lösungsorientiert',
-        third: 'nachhaltig'
-      }
+  props: {
+    keywords: {
+      type: Object,
+      required: true
     }
   }
 }

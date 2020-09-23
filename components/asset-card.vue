@@ -8,9 +8,7 @@
           :src="content.icon.src"
           :alt="content.icon.alt"
         />
-        <p class="text-center asset_card__desc mt-6">
-          {{ content.desc }}
-        </p>
+        <p class="text-center asset_card__desc mt-6" v-html="content.desc" />
       </v-col>
     </v-row>
   </v-container>

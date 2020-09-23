@@ -4,9 +4,7 @@
       <v-col>
         <p class="asset_card__pagination">{{ content.pagination }}</p>
         <h2 class="asset_card__headline">{{ content.headline }}</h2>
-        <p class="asset_card__desc mt-6">
-          {{ content.desc }}
-        </p>
+        <p class="asset_card__desc mt-6" v-html="content.desc" />
       </v-col>
     </v-row>
   </v-container>
