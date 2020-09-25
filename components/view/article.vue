@@ -1,6 +1,6 @@
 <template>
-  <div :class="`stripe--${bColor}`">
-    <v-container class="stripe">
+  <div :class="`article--${bColor}`">
+    <v-container ref="animateBoxHeight">
       <v-row
         justify="center"
         align="center"
@@ -15,7 +15,7 @@
           xl="4"
           class="d-flex align-self-start mr-9"
         >
-          <h2 class="stripe__headline">
+          <h2 class="article__headline">
             {{ content.headline }}
           </h2>
         </v-col>
@@ -27,7 +27,7 @@
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
         >
-          <p class="stripe__desc" v-html="content.desc_1" />
+          <p class="article__desc" v-html="content.desc_1" />
         </v-col>
       </v-row>
     </v-container>
@@ -48,15 +48,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  methods: {
-    eventsInit() {
-      document.addEventListener(
-        'scroll',
-        () => { this.animateBoxHeight('stripe') },
-        false
-      );
-    }
   }
 }
 </script>
@@ -64,7 +55,7 @@ export default {
 <style lang="scss">
 @import '@/scss/colors.scss';
 
-.stripe {
+.article {
   &__headline {
     font-size: 2.8rem;
     text-align: left;

@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import Header from '@/components/header';
+import Header from '@/components/header/header';
 import Contact from '@/components/form/contact';
-import Wrapper from '@/components/wrapper';
-import Preload from '@/components/preloader';
+import Wrapper from '@/components/container/wrapper';
+import Preload from '@/components/global/preloader';
 import ButtonEvents from '@/mixins/buttonEvents';
 import PropertyMapping from '@/mixins/propertyMapping';
 
@@ -36,7 +36,6 @@ export default {
   data() {
     return {
       loading: true,
-      desc: 'Prima. Sie sind bereit einen ersten Schritt zu machen. Lernen Sie mich kennen und fragen Sie mich an – egal ob per Mail oder Telefon. Gerne können wir uns in einem ersten persönlichen Treffen oder Telefonat kennenlernen. All Ihre Fragen zum Coaching und der Vorgehensweise können Sie hier stellen. Erzählen Sie mir Ihr Anliegen und wir überlegen gemeinsam, wie wir starten können. Wenn mein Leistungsangebot zu Ihrem Anliegen passt und Sie es wünschen, kann ich Ihnen ein unverbindliches Angebot machen.',
     }
   },
   mounted() {

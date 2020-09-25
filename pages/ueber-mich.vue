@@ -9,7 +9,7 @@
         v-for="(content, key) in article"
         :key="key"
       >
-        <Stripe
+        <Article
           :content="content"
           :b-color="key < article.length / 2 ? 'yellow' : 'blue'"
         />
@@ -19,13 +19,13 @@
 </template>
 
 <script>
-import Stripe from '@/components/stripe';
-import Header from '@/components/header';
-import Preload from '@/components/preloader';
+import Article from '@/components/view/article';
+import Header from '@/components/header/header';
+import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {Header, Stripe, Preload},
+  components: {Header, Article, Preload},
   mixins: [PropertyMapping],
   transition: "swipe",
   data() {

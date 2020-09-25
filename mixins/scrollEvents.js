@@ -2,6 +2,11 @@ import DetectTouchDevices from '@/mixins/detectTouchDevices';
 
 export default {
   mixins: [DetectTouchDevices],
+  data() {
+    return {
+      mouseIsCreated: false,
+    }
+  },
   mounted() {
     this.isLoaded = true;
     if (this.is_touch_device()) return;
@@ -43,7 +48,6 @@ export default {
       return cursorPos.pageX || cursorPos.pageY ? cursorPos : false;
     },
     cursorMove(e) {
-      // if(e.target.classList.contains('button')) return false
       this.createMouse(e);
       this.validateCursorPos(e) ? this.setCursorPos(this.validateCursorPos(e)) : this.setCursorPos(e);
     }

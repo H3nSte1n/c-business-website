@@ -5,7 +5,7 @@
       class="pa-0"
     >
       <Header :content="header" />
-      <Stripe
+      <Article
         :content="article[0]"
         b-color="blue"
       />
@@ -38,19 +38,19 @@
 
 <script>
 import Contact from '@/components/form/contact';
-import Stripe from '@/components/stripe';
-import Quote from '@/components/quote';
-import Keywords from '@/components/keywords';
-import Header from '@/components/header';
+import Article from '@/components/view/article';
+import Quote from '@/components/view/quote';
+import Keywords from '@/components/view/keywords';
+import Header from '@/components/header/header';
 import ButtonEvents from '@/mixins/buttonEvents';
-import Wall from '@/components/wall';
-import AssetCard from '@/components/asset-card';
-import OfferCard from '@/components/offer-card';
+import Wall from '@/components/container/wall';
+import AssetCard from '@/components/view/asset-card';
+import OfferCard from '@/components/view/offer-card';
 import PropertyMapping from '@/mixins/propertyMapping';
-import Preload from '@/components/preloader';
+import Preload from '@/components/global/preloader';
 
 export default {
-  components: { Header, Wall, AssetCard, OfferCard, Contact, Stripe, Quote, Keywords, Preload },
+  components: { Header, Wall, AssetCard, OfferCard, Contact, Article, Quote, Keywords, Preload },
   mixins: [ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {

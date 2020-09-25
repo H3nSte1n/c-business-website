@@ -12,7 +12,7 @@
         md="5"
         xl="4"
         :order-md="content.order ? content.order : 'first'"
-        class="my-9 kachel__img-container"
+        class="my-9 teasefr__img-container"
       >
         <v-img
           :src="content.img.src"
@@ -29,10 +29,10 @@
         xl="4"
       >
         <div
-          class="kachel__invisible"
-          :class="{'kachel__invisible-enable': isClicked}"
+          class="teaser__invisible"
+          :class="{'teaser__invisible-enable': isClicked}"
         />
-        <h2 class="display-1 font-weight-light kachel__headline">
+        <h2 class="display-1 font-weight-light teaser__headline">
           {{ content.headline }}
         </h2>
         <p class="body-1 font-weight-bold mt-2 mb-10">
@@ -71,7 +71,7 @@ export default {
 <style lang="scss">
 @import '@/scss/colors.scss';
 
-.kachel {
+.teaser {
   &__headline {
     word-break: break-word;
     hyphens: auto;

@@ -5,7 +5,7 @@
       class="pa-0"
     >
       <Header :content="header" />
-      <Stripe
+      <Article
         :content="article[0]"
         b-color="yellow"
       />
@@ -14,7 +14,7 @@
         :items="slider"
       />
       <Quote :quote="quote" />
-      <Stripe
+      <Article
         :content="article[1]"
         b-color="blue"
       />
@@ -29,17 +29,17 @@
 </template>
 
 <script>
-import Stripe from '@/components/stripe.vue';
+import Article from '@/components/view/article';
 import Contact from '@/components/form/contact';
-import Quote from '@/components/quote';
-import Slider from '@/components/slider';
-import Header from '@/components/header';
+import Quote from '@/components/view/quote';
+import Slider from '@/components/specific/slider';
+import Header from '@/components/header/header';
 import ButtonEvents from '@/mixins/buttonEvents';
 import PropertyMapping from '@/mixins/propertyMapping';
-import Preload from '@/components/preloader';
+import Preload from '@/components/global/preloader';
 
 export default {
-  components: { Header, Stripe, Contact, Quote, Slider, Preload },
+  components: { Header, Article, Contact, Quote, Slider, Preload },
   mixins: [ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {

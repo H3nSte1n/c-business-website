@@ -1,7 +1,9 @@
 <template>
   <div class="loader__wrapper">
-    <div v-if="loading" class="loader">
-    </div>
+    <div
+      v-if="loading"
+      class="loader"
+    />
     <slot v-else />
   </div>
 </template>

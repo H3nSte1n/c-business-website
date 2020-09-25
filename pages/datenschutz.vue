@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import HeaderLite from '@/components/header-lite';
-import ContentBox from '@/components/content-box';
+import HeaderLite from '@/components/header/header-lite';
+import ContentBox from '@/components/view/content-box';
 import ButtonEvents from '@/mixins/buttonEvents';
 
 export default {

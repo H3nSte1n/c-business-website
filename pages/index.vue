@@ -3,37 +3,35 @@
     <v-container>
       <Index-Header
         :is-loaded="!loading"
-        :img="Header.img"
-        :content="Header.content"
+        :img="header.img"
+        :content="header.content"
       />
       <animated-line />
-      <template v-if="Teaser">
-        <Kachel
-          v-for="(value, key) in Teaser"
-          :key="key"
-          :content="value"
-          :class="key !== 0 ? '' : 'mt-12'"
-        />
-      </template>
+      <Teaser
+        v-for="(value, key) in teasers"
+        :key="key"
+        :content="value"
+        :class="key !== 0 ? '' : 'mt-12'"
+      />
     </v-container>
   </Preload>
 </template>
 
 <script>
-import Kachel from '@/components/kachel';
-import IndexHeader from '@/components/index-header';
-import Preload from '@/components/preloader';
+import Teaser from '@/components/view/teaser';
+import IndexHeader from '@/components/header/index-header';
+import Preload from '@/components/global/preloader';
 import ButtonEvents from '@/mixins/buttonEvents';
-import AnimatedLine from '@/components/animatedLine';
+import AnimatedLine from '@/components/specific/animatedLine';
 
 export default {
-  components: {IndexHeader, Kachel, AnimatedLine, Preload},
+  components: {IndexHeader, Teaser, AnimatedLine, Preload},
   mixins: [ButtonEvents],
   data () {
     return {
       loading: true,
-      Header: {},
-      Teaser: [],
+      header: {},
+      teasers: [],
     }
   },
   mounted() {
@@ -42,26 +40,26 @@ export default {
   methods: {
     async loadData() {
       const HomepageData = await this.$strapi.find('Homepage');
-      this.passHeaderData(HomepageData);
-      this.passTeaserData(HomepageData);
+      this.passHeaderData(HomepageData.Header);
+      this.passTeaserData(HomepageData.teaser);
       this.loading = false;
     },
 
-    passHeaderData(HomepageData) {
-        this.Header = {
+    passHeaderData(headerData) {
+        this.header = {
         content: {
-          headline: HomepageData.Header.headline,
-          desc: HomepageData.Header.subline
+          headline: headerData.headline,
+          desc: headerData.subline
         },
         img: {
-          src: process.env.BASE_URL_STRAPI + HomepageData.Header.image[0].url,
-          alt: HomepageData.Header.image[0].alternativeText
+          src: process.env.BASE_URL_STRAPI + headerData.image[0].url,
+          alt: headerData.image[0].alternativeText
         },
       }
     },
 
-    passTeaserData(HomepageData) {
-      HomepageData.teaser.forEach((item, index) => {
+    passTeaserData(teasersData) {
+      teasersData.forEach((item, index) => {
         let teaserItem = {
           headline: item.Headline,
           subline: item.subline,
@@ -76,7 +74,7 @@ export default {
           },
           order: index % 2 !== 0 ? 'first' : 'last'
         }
-        this.Teaser.push(teaserItem)
+        this.teasers.push(teaserItem)
       });
     }
   }

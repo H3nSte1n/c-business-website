@@ -23,10 +23,13 @@ export default {
   },
 
   created() {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', this.disableScrollIndicator);
+  },
+  methods: {
+    disableScrollIndicator() {
       this.startScrolling = true;
-      window.removeEventListener('scroll', () => {})
-    });
+      window.removeEventListener('scroll', this.disableScrollIndicator);
+    }
   }
 }
 </script>
