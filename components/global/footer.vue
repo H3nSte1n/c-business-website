@@ -34,7 +34,13 @@
                 Claudia Eck
               </p>
               <p class="body-1 font-weight-medium">
-                Samlandstraße 4
+                <a
+                  href="https://goo.gl/maps/ZkQENkpQ16tdrWgx9"
+                  class="body-1 font-weight-medium footer__button button"
+                  target="_blank"
+                >
+                  Samlandstraße 4
+                </a>
               </p>
               <p class="body-1 font-weight-medium">
                 53225 Bonn
