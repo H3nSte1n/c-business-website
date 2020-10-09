@@ -36,7 +36,7 @@
               <p class="body-1 font-weight-medium">
                 <a
                   href="https://goo.gl/maps/ZkQENkpQ16tdrWgx9"
-                  class="body-1 font-weight-medium footer__button button"
+                  class="body-1 font-weight-medium footer__button button footer__button--underline"
                   target="_blank"
                 >
                   Samlandstraße 4
@@ -192,6 +192,10 @@ export default {
   &__button {
     color: $dark-2;
     text-decoration: none;
+
+    &--underline {
+      text-decoration: underline;
+    }
   }
 }
 </style>
