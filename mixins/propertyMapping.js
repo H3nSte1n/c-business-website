@@ -6,7 +6,8 @@ export default {
       quote: null,
       presentation: {},
       contact: {},
-      slider: []
+      slider: [],
+      infoBoxes: []
     }
   },
   methods: {
@@ -14,10 +15,11 @@ export default {
       this.header = {
         headline: HeaderData.Headline,
         desc: HeaderData.Subline,
-        img: {
-          src: process.env.BASE_URL_STRAPI + HeaderData.Image.url,
-          alt: HeaderData.Image.alternativeText
-        },
+      };
+      if(!HeaderData.Image) return;
+      this.header.img = {
+        src: process.env.BASE_URL_STRAPI + HeaderData.Image.url,
+        alt: HeaderData.Image.alternativeText
       }
     },
     passArticleData(ArticleData) {
@@ -27,6 +29,16 @@ export default {
           desc_1: item.description,
         }
         this.article.push(articleItem)
+      });
+    },
+    passInfoBoxesData(InfoBoxData) {
+      InfoBoxData.forEach(item => {
+        console.log(item.infos);
+        let infoBox = {
+          headline: item.headline,
+          desc: item.infos ? item.infos.replace(/<a/g, '<a class="button button--transition"') : '',
+        }
+        this.infoBoxes.push(infoBox)
       });
     },
     passQuoteData(QuoteData) {
