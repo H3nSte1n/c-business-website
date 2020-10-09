@@ -1,5 +1,5 @@
 <template>
-  <v-container class="content-box">
+  <v-container class="wrapper-content-box">
     <v-row justify="center">
       <v-col
         cols="12"
@@ -8,14 +8,21 @@
         <h2 class="text-left mb-3 content-box__headline">
           {{ content.headline }}
         </h2>
-        <div class="text-left" v-html="content.desc" />
+        <content-box
+          v-for="(infos, key) of content.infoBoxes"
+          :key="key"
+          :content="infos"
+        />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import ContentBox from '@/components/view/content-box';
+
 export default {
+  components: { ContentBox },
   props: {
     content: {
       type: Object,
@@ -26,9 +33,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.content-box {
+.wrapper-content-box {
   &__headline {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 </style>
