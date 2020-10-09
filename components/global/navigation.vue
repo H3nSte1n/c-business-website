@@ -11,7 +11,7 @@
         <v-col
           cols="12"
           lg="2"
-          class="text-center pa-0 d-flex justify-space-between"
+          class="text-center pa-0 d-flex justify-space navigation__bar"
           :class="$vuetify.breakpoint.mdAndDown ? 'order-last' : 'order-first'"
         >
           <router-link
@@ -59,7 +59,7 @@
               {{ navItem.name }}
             </nuxt-link>
             <a
-              class="navigation__links-item navigation__links-item text-center d-inline-flex align-center button"
+              class="navigation__links-item navigation__links-item text-center d-inline-flex align-center button navigation__links-item-6"
               :class="{'navigation__links-item--active': isNavigationMobilActive, 'align-end': $vuetify.breakpoint.mdAndDown}"
               href="tel:+1792242543"
             >
@@ -196,6 +196,11 @@ export default {
     }
   }
 
+  &__bar {
+    background-color: white;
+    z-index: 999;
+  }
+
   &__mobil-opener {
     &:focus {
       outline: none;
@@ -280,23 +285,26 @@ export default {
         }
       }
 
+      &-0 {
+        transition: opacity 0.2s ease-in-out 0.2s;
+      }
       &-1 {
-        transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out 0.4s;
       }
       &-2 {
-        transition: opacity 0.2s ease-out 0.1s;
+        transition: opacity 0.2s ease-out 0.5s;
       }
       &-3 {
-        transition: opacity 0.2s ease-out 0.2s;
+        transition: opacity 0.2s ease-out 0.55s;
       }
       &-4 {
-        transition: opacity 0.2s ease-out 0.3s;
+        transition: opacity 0.2s ease-out 0.6s;
       }
       &-5 {
-        transition: opacity 0.2s ease-out 0.35s;
+        transition: opacity 0.2s ease-out 0.65s;
       }
       &-6 {
-        transition: opacity 0.2s ease-out 0.4s;
+        transition: opacity 0.2s ease-out 0.7s;
       }
 
       &--active {
