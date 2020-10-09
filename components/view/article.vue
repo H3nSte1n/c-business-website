@@ -57,9 +57,13 @@ export default {
 
 .article {
   &__headline {
-    font-size: 2.8rem;
+    font-size: 1.8rem;
     text-align: left;
     font-weight: 300;
+
+    @media screen and (min-width: 1264px) {
+      font-size: 2.8rem;
+    }
   }
   &__desc {
     font-size: 1.2rem;
