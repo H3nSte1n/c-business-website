@@ -47,6 +47,12 @@ body {
     height: 3rem;
   }
 
+  &--transition {
+    mix-blend-mode: difference;
+    background-color: white;
+    cursor: none;
+  }
+
   &:active, &:focus, &:hover, &:visited {
     color: $black;
     border-radius: 50%;
@@ -100,6 +106,10 @@ body {
       border-radius: 25px;
       color: $black;
     }
+  }
+
+  &--transition {
+    text-decoration: underline;
   }
 }
 

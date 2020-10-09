@@ -22,6 +22,12 @@ export default {
     },
     transformToButton(buttonElement) {
       const cursor = document.querySelector('.cursor');
+      if(buttonElement.classList.contains('button--transition')) {
+        cursor.classList.remove('cursor-dot');
+        cursor.classList.add('cursor--transition');
+        return;
+      }
+
       cursor.style.width = `${buttonElement.offsetWidth + 20}px`;
       cursor.style.height = `${buttonElement.offsetHeight + 20}px`;
       cursor.style.borderRadius = "25px";
@@ -37,7 +43,6 @@ export default {
         cursor.classList.remove('cursor-dot');
         cursor.style.borderColor = "black";
       }
-
       // fix button position
       // const buttonHeight = buttonElement.getBoundingClientRect().top + window.pageYOffset;
       // const buttonWidth = buttonElement.offsetLeft;
@@ -47,6 +52,7 @@ export default {
     resetTransformToButton() {
       const cursor = document.querySelector('.cursor');
       if(!cursor.classList.contains('cursor-dot')) cursor.classList.add('cursor-dot');
+      if(!cursor.classList.contains('button--transition')) cursor.classList.remove('cursor--transition');
       cursor.style.width = '3rem';
       cursor.style.height = '3rem';
       cursor.style.borderRadius = "50%";
