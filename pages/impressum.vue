@@ -1,45 +1,45 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <header-lite :content="content" />
-        <content-box
-          v-for="(infos, key) of dataprotection"
-          :key="key"
-          :content="infos"
-        />
-      </v-col>
-    </v-row>
-  </v-container>
+  <Preload :loading="loading">
+    <v-container>
+      <v-row>
+        <v-col>
+          <header-lite :content="header" />
+          <content-box
+            v-for="(infos, key) of infoBoxes"
+            :key="key"
+            :content="infos"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </Preload>
 </template>
 
 <script>
 import HeaderLite from '@/components/header/header-lite';
 import ContentBox from '@/components/view/content-box';
 import ButtonEvents from '@/mixins/buttonEvents';
+import Preload from '@/components/global/preloader';
+import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {HeaderLite, ContentBox},
-  mixins: [ButtonEvents],
+  components: {HeaderLite, ContentBox, Preload},
+  mixins: [ButtonEvents, PropertyMapping],
   data() {
     return {
-      content: {
-        headline: 'Impressum',
-      },
-      dataprotection: [
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        },
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        },
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        }
-      ]
+      loading: true,
+    }
+  },
+  mounted() {
+    this.loadData();
+  },
+  methods: {
+    async loadData() {
+      const data = await this.$strapi.find('Impressum');
+      console.log(data);
+      this.passHeaderData(data.Header);
+      this.passInfoBoxesData(data.InfoBox);
+      this.loading = false;
     }
   }
 }

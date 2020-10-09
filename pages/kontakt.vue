@@ -9,7 +9,7 @@
       >
         <a
           href="tel: 01792242543"
-          class="kontakt__tel"
+          class="kontakt__tel button button--transition"
         >01792242543</a>
       </Wrapper>
       <Contact
