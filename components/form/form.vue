@@ -100,7 +100,7 @@
       <v-row>
         <v-col class="d-flex justify-center">
           <button
-            class="px-7 mt-9 button"
+            class="px-7 mt-9 button button--mobile-active"
             type="submit"
           >
             Senden
