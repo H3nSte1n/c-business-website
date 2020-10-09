@@ -4,6 +4,7 @@
       <v-col
         cols="12"
         md="8"
+        class="pa-0"
       >
         <v-carousel
           v-model="currentItem"
@@ -116,7 +117,11 @@ export default {
 
 <style lang="scss">
 .slider {
-  padding: 40vh 0 0 0;
+  padding: 20vh 0 0 0;
+
+  @media screen and (min-width: 1264px) {
+    padding: 40vh 0 0 0;
+  }
 
   &__text {
     font-size: 1.5rem;
