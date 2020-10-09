@@ -5,18 +5,18 @@ export default {
     }
   },
   mounted() {
-    this.eventsInit();
+    const animatedElement = this.$refs.animateBoxHeight;
+    this.eventsInit(animatedElement);
   },
   methods: {
-    eventsInit() {
+    eventsInit(animatedElement) {
       document.addEventListener(
         'scroll',
-        this.animateBoxHeight,
+        () => { this.animateBoxHeight(animatedElement) },
         false
       );
     },
-    animateBoxHeight() {
-      const animateElement = this.$refs.animateBoxHeight;
+    animateBoxHeight(animateElement) {
       if(!(this.isInViewport(animateElement) && animateElement.offsetHeight <= document.documentElement.clientHeight)) return;
       if(!this.elementsArePrepared) this.prepareAnimatedElement(animateElement);
       animateElement.style.height = `${animateElement.offsetHeight + ((animateElement.getBoundingClientRect().bottom - window.innerHeight) * -1)}px`;
