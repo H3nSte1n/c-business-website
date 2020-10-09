@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="382" height="425" viewBox="0 0 382 425">
-  <g fill="none">
-    <circle cx="34.459" cy="390.541" r="32.959" stroke="#4494A6" stroke-width="3"/>
-    <circle cx="120.608" cy="329.662" r="54.784" stroke="#FFDA51" stroke-width="3"/>
-    <circle cx="237.77" cy="143.581" r="143.581" fill="#DDEFF4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 936">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0h750v936H0z"/>
+    <g transform="translate(71 101)">
+      <circle cx="53" cy="626" r="53" stroke="#4494A6" stroke-width="3"/>
+      <circle cx="192" cy="529" r="88" stroke="#FFDA51" stroke-width="3"/>
+      <ellipse cx="379" cy="230.5" fill="#DDEFF4" fill-rule="nonzero" rx="230" ry="230.5"/>
+    </g>
   </g>
 </svg>
