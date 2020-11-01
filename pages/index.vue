@@ -39,7 +39,9 @@ export default {
   },
   methods: {
     async loadData() {
+      console.log('HomepageData');
       const HomepageData = await this.$strapi.find('Homepage');
+      console.log(HomepageData);
       this.passHeaderData(HomepageData.Header);
       this.passTeaserData(HomepageData.teaser);
       this.loading = false;
