@@ -1,9 +1,15 @@
 <template>
-  <div class="loader__wrapper">
+  <div>
     <div
       v-if="loading"
-      class="loader"
-    />
+      class="loader__wrapper"
+    >
+      <img
+        :src="img.src"
+        :alt="img.alt"
+        class="loader"
+      >
+    </div>
     <slot v-else />
   </div>
 </template>
@@ -16,6 +22,14 @@ export default {
       required: true,
       default: true
     }
+  },
+  data() {
+    return {
+      img: {
+        src: require('../../assets/images/loading.gif'),
+        alt: 'loading svg',
+      }
+    }
   }
 }
 </script>
@@ -24,23 +38,21 @@ export default {
 @import '@/scss/colors.scss';
 
 .loader {
-  border: 6px solid #f3f3f3;
-  border-top: 16px solid $black;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  position: absolute;
+  transform: translate(-50%, -50%);
+  position: relative;
+  max-width: 20vw;
   left: 50%;
   top: 50%;
 
   &__wrapper {
-    min-height: calc(100vh - 100px);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    overflow: none;
   }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 </style>
