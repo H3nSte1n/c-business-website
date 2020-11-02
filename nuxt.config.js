@@ -12,7 +12,7 @@ export default {
     EMAIL: process.env.EMAIL,
     RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
     BASE_URL_STRAPI: process.env.BASE_URL_STRAPI
-  }
+  },
   /*
   ** Headers of the page
   */
