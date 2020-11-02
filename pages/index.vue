@@ -48,7 +48,8 @@ export default {
     },
 
     passHeaderData(headerData) {
-        this.header = {
+      console.log('asdad', process.env.BASE_URL_STRAPI);
+      this.header = {
         content: {
           headline: headerData.headline,
           desc: headerData.subline

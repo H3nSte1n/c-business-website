@@ -6,6 +6,13 @@ export default {
     fallback: '404.html',
   },
   mode: 'universal',
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    PW: process.env.PW,
+    EMAIL: process.env.EMAIL,
+    RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+    BASE_URL_STRAPI: process.env.BASE_URL_STRAPI
+  }
   /*
   ** Headers of the page
   */

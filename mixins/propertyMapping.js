@@ -18,7 +18,7 @@ export default {
       };
       if(!HeaderData.Image) return;
       this.header.img = {
-        src: process.env.HOST + HeaderData.Image.url,
+        src: process.env.BASE_URL_STRAPI + HeaderData.Image.url,
         alt: HeaderData.Image.alternativeText
       }
     },
