@@ -18,7 +18,7 @@ export default {
       };
       if(!HeaderData.Image) return;
       this.header.img = {
-        src: process.env.BASE_URL_STRAPI + HeaderData.Image.url,
+        src: HeaderData.Image.url,
         alt: HeaderData.Image.alternativeText
       }
     },
@@ -33,7 +33,6 @@ export default {
     },
     passInfoBoxesData(InfoBoxData) {
       InfoBoxData.forEach(item => {
-        console.log(item.infos);
         let infoBox = {
           headline: item.headline,
           desc: item.infos ? item.infos.replace(/<a/g, '<a class="button button--transition"') : '',
@@ -59,7 +58,7 @@ export default {
     passSliderData(PersoenlichkeitscoachingData) {
       PersoenlichkeitscoachingData.Slider.forEach(item => {
         let sliderItem = {
-          src: process.env.BASE_URL_STRAPI + item.image.url,
+          src: item.image.url,
           alt: item.image.alternativeText,
           text: {
             tag: item.headline,

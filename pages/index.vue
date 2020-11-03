@@ -39,23 +39,20 @@ export default {
   },
   methods: {
     async loadData() {
-      console.log('HomepageData', process.env.BASE_URL_STRAPI);
       const HomepageData = await this.$strapi.find('Homepage');
-      console.log(HomepageData);
       this.passHeaderData(HomepageData.Header);
       this.passTeaserData(HomepageData.teaser);
       this.loading = false;
     },
 
     passHeaderData(headerData) {
-      console.log('asdad', process.env.BASE_URL_STRAPI);
       this.header = {
         content: {
           headline: headerData.headline,
           desc: headerData.subline
         },
         img: {
-          src: process.env.BASE_URL_STRAPI + headerData.image[0].url,
+          src: headerData.image[0].url,
           alt: headerData.image[0].alternativeText
         },
       }
