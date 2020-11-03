@@ -96,7 +96,7 @@ export default {
           content: {
             desc: item.description,
             icon: {
-              src: process.env.BASE_URL_STRAPI + item.image.url,
+              src: item.image.url,
               alt: item.image.alternativeText
             }
           }

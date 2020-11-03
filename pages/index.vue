@@ -69,7 +69,7 @@ export default {
             link: item.url,
           },
           img: {
-            src: process.env.BASE_URL_STRAPI + item.Image.url,
+            src: item.Image.url,
             alt: item.Image.alternativeText
           },
           order: index % 2 !== 0 ? 'first' : 'last'
