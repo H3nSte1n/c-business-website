@@ -36,7 +36,6 @@ export default {
   methods: {
     async loadData() {
       const data = await this.$strapi.find('Impressum');
-      console.log(data);
       this.passHeaderData(data.Header);
       this.passInfoBoxesData(data.InfoBox);
       this.loading = false;

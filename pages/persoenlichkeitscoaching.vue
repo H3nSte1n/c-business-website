@@ -52,9 +52,7 @@ export default {
   },
   methods: {
     async loadData() {
-      console.log(this.$strapi);
       const data = await this.$strapi.find('Persoenlichkeitscoaching');
-      console.log(this.$strapi);
       this.passHeaderData(data.Header);
       this.passArticleData(data.Article);
       this.passQuoteData(data.Quote);
