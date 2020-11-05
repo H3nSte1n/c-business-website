@@ -44,7 +44,6 @@ export default {
       });
     },
     passQuoteData(QuoteData) {
-      console.log(this.decodeDSLColorTag(QuoteData ?? ''))
       this.quote = this.decodeDSLColorTag(QuoteData) ?? '';
     },
     passPresentationData(PersoenlichkeitscoachingData) {

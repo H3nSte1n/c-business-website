@@ -38,9 +38,10 @@
         <p class="body-1 font-weight-bold mt-2 mb-10">
           {{ content.subline }}
         </p>
-        <p class="body-1 mb-6">
-          {{ content.text }}
-        </p>
+        <p
+          class="body-1 mb-6"
+          v-html="content.text"
+        />
         <router-link
           :to="content.button.link"
           class="text-lowercase button button--mobile-active body-1 font-weight-bold"
