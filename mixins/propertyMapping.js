@@ -1,4 +1,4 @@
-import DecodeDSL from './DecodeDSL';
+import DecodeDSL from './decodeDSL';
 
 export default {
   mixins: [DecodeDSL],
