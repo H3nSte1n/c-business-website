@@ -1,4 +1,7 @@
+import DecodeDSL from './DecodeDSL';
+
 export default {
+  mixins: [DecodeDSL],
   data() {
     return {
       header: {},
@@ -41,7 +44,8 @@ export default {
       });
     },
     passQuoteData(QuoteData) {
-      this.quote = QuoteData;
+      console.log(this.decodeDSLColorTag(QuoteData ?? ''))
+      this.quote = this.decodeDSLColorTag(QuoteData) ?? '';
     },
     passPresentationData(PersoenlichkeitscoachingData) {
         this.presentation = {
