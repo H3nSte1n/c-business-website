@@ -12,7 +12,7 @@
         md="5"
         xl="4"
         :order-md="content.order ? content.order : 'first'"
-        class="my-9 teasefr__img-container"
+        class="my-9 teaser__img-container"
       >
         <v-img
           :src="content.img.src"

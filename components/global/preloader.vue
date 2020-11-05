@@ -40,6 +40,7 @@ export default {
 .loader {
   transform: translate(-50%, -50%);
   position: relative;
+  min-width: 250px;
   max-width: 20vw;
   left: 50%;
   top: 50%;
