@@ -12,9 +12,9 @@
         cols="5"
         sm="4"
         md="3"
-      >
-        <p class="body-1" v-html="keywords.desc" />
-      </v-col>
+        class="body-1"
+        v-html="keywords.desc"
+      />
       <v-col
         cols="7"
         md="8"

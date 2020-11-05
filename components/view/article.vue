@@ -26,9 +26,9 @@
           lg="6"
           xl="4"
           :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
-        >
-          <p class="article__desc" v-html="content.desc_1" />
-        </v-col>
+          class="article__desc"
+          v-html="content.desc_1"
+        />
       </v-row>
     </v-container>
   </div>

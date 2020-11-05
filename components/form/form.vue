@@ -32,9 +32,9 @@
           cols="10"
           md="8"
           xl="8"
-        >
-          <p class="contact__desc" v-html="content.desc" />
-        </v-col>
+          class="contact__desc"
+          v-html="content.desc"
+        />
       </v-row>
       <v-row
         justify="center"

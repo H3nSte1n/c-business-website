@@ -12,12 +12,12 @@
             class="quote__content"
             :class="{'quote__content--left': position === 'left'}"
           >
-            <p
+            <div
               class="quote__headline mb-7"
               :class="`text-${position}`"
               v-html="quote"
             />
-            <p
+            <div
               v-if="desc"
               class="quote__desc"
               v-html="desc"
@@ -46,12 +46,13 @@ export default {
       required: false,
       default: 'center'
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
 @import '@/scss/colors.scss';
+@import '@/scss/dsl_styles.scss';
 
 .quote {
   background-color: $white;
@@ -74,12 +75,6 @@ export default {
 
     @media screen and (min-width: 1264px) {
       font-size: 35px;
-    }
-  }
-
-  .highlight {
-    &--light-blue {
-      color: $light-blue;
     }
   }
 }
