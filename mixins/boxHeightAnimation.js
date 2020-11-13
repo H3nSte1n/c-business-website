@@ -5,17 +5,21 @@ export default {
     }
   },
   mounted() {
-    this.eventsInit();
+    const animatedElement = this.$refs.animateBoxHeight;
+    this.eventsInit(animatedElement);
   },
   methods: {
-    animateBoxHeight(className) {
-      const stripes = document.querySelectorAll(`.${className}`);
-      stripes.forEach( e => {
-        if(this.isInViewport(e) && e.offsetHeight <= document.documentElement.clientHeight) {
-          if(!this.elementsArePrepared) this.prepareAnimatedElement(e);
-          e.style.height = `${e.offsetHeight + ((e.getBoundingClientRect().bottom - window.innerHeight) * -1)}px`;
-        }
-      })
+    eventsInit(animatedElement) {
+      document.addEventListener(
+        'scroll',
+        () => { this.animateBoxHeight(animatedElement) },
+        false
+      );
+    },
+    animateBoxHeight(animateElement) {
+      if(!(this.isInViewport(animateElement) && animateElement.offsetHeight <= document.documentElement.clientHeight)) return;
+      if(!this.elementsArePrepared) this.prepareAnimatedElement(animateElement);
+      animateElement.style.height = `${animateElement.offsetHeight + ((animateElement.getBoundingClientRect().bottom - window.innerHeight) * -1)}px`;
       this.elementArePrepared = true;
     },
 

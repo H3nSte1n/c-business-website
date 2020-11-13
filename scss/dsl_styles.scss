@@ -1,0 +1,20 @@
+@import '@/scss/colors.scss';
+
+.dsl__color {
+
+  &--blue {
+    color: $light-blue;
+  }
+
+  &--dark {
+    color: $dark-2;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--yellow {
+    color: $yellow;
+  }
+}

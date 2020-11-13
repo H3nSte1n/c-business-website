@@ -1,132 +1,117 @@
 <template>
-  <v-container
-    fluid
-    class="pa-0"
-  >
-    <Header :content="header" />
-    <Stripe
-      :content="stripe.content"
-      b-color="blue"
-    />
-    <Quote
-      :quote="quote"
-    />
-    <Wall :title="title__asset_card">
-      <asset-card
-        v-for="(value, key) in assetCardContent"
-        :key="key"
-        :content="value.content"
+  <Preload :loading="loading">
+    <v-container
+      fluid
+      class="pa-0"
+    >
+      <Header :content="header" />
+      <Article
+        :content="article[0]"
+        b-color="blue"
       />
-    </Wall>
-    <Wall :title="title__offer_card">
-      <offer-card
-        v-for="(value, key) in offerCardContent"
-        :key="key"
-        :content="value.content"
+      <Quote
+        :quote="quote"
       />
-    </Wall>
-    <keywords />
-    <Contact
-      :content="content_contact"
-      :center-headline="true"
-      :small-headline="true"
-    />
-  </v-container>
+      <Wall :title="title__asset_card">
+        <asset-card
+          v-for="(value, key) in assetCard"
+          :key="key"
+          :content="value.content"
+        />
+      </Wall>
+      <Wall :title="title__offer_card">
+        <offer-card
+          v-for="(value, key) in offerCard"
+          :key="key"
+          :content="value.content"
+        />
+      </Wall>
+      <keywords :keywords="keywords" />
+      <Contact
+        :content="contact"
+        :center-headline="true"
+        :small-headline="true"
+      />
+    </v-container>
+  </Preload>
 </template>
 
 <script>
 import Contact from '@/components/form/contact';
-import Stripe from '@/components/stripe';
-import Quote from '@/components/quote';
-import Keywords from '@/components/keywords';
-import Header from '@/components/header';
+import Article from '@/components/view/article';
+import Quote from '@/components/view/quote';
+import Keywords from '@/components/view/keywords';
+import Header from '@/components/header/header';
 import ButtonEvents from '@/mixins/buttonEvents';
-import Wall from '@/components/wall';
-import assetCard from '@/components/asset-card';
-import offerCard from '@/components/offer-card';
+import Wall from '@/components/container/wall';
+import AssetCard from '@/components/view/asset-card';
+import OfferCard from '@/components/view/offer-card';
+import PropertyMapping from '@/mixins/propertyMapping';
+import Preload from '@/components/global/preloader';
 
 export default {
-  components: { Header, Wall, assetCard, offerCard, Contact, Stripe, Quote, Keywords },
-  mixins: [ButtonEvents],
+  components: { Header, Wall, AssetCard, OfferCard, Contact, Article, Quote, Keywords, Preload },
+  mixins: [ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {
     return {
-      header: {
-        headline: 'Unternehmenscoaching',
-        desc: 'für mehr positive Energie und gesunde Führungskultur',
-        img: {
-          src: require('~/assets/images/claudia-eck-unternehmenscoaching.svg'),
-          alt: 'unternehmenscoaching'
-        }
-      },
-      stripe: {
-          color: "light-blue",
-          content: {
-            headline: 'Gesundes Betriebsklima als gemeinsames Entwicklungsziel',
-            desc_1: 'Unternehmen, denen im Rahmen der Prävention die gesundheitliche Fürsorge der Mitarbeiter am Herzen liegt, biete ich Betriebliches Gesundheitsmanagement BGM an. Die Arbeitszeit macht einen großen Teil der Lebenszeit aus. Da lohnt es sich, wenn die Mitarbeiter zufrieden sind, die Qualität der Arbeit halten oder sogar noch verbessern.',
-            desc_2: 'Führungskräfte wissen oft gar nicht, dass sie an der Gesundheit ihrer Mitarbeiter einen großen Anteil haben. Führen auf einem hohen Level heißt, die eigene innere Haltung und mentale Gesundheit so weiter zu entwickeln, dass andere gerne folgen. Den anvertrauten Mitarbeitern gelingt es dann leichter, die eigene Orientierung und Selbstbestimmung zu finden. Es kann daher für Unternehmen sinnvoll sein, auf die Führungskultur, das Stressmanagement, die Work-Life-Balance und die Burnout-Prävention zu schauen, um mögliche gesundheitsfördernde Strukturen, Abläufe und Maßnahmen für Führungskräfte, Teams oder auch einzelne Mitarbeiter zu entdecken.'
-        }
-      },
-      quote: 'Gerne helfe ich Ihnen dabei oder lernen Sie mich über meinen Vortag <span class="highlight--light-blue">„Was kann ich tun, um den Krankenstand der Mitarbeiter zu reduzieren?“</span> kennen.',
-      content_contact: {
-        headline: 'Gerne unterbreite ich Ihnen ein Individuelles Angebot:'
-      },
+      loading: true,
       title__asset_card: 'Von mir <nobr>bekommen Sie</nobr>',
       title__offer_card: 'Angebote',
-      assetCardContent: [
-        {
-
-          content: {
-            desc: 'Analyse von bereits bestehenden gesundheitsfördernden Strukturen und Abläufe',
-            icon: {
-              src: require('~/assets/images/claudia-eck-analyse.svg'),
-              alt: 'analyse icon'
-            }
-          }
-        },
-        {
-          content: {
-            desc: 'Identifizierung von organisationsinternen gesundheitsbelastenden Bedingungen',
-            icon: {
-              src: require('~/assets/images/claudia-eck-identifizierung.svg'),
-              alt: 'identifizierung icon'
-            }
-          }
-        },
-        {
-          content: {
-            desc: 'Vorschläge von nutzbringenden und gesundheitsfördernden Maßnahmen in Richtung „attraktiver Arbeitgeber“',
-            icon: {
-              src: require('~/assets/images/claudia-eck-ideen.svg'),
-              alt: 'ideen icon'
-            }
-          }
-        }
-      ],
-      offerCardContent: [
-        {
-          content: {
-            pagination: '01',
-            headline: 'Führungskräftecoaching',
-            desc: 'Trotz steigender Komplexität und Arbeitsbelastung angstfrei, sicher, und gesunderhaltend führen?'
-          }
-        },
-        {
-          content: {
-            pagination: '02',
-            headline: 'Teamcoaching',
-            desc: 'Gruppendynamische Prozesse erkennen und unterschiedliche Rollen gewinnbringend nutzen'
-          }
-        },
-        {
-          content: {
-            pagination: '03',
-            headline: 'Einzelcoaching',
-            desc: 'Die individuelle Persönlichkeit als Stärke authentisch und klar positionieren'
-          }
-        }
-      ]
+      offerCard: [],
+      assetCard: [],
+      keywords: {}
     }
+  },
+  mounted() {
+    this.loadData();
+  },
+  methods: {
+    async loadData() {
+      const data = await this.$strapi.find('Unternehmenscoaching');
+      this.passHeaderData(data.header);
+      this.passArticleData(data.article);
+      this.passQuoteData(data.Quote);
+      this.passContactData(data.Contact);
+      this.passOfferCardItems(data.OfferCard);
+      this.passAssetCardItems(data.AssetCard);
+      this.passKeywordsData(data.Keywords);
+      this.loading = false;
+    },
+    passOfferCardItems(OfferCardData) {
+      Array.from(OfferCardData).forEach(item => {
+        let cardItem = {
+          content: {
+            pagination: item.pagination,
+            headline: item.headline,
+            desc: item.description
+          }
+        }
+        this.offerCard.push(cardItem);
+      })
+    },
+    passAssetCardItems(AssetCardData) {
+      Array.from(AssetCardData).forEach(item => {
+        let cardItem = {
+          content: {
+            desc: item.description,
+            icon: {
+              src: item.image.url,
+              alt: item.image.alternativeText
+            }
+          }
+        };
+        this.assetCard.push(cardItem);
+      })
+    },
+    passKeywordsData(KeywordsData) {
+      this.keywords = {
+        desc: KeywordsData.description,
+        first: KeywordsData.keyword_1,
+        second: KeywordsData.keyword_2,
+        third: KeywordsData.keyword_3
+      }
+    },
   }
 }
 </script>

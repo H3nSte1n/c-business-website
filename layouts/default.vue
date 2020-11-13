@@ -14,40 +14,14 @@
 </template>
 
 <script>
-import Footer from '~/components/footer';
-import Navigation from '@/components/navigation';
+import Footer from '~/components/global/footer';
+import Navigation from '@/components/global/navigation';
 import ButtonEvents from '@/mixins/buttonEvents';
 import scrollEvents from '@/mixins/scrollEvents';
 
 export default {
   components: { Footer, Navigation },
   mixins: [ButtonEvents, scrollEvents],
-
-  data () {
-    return {
-      mouseIsCreated: false,
-      isLoaded: false,
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
 }
 </script>
 
@@ -71,6 +45,12 @@ body {
   &--active {
     width: 3rem;
     height: 3rem;
+  }
+
+  &--transition {
+    mix-blend-mode: difference;
+    background-color: white;
+    cursor: none;
   }
 
   &:active, &:focus, &:hover, &:visited {
@@ -126,6 +106,10 @@ body {
       border-radius: 25px;
       color: $black;
     }
+  }
+
+  &--transition {
+    text-decoration: underline;
   }
 }
 

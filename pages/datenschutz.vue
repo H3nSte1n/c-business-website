@@ -1,46 +1,55 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <header-lite :content="content" />
-        <content-box
-          v-for="(infos, key) of dataprotection"
-          :key="key"
-          :content="infos"
-        />
-      </v-col>
-    </v-row>
-  </v-container>
+  <Preload :loading="loading">
+    <v-container>
+      <v-row>
+        <v-col>
+          <header-lite :content="header" />
+          <content-box-wrapper
+            v-for="(infos, key) of infoBoxSections"
+            :key="key"
+            :content="infos"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </Preload>
 </template>
 
 <script>
-import HeaderLite from '@/components/header-lite';
-import ContentBox from '@/components/content-box';
+import HeaderLite from '@/components/header/header-lite';
+import ContentBoxWrapper from '@/components/container/wrapper-content-box';
 import ButtonEvents from '@/mixins/buttonEvents';
+import Preload from '@/components/global/preloader';
+import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {HeaderLite, ContentBox},
-  mixins: [ButtonEvents],
+  components: {HeaderLite, ContentBoxWrapper, Preload},
+  mixins: [ButtonEvents, PropertyMapping],
   data() {
     return {
-      content: {
-        headline: 'Datenschutzbestimmungen',
-        desc: 'www.claudia-eck.de'
-      },
-      dataprotection: [
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        },
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-        },
-        {
-          headline: 'Headline',
-          desc: 'Hier steht ein Absatz. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+      loading: true,
+      infoBoxSections: [],
+    }
+  },
+  mounted() {
+    this.loadData();
+  },
+  methods: {
+    async loadData() {
+      const data = await this.$strapi.find('DataProtection');
+      this.passHeaderData(data.Header);
+      this.passInfoBoxeSectionsData(data.InfoBoxSection);
+      this.loading = false;
+    },
+    passInfoBoxeSectionsData(InfoBoxSectionData) {
+      InfoBoxSectionData.forEach(async item => {
+        this.passInfoBoxesData(item.InfoBox);
+        let infoBoxSection = {
+          headline: item.headline,
+          infoBoxes: this.infoBoxes
         }
-      ]
+        this.infoBoxSections.push(infoBoxSection)
+      });
     }
   }
 }

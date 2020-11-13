@@ -32,11 +32,9 @@
           cols="10"
           md="8"
           xl="8"
-        >
-          <p class="contact__desc">
-            {{ content.desc }}
-          </p>
-        </v-col>
+          class="contact__desc"
+          v-html="content.desc"
+        />
       </v-row>
       <v-row
         justify="center"
@@ -102,7 +100,7 @@
       <v-row>
         <v-col class="d-flex justify-center">
           <button
-            class="px-7 mt-9 button"
+            class="px-7 mt-9 button button--mobile-active"
             type="submit"
           >
             Senden

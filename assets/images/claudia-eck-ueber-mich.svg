@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="382" height="836" viewBox="0 0 382 836">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 936">
   <g fill="none" fill-rule="evenodd">
-    <circle cx="232.297" cy="227.135" r="135.297" stroke="#4494A6" stroke-width="3"/>
-    <rect width="275.757" height="275.757" x="94.419" y="559.014" stroke="#FFDA51" stroke-width="3"/>
-    <line x1="-11.615" x2="393.615" y1="50.331" y2="112.277" stroke="#FFDA51" stroke-width="3" transform="rotate(-30 191 81.304)"/>
-    <path fill="#DDEFF4" fill-rule="nonzero" stroke="#DDEFF4" stroke-width="9.106" d="M367.045618,407.115277 C365.857854,442.524165 351.008946,474.478624 327.602297,497.87781 C303.195314,522.277011 269.483354,537.374279 232.251396,537.386128 C195.02104,537.397969 161.319895,522.323241 136.929436,497.940525 C113.537398,474.555914 98.709588,442.60989 97.5458802,407.201019 L97.5458802,407.201019 Z" transform="rotate(180 232.297 472.25)"/>
+    <path d="M0 0h750v936H0z"/>
+    <g transform="translate(247 158)">
+      <ellipse cx="128" cy="126.5" stroke="#4494A6" stroke-width="3" rx="126" ry="126.5"/>
+      <path stroke="#FFDA51" stroke-width="3" d="M0 437h257v258H0z"/>
+      <path fill="#DDEFF4" fill-rule="nonzero" stroke="#DDEFF4" stroke-width="9.106" d="M3 417c1.10623-33.160788 14.935839-63.086468 36.735745-85.000047C62.467317 309.14985 93.865128 295.011103 128.541308 295c34.6746886-.011083 66.0624275 14.106555 88.7786099 36.94122C239.1062157 353.841149 252.91617461 383.758929 254 416.919702h0L3 417z"/>
+    </g>
+    <path stroke="#FFDA51" stroke-width="3" d="M158.61442816 226.0928222l355.9865097-139.18327837"/>
   </g>
 </svg>
