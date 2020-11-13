@@ -99,7 +99,7 @@ export default {
 
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
-    siteKey: process.env.NODE_ENV === ('production'||'staging') ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
+    siteKey: process.env.NODE_ENV === 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
     version: 3, // Version
     size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
   },
