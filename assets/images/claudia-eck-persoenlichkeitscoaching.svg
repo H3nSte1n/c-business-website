@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="382" height="756" viewBox="0 0 382 756">
-  <g fill="none" fill-rule="evenodd" transform="translate(5.042 -28.296)">
-    <path stroke="#4494A6" stroke-width="3" d="M385.208494,594.794488 L11.0102209,594.913844 C11.9306836,645.291495 32.6706505,690.806338 65.7478335,723.957133 C99.6002201,757.884855 146.374961,778.861835 198.048577,778.845368 C249.723449,778.828872 296.512484,757.82119 330.387226,723.871108 C363.48527,690.699453 384.254792,645.172173 385.208494,594.794488 Z" transform="rotate(-8 198.11 686.82)"/>
-    <circle cx="198.085" cy="530.556" r="54.038" stroke="#DDEFF4" stroke-width="3"/>
-    <ellipse cx="240.529" cy="62.656" fill="#DDEFF4" fill-rule="nonzero" stroke="#DDEFF4" stroke-width="7.131" rx="30.134" ry="30.794"/>
-    <polygon stroke="#4494A6" stroke-width="3" points="129.362 303.393 129.481 440.556 266.423 440.675 266.305 303.512" transform="rotate(24.3 197.893 372.034)"/>
-    <polygon stroke="#FFDA51" stroke-width="3" points="212.909 51.126 103.448 235.608 321.944 235.356" transform="rotate(-45 212.696 143.367)"/>
-    <line x1="356.746" x2="47.508" y1="483.058" y2="454.762" stroke="#FFDA51" stroke-linecap="square" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 936">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M0 0h750v936H0z"/>
+    <g transform="translate(177 39)">
+      <path stroke="#4494A6" stroke-width="3" d="M370.62218827 569.35494673L.08219808 621.55147523c7.92271873 49.7592755 34.79528754 91.94472568 72.16426461 120.16944529 38.24476378 28.88619812 87.48372757 43.14924584 138.65216912 35.94137163 51.1696785-7.20809755 94.57966159-34.52310932 123.39979874-72.85724435 28.15933402-37.45518815 42.39055572-85.42995857 36.32375772-135.45010107z"/>
+      <circle cx="198.127" cy="530.26" r="54.038" stroke="#DDEFF4" stroke-width="3"/>
+      <ellipse cx="240.571" cy="62.36" fill="#DDEFF4" fill-rule="nonzero" stroke="#DDEFF4" stroke-width="7.131" rx="30.134" ry="30.794"/>
+      <path stroke="#4494A6" stroke-width="3" d="M163.72237914 280.97687718l-56.33608698 125.05977784 124.7604173 56.46205629 56.33699838-125.05936633z"/>
+      <path stroke="#FFDA51" stroke-width="3" d="M147.66437714 77.69614965l53.04785783 207.84908858 154.32181236-154.67819417z"/>
+      <path stroke="#FFDA51" stroke-linecap="square" stroke-width="3" d="M356.788 482.762L47.55 454.466"/>
+    </g>
   </g>
 </svg>

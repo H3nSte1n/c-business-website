@@ -6,6 +6,15 @@ export default {
     fallback: '404.html',
   },
   mode: 'universal',
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    PW: process.env.PW,
+    EMAIL: process.env.EMAIL,
+    RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+    BASE_URL_STRAPI: process.env.BASE_URL_STRAPI,
+    AUTH_USERNAME: process.env.AUTH_USERNAME,
+    AUTH_PASSWORD: process.env.AUTH_PASSWORD
+  },
   /*
   ** Headers of the page
   */
@@ -78,11 +87,19 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
+    '@nuxtjs/strapi',
+    'nuxt-basic-auth-module'
   ],
+
+  basic: {
+    name: process.env.AUTH_USERNAME,
+    pass: process.env.AUTH_PASSWORD,
+    enabled: process.env.NODE_ENV === 'staging'
+  },
 
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
-    siteKey: process.env.NODE_ENV == 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
+    siteKey: process.env.NODE_ENV === 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
     version: 3, // Version
     size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
   },
