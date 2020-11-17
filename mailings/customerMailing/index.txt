@@ -1,0 +1,41 @@
+*********************************************************************
+
+Claudia Eck
+
+*********************************************************************
+
+Kundenmail
+
+*********************************************************************
+
+Name: $name,
+
+Nachricht: $msg
+
+E-Mail: $email
+
+Viel Spaß beim bearbeiten, wünscht das Administrationsteam :D.
+Admins
+
+*********************************************************************
+
+>> Persönlichkeit entfalten
+https://c-claudia-website-web.herokuapp.com/persoenlichkeitscoaching
+
+>> Unternehmen beleben
+https://c-claudia-website-web.herokuapp.com/unternehmenscoaching
+
+>> Über mich
+https://c-claudia-website-web.herokuapp.com/ueber-mich
+
+>> Kontakt
+https://c-claudia-website-web.herokuapp.com/kontakt
+
+>> Datenschutz
+https://c-claudia-website-web.herokuapp.com/datenschutz
+
+>> Impressum
+https://c-claudia-website-web.herokuapp.com/impressum
+
+
+*********************************************************************

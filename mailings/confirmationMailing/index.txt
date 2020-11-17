@@ -1,0 +1,39 @@
+*********************************************************************
+
+Claudia Eck
+
+*********************************************************************
+
+Bestätigungsmail
+
+*********************************************************************
+
+Hallo $name,
+
+Ihre Mail ist erfolgreich bei der mir angekommen. Ich werde mich schnellstmöglich um ihre Anfrage kümmern.
+
+Mit freundlichen Grüßen
+Claudia Eck
+
+*********************************************************************
+
+>> Persönlichkeit entfalten
+https://c-claudia-website-web.herokuapp.com/persoenlichkeitscoaching
+
+>> Unternehmen beleben
+https://c-claudia-website-web.herokuapp.com/unternehmenscoaching
+
+>> Über mich
+https://c-claudia-website-web.herokuapp.com/ueber-mich
+
+>> Kontakt
+https://c-claudia-website-web.herokuapp.com/kontakt
+
+>> Datenschutz
+https://c-claudia-website-web.herokuapp.com/datenschutz
+
+>> Impressum
+https://c-claudia-website-web.herokuapp.com/impressum
+
+
+*********************************************************************
