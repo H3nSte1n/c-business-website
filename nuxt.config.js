@@ -11,6 +11,7 @@ export default {
     PW: process.env.PW,
     EMAIL: process.env.EMAIL,
     RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
+    RECAPTCHA_KEY_LOCAL: process.env.RECAPTCHA_KEY_LOCAL,
     BASE_URL_STRAPI: process.env.BASE_URL_STRAPI,
     AUTH_USERNAME: process.env.AUTH_USERNAME,
     AUTH_PASSWORD: process.env.AUTH_PASSWORD

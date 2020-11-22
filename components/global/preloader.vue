@@ -52,7 +52,7 @@ export default {
     background-color: white;
     top: 0px;
     left: 0px;
-    z-index: 999;
+    z-index: 99999;
     overflow: none;
   }
 }

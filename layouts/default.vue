@@ -38,7 +38,7 @@ body {
   border: 1px solid $black;
   position: absolute;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 999999;
   pointer-events: none;
   transition: width 0.25s ease-out, height 1s ease-out, border-color 0.2s ease-out;
 
@@ -73,7 +73,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 99999;
+      z-index: 9999999;
     }
     &-active {
       &::before {
