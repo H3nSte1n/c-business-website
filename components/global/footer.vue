@@ -169,7 +169,7 @@
           </v-row>
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="footer">
         <v-col class="mt-7">
           <p>&copy; Claudia Eck</p>
           <p class="mt-9">Design von Johannes Zimmer</p>
