@@ -8,6 +8,7 @@
       <Article
         :content="article[0]"
         b-color="yellow"
+        :box-count="0"
       />
       <Slider
         v-if="slider.length > 0"
@@ -17,6 +18,7 @@
       <Article
         :content="article[1]"
         b-color="blue"
+        :box-count="1"
       />
       <Quote
         :quote="presentation.headline"

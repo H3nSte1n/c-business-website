@@ -1,6 +1,9 @@
 <template>
   <div :class="`article--${bColor}`">
-    <v-container ref="animateBoxHeight">
+    <v-container
+      ref="animateBoxHeight"
+      :data-BoxCount="boxCount"
+    >
       <v-row
         justify="center"
         align="center"
@@ -47,6 +50,11 @@ export default {
     content: {
       type: Object,
       required: true
+    },
+    boxCount: {
+      type: Number,
+      required: false,
+      default: 1
     }
   }
 }

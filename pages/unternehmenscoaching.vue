@@ -8,6 +8,7 @@
       <Article
         :content="article[0]"
         b-color="blue"
+        :box-count="0"
       />
       <Quote
         :quote="quote"

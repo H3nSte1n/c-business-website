@@ -12,6 +12,7 @@
         <Article
           :content="content"
           :b-color="key < article.length / 2 ? 'yellow' : 'blue'"
+          :box-count="key"
         />
       </div>
     </v-container>
