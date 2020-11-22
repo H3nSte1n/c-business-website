@@ -169,6 +169,13 @@
           </v-row>
         </v-col>
       </v-row>
+      <v-row>
+        <v-col class="mt-7">
+          <p>&copy; Claudia Eck</p>
+          <p class="mt-9">Design von Johannes Zimmer</p>
+          <p>Entwickelt von Henry Steinhauer</p>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>

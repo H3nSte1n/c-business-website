@@ -157,9 +157,6 @@ export default {
       this.submitForm();
     }
   },
-  mounted() {
-    this.initCursorEvents();
-  },
   methods: {
     validate () {
       this.$refs.form.validate()
