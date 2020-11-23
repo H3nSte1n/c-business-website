@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 .content-box {
   &__headline {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 </style>

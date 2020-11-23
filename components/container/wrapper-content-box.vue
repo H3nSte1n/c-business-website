@@ -5,7 +5,7 @@
         cols="12"
         xl="10"
       >
-        <h2 class="text-left mb-3 content-box__headline">
+        <h2 class="text-left mb-3 wrapper-content-box__headline">
           {{ content.headline }}
         </h2>
         <content-box
@@ -35,7 +35,7 @@ export default {
 <style scoped lang="scss">
 .wrapper-content-box {
   &__headline {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 </style>
