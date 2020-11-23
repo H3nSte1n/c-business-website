@@ -43,12 +43,14 @@ export default {
     },
     passInfoBoxeSectionsData(InfoBoxSectionData) {
       InfoBoxSectionData.forEach(async item => {
+        console.log(item);
         this.passInfoBoxesData(item.InfoBox);
         let infoBoxSection = {
           headline: item.headline,
           infoBoxes: this.infoBoxes
         }
         this.infoBoxSections.push(infoBoxSection)
+        this.infoBoxes = [];
       });
     }
   }

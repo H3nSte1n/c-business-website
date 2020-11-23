@@ -38,7 +38,7 @@ export default {
       InfoBoxData.forEach(item => {
         let infoBox = {
           headline: item.headline,
-          desc: item.infos ? item.infos.replace(/<a/g, '<a class="button button--transition"') : '',
+          desc: item.infos ? item.infos.replace(/<a/g, '<a class="button button--transition" target="_blank"') : '',
         }
         this.infoBoxes.push(infoBox)
       });
