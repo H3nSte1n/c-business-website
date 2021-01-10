@@ -32,7 +32,7 @@
     "lazysizes": "5.2.2",
     "lodash.throttle": "4.1.1",
     "net": "1.0.2",
-    "nodemailer": "6.4.16",
+    "nodemailer": "6.4.17",
     "nuxt": "2.14.7",
     "nuxt-responsive-loader": "2.0.1",
     "sqip-loader": "1.0.0",
