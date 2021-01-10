@@ -11,7 +11,7 @@
       >
         <Article
           :content="content"
-          :b-color="(key + 1) % 3 === 0 || (key !== 0 && key % 3 === 0) ? 'yellow' : 'blue'"
+          :b-color="(key + 1) % 2 === 0 || (key !== 0 && key % 2 === 0) ? 'yellow' : 'blue'"
           :box-count="key"
         />
       </div>
