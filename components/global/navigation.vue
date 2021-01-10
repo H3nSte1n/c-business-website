@@ -61,14 +61,14 @@
             <a
               class="navigation__links-item navigation__links-item text-center d-inline-flex align-center button navigation__links-item-6"
               :class="{'navigation__links-item--active': isNavigationMobilActive, 'align-end': $vuetify.breakpoint.mdAndDown}"
-              href="tel:+1792242543"
+              href="tel:01792242543"
             >
               <img
                 class="mr-2"
                 width="18px"
                 :src="require('assets/images/claudia-eck-kontakt-telefon.svg')"
               >
-              + 1792 242543
+              01792 242543
             </a>
           </div>
         </v-col>

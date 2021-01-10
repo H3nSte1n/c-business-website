@@ -72,7 +72,7 @@
                 <a
                   href="tel:01792 242543"
                   class="body-1 font-weight-medium footer__button button"
-                >+ 1792 242543</a>
+                >01792 242543</a>
               </p>
               <p>
                 <a
