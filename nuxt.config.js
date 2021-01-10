@@ -5,7 +5,6 @@ export default {
     dir: 'public',
     fallback: '404.html',
   },
-  mode: 'universal',
   env: {
     BASE_URL: process.env.BASE_URL,
     PW: process.env.PW,
