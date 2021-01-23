@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@mdi/font": "5.8.55",
-    "@mdi/js": "5.8.55",
+    "@mdi/js": "5.9.55",
     "@nuxtjs/axios": "5.12.5",
     "@nuxtjs/component-cache": "1.1.6",
     "@nuxtjs/dotenv": "1.4.1",
