@@ -68,7 +68,7 @@
                 width="18px"
                 :src="require('assets/images/claudia-eck-kontakt-telefon.svg')"
               >
-              01792 242543
+              0179 2242543
             </a>
           </div>
         </v-col>
