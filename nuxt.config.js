@@ -88,7 +88,7 @@ export default {
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
     '@nuxtjs/strapi',
-    'nuxt-basic-auth-module'
+    process.env.NODE_ENV === 'staging' ? 'nuxt-basic-auth-module' : ''
   ],
 
   basic: {
