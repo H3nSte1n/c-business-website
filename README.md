@@ -29,6 +29,7 @@ The website was created as a kind of business card. The goal was to give the use
 This section lists all used programming languages, frameworks and third-party-libraries.
 * [Nuxt](https://nuxtjs.org/)
 * [Vuex](https://vuex.vuejs.org/)
+* [Vuetify](https://vuetifyjs.com/)
 * [Nodemailer](https://nodemailer.com/about/)
 * [Heroku](https://www.heroku.com/)
 
@@ -51,8 +52,8 @@ This section lists all used programming languages, frameworks and third-party-li
 ```
 
 ### ENV
-- Removing the dist wording from the .env(.test).dist filename\
-  ***.env(.test).dist -> .env(.test)***
+- Removing the dist wording from the ***.env.dist*** filename\
+  ***.env.dist -> .env***
 
 
 - set following env variables
