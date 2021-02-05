@@ -14,19 +14,26 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
-    <li>
-      <a href="#setup">Setup</a>
-    </li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#used">Used</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="setup">Setup</a></li>
+    <li><a href="#requirements">Requirements</a></li>    
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 ## About The Project
-...
+The website was created as a kind of business card. The goal was to give the user a "wow" moment. Nevertheless, the attention should largely be on the content. The design was created by Johannes Zimmer.
 
+## Used
+This section lists all used programming languages, frameworks and third-party-libraries.
+* [Nuxt](https://nuxtjs.org/)
+* [Vuex](https://vuex.vuejs.org/)
+* [Nodemailer](https://nodemailer.com/about/)
+* [Heroku](https://www.heroku.com/)
+
+## Contact
+![Henry Steinhauer][link-name] ![E-Mail][link-email] ![Twitter][link-medium] ![Twitter][link-twitter] ![Twitter][link-reddit] ![Github][link-github]
 
 ## Setup
 ### Commands
@@ -60,16 +67,7 @@
 
 ## Requirements
 * Node > v10.0.0
-
-
-## Built With
-This section lists all programming languages and main frameworks.
-* [Node](https://nodejs.org/en/)
-* [Typescript](https://www.typescriptlang.org/)
-* [Jest](https://jestjs.io/)
-
-## Contact
-![Henry Steinhauer][link-name] ![E-Mail][link-email] ![Twitter][link-medium] ![Twitter][link-twitter] ![Twitter][link-reddit] ![Github][link-github]
+* Headless CMS
 
 ## Acknowledgements
 * [Img Shields](https://shields.io)
