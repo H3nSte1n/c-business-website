@@ -33,7 +33,7 @@
     "lodash.throttle": "4.1.1",
     "net": "1.0.2",
     "nodemailer": "6.4.17",
-    "nuxt": "2.14.12",
+    "nuxt": "2.15.0",
     "nuxt-responsive-loader": "2.0.1",
     "sqip-loader": "1.0.0",
     "tls": "0.0.1",
