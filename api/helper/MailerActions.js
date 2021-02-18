@@ -36,7 +36,7 @@ export class MailerActions {
     })
     transporter.sendMail({
       from: process.env.EMAIL,
-      to: 'hallo@claudia-eck.de',
+      to: process.env.EMAIL,
       subject: `Kundenmail, ${name}`,
       text: ReplaceAttribute.replace(textlCustomerMailing, ['msg', 'name', 'email'], [msg, name, email]),
       html: ReplaceAttribute.replace(htmlCustomerMailing, ['msg', 'name', 'email'], [msg, name, email]),
