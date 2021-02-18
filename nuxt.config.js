@@ -69,7 +69,8 @@ export default {
   ],
   // server middleware
   serverMiddleware: [
-    '~/api/mailer'
+    '~/api/mailer',
+    'redirect-ssl'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -88,7 +89,6 @@ export default {
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
     '@nuxtjs/strapi',
-    'nuxt-basic-auth-module'
   ],
 
   basic: {
