@@ -27,7 +27,8 @@ const [htmlConfirmationMailing, htmlCustomerMailing] = TranspiledFiles.transpile
 export class MailerActions {
   static sendMail (name, email, msg) {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.strato.de',
+      port: '465',
       auth: {
           user: process.env.EMAIL,
           pass: process.env.PW
@@ -35,7 +36,7 @@ export class MailerActions {
     })
     transporter.sendMail({
       from: process.env.EMAIL,
-      to: 'Henrysteinhauer@t-online.de',
+      to: 'hallo@claudia-eck.de',
       subject: `Kundenmail, ${name}`,
       text: ReplaceAttribute.replace(textlCustomerMailing, ['msg', 'name', 'email'], [msg, name, email]),
       html: ReplaceAttribute.replace(htmlCustomerMailing, ['msg', 'name', 'email'], [msg, name, email]),
