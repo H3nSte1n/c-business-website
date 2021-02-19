@@ -49,10 +49,11 @@ import AssetCard from '@/components/view/asset-card';
 import OfferCard from '@/components/view/offer-card';
 import PropertyMapping from '@/mixins/propertyMapping';
 import Preload from '@/components/global/preloader';
+import Head from '@/mixins/head';
 
 export default {
   components: { Header, Wall, AssetCard, OfferCard, Contact, Article, Quote, Keywords, Preload },
-  mixins: [ButtonEvents, PropertyMapping],
+  mixins: [Head, ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {
     return {
@@ -61,7 +62,11 @@ export default {
       title__offer_card: 'Angebote',
       offerCard: [],
       assetCard: [],
-      keywords: {}
+      keywords: {},
+      title: 'Unternehmenscoaching',
+      existDescription: true,
+      existSocialMediaDescription: true,
+      robots: true,
     }
   },
   mounted() {

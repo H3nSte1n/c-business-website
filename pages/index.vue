@@ -23,15 +23,19 @@ import IndexHeader from '@/components/header/index-header';
 import Preload from '@/components/global/preloader';
 import ButtonEvents from '@/mixins/buttonEvents';
 import AnimatedLine from '@/components/specific/animatedLine';
+import Head from '@/mixins/head';
 
 export default {
   components: {IndexHeader, Teaser, AnimatedLine, Preload},
-  mixins: [ButtonEvents],
+  mixins: [Head, ButtonEvents],
   data () {
     return {
       loading: true,
       header: {},
       teasers: [],
+      existDescription: true,
+      existSocialMediaDescription: true,
+      robots: true,
     }
   },
   mounted() {

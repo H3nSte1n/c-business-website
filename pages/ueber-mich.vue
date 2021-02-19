@@ -24,14 +24,19 @@ import Article from '@/components/view/article';
 import Header from '@/components/header/header';
 import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
+import Head from '@/mixins/head';
 
 export default {
   components: {Header, Article, Preload},
-  mixins: [PropertyMapping],
+  mixins: [Head, PropertyMapping],
   transition: "swipe",
   data() {
     return {
       loading: true,
+      title: 'Über mich',
+      existDescription: true,
+      existSocialMediaDescription: true,
+      robots: true,
     }
   },
   mounted() {

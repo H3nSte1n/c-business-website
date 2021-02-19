@@ -21,13 +21,18 @@ import ContentBox from '@/components/view/content-box';
 import ButtonEvents from '@/mixins/buttonEvents';
 import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
+import Head from '@/mixins/head';
 
 export default {
   components: {HeaderLite, ContentBox, Preload},
-  mixins: [ButtonEvents, PropertyMapping],
+  mixins: [Head, ButtonEvents, PropertyMapping],
   data() {
     return {
       loading: true,
+      title: 'Impressum',
+      existDescription: false,
+      existSocialMediaDescription: false,
+      robots: false,
     }
   },
   mounted() {

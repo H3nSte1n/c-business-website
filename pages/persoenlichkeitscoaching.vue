@@ -39,14 +39,19 @@ import Header from '@/components/header/header';
 import ButtonEvents from '@/mixins/buttonEvents';
 import PropertyMapping from '@/mixins/propertyMapping';
 import Preload from '@/components/global/preloader';
+import Head from '@/mixins/head';
 
 export default {
   components: { Header, Article, Contact, Quote, Slider, Preload },
-  mixins: [ButtonEvents, PropertyMapping],
+  mixins: [Head, ButtonEvents, PropertyMapping],
   transition: "swipe",
   data () {
     return {
       loading: true,
+      title: 'Persönlichkeitscoaching',
+      existDescription: true,
+      existSocialMediaDescription: true,
+      robots: true,
     }
   },
   mounted() {

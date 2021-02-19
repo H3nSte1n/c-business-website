@@ -28,14 +28,19 @@ import Wrapper from '@/components/container/wrapper';
 import Preload from '@/components/global/preloader';
 import ButtonEvents from '@/mixins/buttonEvents';
 import PropertyMapping from '@/mixins/propertyMapping';
+import Head from '@/mixins/head';
 
 export default {
   components: {Header, Contact, Wrapper, Preload},
-  mixins: [ButtonEvents, PropertyMapping],
+  mixins: [Head, ButtonEvents, PropertyMapping],
   transition: "swipe",
   data() {
     return {
       loading: true,
+      title: 'Kontakt',
+      existDescription: true,
+      existSocialMediaDescription: true,
+      robots: true,
     }
   },
   mounted() {
