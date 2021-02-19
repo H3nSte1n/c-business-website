@@ -5,7 +5,7 @@ export default {
       social_mediaDescription: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit und persönliche Entwicklung für einen gesundheitsfördernden Lebens- und Arbeitsstil zusammen.',
     }
   },
-  head() {
+  /*head() {
     return {
       title: this.getTitle(),
       meta: [
@@ -18,7 +18,7 @@ export default {
         { property: 'og:image', content: '' },
       ]
     }
-  },
+  },*/
   methods: {
     getTitle() {
       return this.title ? `Claudia Eck - ${this.title}` : 'Claudia Eck'
