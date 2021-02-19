@@ -6,11 +6,11 @@ export default {
     }
   },
   head() {
-      return {
-        title: this.getTitle(),
-        meta: [
+    return {
+      title: this.getTitle(),
+      meta: [
         { name: 'description', content: this.getDescription() },
-        { name: "robots", content: this.robots ? 'index, follow' : 'noindex, nofollow' },
+        { name: 'robots', content: this.robots ? 'index, follow' : 'noindex, nofollow' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Claudia Eck' },
         { property: 'og:title', content: this.getTitle() },
@@ -19,7 +19,6 @@ export default {
       ]
     }
   },
-
   methods: {
     getTitle() {
       return this.title ? `Claudia Eck - ${this.title}` : 'Claudia Eck'
