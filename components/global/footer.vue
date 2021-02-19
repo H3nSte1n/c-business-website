@@ -172,8 +172,14 @@
       <v-row class="footer">
         <v-col class="mt-7">
           <p>&copy; Claudia Eck</p>
-          <p class="mt-9">Design von Johannes Zimmer</p>
-          <p>Entwickelt von Henry Steinhauer</p>
+          <a
+            class="mt-9 footer__button button"
+            href="https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/"
+          >Design von Johannes Zimmer</a>
+          <a
+            class="footer__button button"
+            href="https://github.com/H3nSte1n"
+          >Entwickelt von Henry Steinhauer</a>
         </v-col>
       </v-row>
     </v-container>
