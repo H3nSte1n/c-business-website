@@ -176,12 +176,14 @@
             <a
               class="mt-9 footer__button footer__button--wide button"
               href="https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/"
+              target="_blank"
             >Design von Johannes Zimmer</a>
           </p>
           <p>
             <a
               class="footer__button footer__button--wide button"
               href="https://github.com/H3nSte1n"
+              target="_blank"
             >Entwickelt von Henry Steinhauer</a>
           </p>
         </v-col>
