@@ -19,7 +19,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s',
+    titleTemplate: 'Claudia Eck',
     title: 'Claudia Eck',
     meta: [
       { charset: 'utf-8' },
