@@ -8,7 +8,7 @@ export default {
   head() {
     return {
       title: this.getTitle(),
-      meta: [
+      /*meta: [
         { name: 'description', content: this.getDescription() },
         { name: 'robots', content: this.robots ? 'index, follow' : 'noindex, nofollow' },
         { property: 'og:type', content: 'website' },
@@ -16,7 +16,7 @@ export default {
         { property: 'og:title', content: this.getTitle() },
         { property: 'og:description', content: this.getSocialMediaDescription() },
         { property: 'og:image', content: '' },
-      ]
+      ]*/
     }
   },
   methods: {
