@@ -170,10 +170,22 @@
         </v-col>
       </v-row>
       <v-row class="footer">
-        <v-col class="mt-7">
+        <v-col class="my-7">
           <p>&copy; Claudia Eck</p>
-          <p class="mt-9">Design von Johannes Zimmer</p>
-          <p>Entwickelt von Henry Steinhauer</p>
+          <p>
+            <a
+              class="mt-9 footer__button footer__button--wide button"
+              href="https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/"
+              target="_blank"
+            >Design von Johannes Zimmer</a>
+          </p>
+          <p>
+            <a
+              class="footer__button footer__button--wide button"
+              href="https://github.com/H3nSte1n"
+              target="_blank"
+            >Entwickelt von Henry Steinhauer</a>
+          </p>
         </v-col>
       </v-row>
     </v-container>
@@ -199,6 +211,10 @@ export default {
   &__button {
     color: $dark-2;
     text-decoration: none;
+
+    &--wide {
+      max-width: 300px;
+    }
 
     &--underline {
       text-decoration: underline;

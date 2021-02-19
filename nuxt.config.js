@@ -19,7 +19,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s',
     title: 'Claudia Eck',
     meta: [
       { charset: 'utf-8' },
@@ -30,6 +30,13 @@ export default {
       { name: 'msapplication-TileImage', content: '/assets/fav/ms-icon-144x144.png' },
       { name: 'msapplication-TileImage', content: '/assets/fav/ms-icon-150x150.png' },
       { name: 'theme-color', content: '#ffffff' },
+      { name: 'description', content: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit …' },
+      { name: 'robots', content: 'index, follow' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Claudia Eck' },
+      { property: 'og:title', content: 'Claudia Eck' },
+      { property: 'og:description', content: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit und persönliche Entwicklung für einen gesundheitsfördernden Lebens- und Arbeitsstil zusammen.' },
+      { property: 'og:image', content: '' },
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/assets/fav/apple-icon-57x57.png' },
