@@ -23,10 +23,9 @@
 </details>
 
 ## About The Project
-The website was created as a kind of business card. The goal was to give the user a "wow" moment. Nevertheless, the attention should largely be on the content. The design was created by Johannes Zimmer.
+The website was created as a business card. The goal was to give the user a "wow" moment. However, the attention should still be largely on the content. The design was created by [Johannes Zimmer](https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/).
 
 ## Used
-This section lists all used programming languages, frameworks and third-party-libraries.
 * [Nuxt](https://nuxtjs.org/)
 * [Vuex](https://vuex.vuejs.org/)
 * [Vuetify](https://vuetifyjs.com/)
