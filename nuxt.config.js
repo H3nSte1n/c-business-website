@@ -36,7 +36,7 @@ export default {
       { property: 'og:site_name', content: 'Claudia Eck' },
       { property: 'og:title', content: 'Claudia Eck' },
       { property: 'og:description', content: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit und persönliche Entwicklung für einen gesundheitsfördernden Lebens- und Arbeitsstil zusammen.' },
-      { property: 'og:image', content: '' },
+      { property: 'og:image', content: '/assets/claudia-eck-share-image.jpg' },
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/assets/fav/apple-icon-57x57.png' },
