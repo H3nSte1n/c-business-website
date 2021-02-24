@@ -98,10 +98,10 @@ The website was created as a business card. The goal was to give the user a "wow
 
 [link-name]: https://img.shields.io/badge/Henry_Steinhauer-469C90.svg?link=https://github.com/
 [link-email]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Minutemailer&logoColor=white&color=469C90
-[link-twitter]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Twitter&logoColor=white&color=469C90
-[link-github]: https://img.shields.io/badge/Mail-informational?style=flat&logo=GitHub&logoColor=white&color=469C90
-[link-medium]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Medium&logoColor=white&color=469C90
-[link-reddit]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Reddit&logoColor=white&color=469C90
+[link-twitter]: https://img.shields.io/badge/Twitter-informational?style=flat&logo=Twitter&logoColor=white&color=469C90
+[link-github]: https://img.shields.io/badge/Github-informational?style=flat&logo=GitHub&logoColor=white&color=469C90
+[link-medium]: https://img.shields.io/badge/Medium-informational?style=flat&logo=Medium&logoColor=white&color=469C90
+[link-reddit]: https://img.shields.io/badge/Reddit-informational?style=flat&logo=Reddit&logoColor=white&color=469C90
 
 <!--infos-->
 [ci]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/CI/badge.svg?style=flat
