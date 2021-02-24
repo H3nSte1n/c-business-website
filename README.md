@@ -33,7 +33,7 @@ The website was created as a business card. The goal was to give the user a "wow
 * [Heroku](https://www.heroku.com/)
 
 ## Contact
-![Henry Steinhauer][link-name] ![E-Mail][link-email] ![Twitter][link-medium] ![Twitter][link-twitter] ![Twitter][link-reddit] ![Github][link-github]
+![Henry Steinhauer][link-name] [![][link-email]](https://github.com/H3nSte1n) ![Twitter][link-medium] ![Twitter][link-twitter] ![Twitter][link-reddit] ![Github][link-github]
 
 ## Setup
 ### Commands
@@ -96,7 +96,7 @@ The website was created as a business card. The goal was to give the user a "wow
 [color-green]: https://img.shields.io/badge/green-83A603.svg?green=green
 [color-black]: https://img.shields.io/badge/black-83A603.svg?color=black
 
-[link-name]: https://img.shields.io/badge/Henry_Steinhauer-469C90.svg?link=https://github.com/H3nSte1n
+[link-name]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Minutemailer&logoColor=white&color=469C90
 [link-email]: https://img.shields.io/badge/Mail-469C90.svg?link=https://github.com/
 [link-twitter]: https://img.shields.io/badge/Twitter-469C90.svg?link=https://github.com/
 [link-github]: https://img.shields.io/badge/Github-469C90.svg?link=https://github.com/
