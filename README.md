@@ -33,7 +33,7 @@ The website was created as a business card. The goal was to give the user a "wow
 * [Heroku](https://www.heroku.com/)
 
 ## Contact
-[![][link-name]](https://github.com/H3nSte1n) [![][link-email]](mailto:Henrysteinhauer@t-online.de) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-reddit]](https://www.reddit.com/user/H3nry_d3v) [![][link-medium]](https://henrysteinhauer.medium.com/)
+[![][link-name]](https://github.com/H3nSte1n) [![][link-email]](mailto:Henrysteinhauer@t-online.de) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-medium]](https://henrysteinhauer.medium.com/)
 
 ## Setup
 ### Commands
@@ -84,10 +84,6 @@ The website was created as a business card. The goal was to give the user a "wow
 [style-for-the-badge]: https://img.shields.io/badge/for_the_badge-83A603.svg?style=for-the-badge
 [style-social]: https://img.shields.io/badge/social-83A603.svg?style=social
 
-[logo-github]: https://img.shields.io/badge/logo-github.svg?logo=github
-[logo-kotlin]: https://img.shields.io/badge/logo-kotlin.svg?logo=kotlin
-[logo-medium]: https://img.shields.io/badge/logo-medium.svg?logo=medium
-
 [logo-blue]: https://img.shields.io/badge/blue-83A603.svg?logo=github&logoColor=blue
 [logo-green]: https://img.shields.io/badge/green-83A603.svg?logo=kotlin&logoColor=green
 [logo-black]: https://img.shields.io/badge/black-83A603.svg?logo=medium&logoColor=black
@@ -101,7 +97,6 @@ The website was created as a business card. The goal was to give the user a "wow
 [link-twitter]: https://img.shields.io/badge/Twitter-informational?style=flat&logo=Twitter&logoColor=white&color=469C90
 [link-github]: https://img.shields.io/badge/Github-informational?style=flat&logo=GitHub&logoColor=white&color=469C90
 [link-medium]: https://img.shields.io/badge/Medium-informational?style=flat&logo=Medium&logoColor=white&color=469C90
-[link-reddit]: https://img.shields.io/badge/Reddit-informational?style=flat&logo=Reddit&logoColor=white&color=469C90
 
 <!--infos-->
 [ci]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/CI/badge.svg?style=flat
