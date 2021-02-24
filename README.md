@@ -28,6 +28,7 @@ The website was created as a business card. The goal was to give the user a "wow
 ## Used
 * [Nuxt](https://nuxtjs.org/)
 * [Vuetify](https://vuetifyjs.com/)
+* [Express](https://expressjs.com/de/)
 * [Nodemailer](https://nodemailer.com/about/)
 * [Heroku](https://www.heroku.com/)
 
