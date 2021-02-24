@@ -33,7 +33,7 @@ The website was created as a business card. The goal was to give the user a "wow
 * [Heroku](https://www.heroku.com/)
 
 ## Contact
-[![][link-name]](https://github.com/H3nSte1n) [![][link-email]](https://github.com/H3nSte1n) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-reddit]](https://www.reddit.com/user/H3nry_d3v) [![][link-medium]](https://henrysteinhauer.medium.com/)
+[![][link-name]](https://github.com/H3nSte1n) [![][link-email]](mailto:Henrysteinhauer@t-online.de) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-reddit]](https://www.reddit.com/user/H3nry_d3v) [![][link-medium]](https://henrysteinhauer.medium.com/)
 
 ## Setup
 ### Commands
