@@ -101,13 +101,13 @@
                 <v-col class="d-flex justify-center">
                   <v-btn
                     icon
-                    href="https://de-de.facebook.com/claudia.eck.56"
+                    href="https://www.xing.com/profile/Claudia_Eck"
                     class="button"
                     target="_blank"
                   >
                     <v-img
-                      :src="require('~/assets/images/social-icons/facebook.svg')"
-                      alt="facebook"
+                      :src="require('~/assets/images/social-icons/xing.svg')"
+                      alt="xing"
                       width="48px"
                     />
                   </v-btn>
@@ -129,13 +129,13 @@
                 <v-col class="d-flex justify-center">
                   <v-btn
                     icon
-                    href="https://www.xing.com/profile/Claudia_Eck"
+                    href="https://de-de.facebook.com/claudia.eck.56"
                     class="button"
                     target="_blank"
                   >
                     <v-img
-                      :src="require('~/assets/images/social-icons/xing.svg')"
-                      alt="xing"
+                      :src="require('~/assets/images/social-icons/facebook.svg')"
+                      alt="facebook"
                       width="48px"
                     />
                   </v-btn>

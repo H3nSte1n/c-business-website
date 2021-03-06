@@ -23,18 +23,17 @@
 </details>
 
 ## About The Project
-The website was created as a kind of business card. The goal was to give the user a "wow" moment. Nevertheless, the attention should largely be on the content. The design was created by Johannes Zimmer.
+The website was created as a business card. The goal was to give the user a "wow" moment. However, the attention should still be largely on the content. The design was created by [Johannes Zimmer](https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/).
 
 ## Used
-This section lists all used programming languages, frameworks and third-party-libraries.
 * [Nuxt](https://nuxtjs.org/)
-* [Vuex](https://vuex.vuejs.org/)
 * [Vuetify](https://vuetifyjs.com/)
+* [Express](https://expressjs.com/de/)
 * [Nodemailer](https://nodemailer.com/about/)
 * [Heroku](https://www.heroku.com/)
 
 ## Contact
-![Henry Steinhauer][link-name] ![E-Mail][link-email] ![Twitter][link-medium] ![Twitter][link-twitter] ![Twitter][link-reddit] ![Github][link-github]
+[![][link-name]](https://github.com/H3nSte1n) [![][link-email]](mailto:Henrysteinhauer@t-online.de) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-medium]](https://henrysteinhauer.medium.com/)
 
 ## Setup
 ### Commands
@@ -85,10 +84,6 @@ This section lists all used programming languages, frameworks and third-party-li
 [style-for-the-badge]: https://img.shields.io/badge/for_the_badge-83A603.svg?style=for-the-badge
 [style-social]: https://img.shields.io/badge/social-83A603.svg?style=social
 
-[logo-github]: https://img.shields.io/badge/logo-github.svg?logo=github
-[logo-kotlin]: https://img.shields.io/badge/logo-kotlin.svg?logo=kotlin
-[logo-medium]: https://img.shields.io/badge/logo-medium.svg?logo=medium
-
 [logo-blue]: https://img.shields.io/badge/blue-83A603.svg?logo=github&logoColor=blue
 [logo-green]: https://img.shields.io/badge/green-83A603.svg?logo=kotlin&logoColor=green
 [logo-black]: https://img.shields.io/badge/black-83A603.svg?logo=medium&logoColor=black
@@ -97,12 +92,11 @@ This section lists all used programming languages, frameworks and third-party-li
 [color-green]: https://img.shields.io/badge/green-83A603.svg?green=green
 [color-black]: https://img.shields.io/badge/black-83A603.svg?color=black
 
-[link-name]: https://img.shields.io/badge/Henry_Steinhauer-469C90.svg?link=https://github.com/H3nSte1n
-[link-email]: https://img.shields.io/badge/Mail-469C90.svg?link=https://github.com/
-[link-twitter]: https://img.shields.io/badge/Twitter-469C90.svg?link=https://github.com/
-[link-github]: https://img.shields.io/badge/Github-469C90.svg?link=https://github.com/
-[link-medium]: https://img.shields.io/badge/Medium-469C90.svg?link=https://medium.com/
-[link-reddit]: https://img.shields.io/badge/Reddit-469C90.svg?link=https://www.reddit.com/
+[link-name]: https://img.shields.io/badge/Henry_Steinhauer-469C90.svg?link=https://github.com/
+[link-email]: https://img.shields.io/badge/Mail-informational?style=flat&logo=Minutemailer&logoColor=white&color=469C90
+[link-twitter]: https://img.shields.io/badge/Twitter-informational?style=flat&logo=Twitter&logoColor=white&color=469C90
+[link-github]: https://img.shields.io/badge/Github-informational?style=flat&logo=GitHub&logoColor=white&color=469C90
+[link-medium]: https://img.shields.io/badge/Medium-informational?style=flat&logo=Medium&logoColor=white&color=469C90
 
 <!--infos-->
 [ci]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/CI/badge.svg?style=flat
