@@ -100,6 +100,7 @@ export default {
   ],
 
   basic: {
+    message: 'Please verify',
     name: process.env.AUTH_USERNAME,
     pass: process.env.AUTH_PASSWORD,
     enabled: process.env.NODE_ENV === 'staging'
