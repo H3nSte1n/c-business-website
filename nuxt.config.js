@@ -96,6 +96,7 @@ export default {
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
     '@nuxtjs/strapi',
+    'nuxt-basic-auth-module'
   ],
 
   basic: {
