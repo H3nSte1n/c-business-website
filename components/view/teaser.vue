@@ -1,18 +1,18 @@
 <template>
   <v-container>
-    <v-row
-      justify="space-around"
-      align="center"
-      flex
-      :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
+    <v-lazy
+      v-model="isActive"
+      :options="{
+        threshold: .5
+      }"
+      min-height="200"
+      transition="fade-transition"
     >
-      <v-lazy
-        v-model="isActive"
-        :options="{
-          threshold: .5
-        }"
-        min-height="200"
-        transition="fade-transition"
+      <v-row
+        justify="space-around"
+        align="center"
+        flex
+        :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
       >
         <v-col
           cols="12"
@@ -57,8 +57,8 @@
             {{ content.button.text }}
           </router-link>
         </v-col>
-      </v-lazy>
-    </v-row>
+      </v-row>
+    </v-lazy>
   </v-container>
 </template>
 
