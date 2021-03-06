@@ -99,6 +99,7 @@ export default {
     'nuxt-basic-auth-module'
   ],
 
+
   basic: {
     name: process.env.AUTH_USERNAME,
     pass: process.env.AUTH_PASSWORD,
