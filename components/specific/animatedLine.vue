@@ -43,7 +43,7 @@ export default {
   transition: opacity 1s ease-in-out;
 
   @media screen and (min-width: 1264px) {
-    margin-bottom: 140px;
+    margin-bottom: 50px;
   }
 
   &__line {
