@@ -7,6 +7,7 @@
       :class="$vuetify.breakpoint.mdAndUp ? 'py-12': 'py-1'"
     >
       <v-lazy
+        v-model="isActive"
         :options="{
           threshold: .5
         }"
@@ -72,6 +73,7 @@ export default {
   data() {
     return {
       isClicked: false,
+      isActive: false,
     }
   },
 }
