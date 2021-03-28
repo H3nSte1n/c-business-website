@@ -76,10 +76,10 @@
               </p>
               <p>
                 <a
-                  href="mailto:info@claudiaeck.de"
+                  href="mailto:coaching@claudia-eck.de"
                   target="_blank"
                   class="body-1 font-weight-medium footer__button button"
-                >info@claudiaeck.de</a>
+                >coaching@claudia-eck.de</a>
               </p>
             </v-col>
           </v-row>

@@ -14,13 +14,22 @@
         :order-md="content.order ? content.order : 'first'"
         class="my-9 teaser__img-container"
       >
-        <v-img
-          :src="content.img.src"
-          :alt="content.img.alt"
-          :width="$vuetify.breakpoint.smAndDown ? '40%': '100%'"
-          :max-width="$vuetify.breakpoint.smAndDown ? '200px': 'none'"
-          class="mx-auto my-12"
-        />
+        <v-lazy
+          v-model="isActive"
+          :options="{
+            threshold: .5
+          }"
+          min-height="200"
+          transition="fade-transition"
+        >
+          <v-img
+            :src="content.img.src"
+            :alt="content.img.alt"
+            :width="$vuetify.breakpoint.smAndDown ? '40%': '100%'"
+            :max-width="$vuetify.breakpoint.smAndDown ? '200px': 'none'"
+            class="mx-auto my-12"
+          />
+        </v-lazy>
       </v-col>
       <v-col
         cols="12"
@@ -64,6 +73,7 @@ export default {
   data() {
     return {
       isClicked: false,
+      isActive: false,
     }
   },
 }
