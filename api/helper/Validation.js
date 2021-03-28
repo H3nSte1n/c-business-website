@@ -5,9 +5,9 @@ import validator from 'validator'
 export class Validation {
   static validateAndSanitize (key, value) {
     const rejectFunctions = new Map([
-      [ 'name', v => v.length < 4 ],
+      [ 'name', v => v.length < 2 ],
       [ 'email', v => !validator.isEmail(v) ],
-      [ 'msg', v => v.length > 25 ]
+      [ 'msg', v => v.length > 6500 ]
     ])
 
     // If map has key and function returns false, return sanitized input. Else, return false
