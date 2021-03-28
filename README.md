@@ -26,11 +26,11 @@
 The website was created as a business card. The goal was to give the user a "wow" moment. However, the attention should still be largely on the content. The design was created by [Johannes Zimmer](https://johannes-portfolio-9bd3ff97ac7e5035ea33.webflow.io/).
 
 ## Used
-* [Nuxt](https://nuxtjs.org/)
-* [Vuetify](https://vuetifyjs.com/)
-* [Express](https://expressjs.com/de/)
-* [Nodemailer](https://nodemailer.com/about/)
-* [Heroku](https://www.heroku.com/)
+* [![][logo-nuxt]](https://nuxtjs.org/)
+* [![][logo-vuetify]](https://vuetifyjs.com/)
+* [![][logo-express]](https://expressjs.com/de/)
+* [![][logo-nodemailer]](https://nodemailer.com/about/)
+* [![][logo-heroku]](https://www.heroku.com/)
 
 ## Contact
 [![][link-name]](https://github.com/H3nSte1n) [![][link-email]](mailto:Henrysteinhauer@t-online.de) [![][link-twitter]](https://twitter.com/H3nSte1n) [![][link-medium]](https://henrysteinhauer.medium.com/)
@@ -97,6 +97,12 @@ The website was created as a business card. The goal was to give the user a "wow
 [link-twitter]: https://img.shields.io/badge/Twitter-informational?style=flat&logo=Twitter&logoColor=white&color=469C90
 [link-github]: https://img.shields.io/badge/Github-informational?style=flat&logo=GitHub&logoColor=white&color=469C90
 [link-medium]: https://img.shields.io/badge/Medium-informational?style=flat&logo=Medium&logoColor=white&color=469C90
+
+[logo-nuxt]: https://img.shields.io/badge/Nuxt-informational?style=flat&logo=nuxt.js&logoColor=white&color=469C90
+[logo-vuetify]: https://img.shields.io/badge/Vuetify-informational?style=flat&logo=vuetify&logoColor=white&color=469C90
+[logo-express]: https://img.shields.io/badge/Express-informational?style=flat&logoColor=white&color=469C90
+[logo-nodemailer]: https://img.shields.io/badge/Nodemailer-informational?style=flat&logoColor=white&color=469C90
+[logo-heroku]: https://img.shields.io/badge/Heroku-informational?style=flat&logo=heroku&logoColor=white&color=469C90
 
 <!--infos-->
 [ci]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/CI/badge.svg?style=flat
