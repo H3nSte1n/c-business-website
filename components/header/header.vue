@@ -66,9 +66,6 @@ export default {
     }
   },
   computed: {
-    preparedHeadline() {
-      return this.content.headline.split(' ').join('&nbsp;,').split(',');
-    },
     preparedDesc() {
       return this.content.desc.split(' ').join('&nbsp;,').split(',');
     }
