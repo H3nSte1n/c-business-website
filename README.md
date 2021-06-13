@@ -3,7 +3,6 @@
 
 ![Build][build]
 ![Code-Style][code-style]
-
 ![Maintenance][maintained-shield]
 <br><br>
 
