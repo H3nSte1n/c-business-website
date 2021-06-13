@@ -1,7 +1,6 @@
 <h1>Claudia Eck - Coaching - Website</h1>  
 <br>
 
-![CI][ci]
 ![Build][build]
 ![Code-Style][code-style]
 
@@ -111,9 +110,8 @@ The website was created as a business card. The goal was to give the user a "wow
 
 <!--infos-->
 
-[ci]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/CI/badge.svg?style=flat
-[build]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/Build/badge.svg?style=flat
-[code-style]: https://github.com/H3nSte1n/coverage-badge-creator/workflows/Code-Style/badge.svg?style=flat
+[build]: https://github.com/H3nSte1n/c-business-website/workflows/Build/badge.svg?style=flat
+[code-style]: https://github.com/H3nSte1n/c-business-website/workflows/Code-Style/badge.svg?style=flat
 [maintained-shield]: https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat
 [release-shield]: https://img.shields.io/github/release/H3nSte1n/coverage-badge-creator.svg?style=flat
 [release-url]: https://GitHub.com/H3nSte1n/coverage-badge-creator/releases/
