@@ -95,6 +95,7 @@ export default {
     '@nuxtjs/recaptcha',
     '@nuxtjs/component-cache',
     '@nuxtjs/strapi',
+    '@nuxtjs/sitemap'
   ],
 
   basic: {
