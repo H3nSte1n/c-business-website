@@ -8,18 +8,8 @@
       </v-col>
     </v-row>
     <v-row class="align-center justify-end">
-      <v-col
-        cols="5"
-        sm="4"
-        md="3"
-        class="body-1"
-        v-html="keywords.desc"
-      />
-      <v-col
-        cols="7"
-        md="8"
-        class="d-flex justify-center"
-      >
+      <v-col cols="5" sm="4" md="3" class="body-1" v-html="keywords.desc" />
+      <v-col cols="7" md="8" class="d-flex justify-center">
         <p class="keywords--big">
           {{ keywords.second }}
         </p>
@@ -40,10 +30,10 @@ export default {
   props: {
     keywords: {
       type: Object,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -1,17 +1,11 @@
 <template>
   <Preload :loading="loading">
-    <v-container
-      fluid
-      class="pa-0"
-    >
+    <v-container fluid class="pa-0">
       <Header :content="header" />
-      <div
-        v-for="(content, key) in article"
-        :key="key"
-      >
+      <div v-for="(content, key) in article" :key="key">
         <Article
           :content="content"
-          :b-color="(key % 4 === 0||(key - 1) % 4 === 0) ? 'yellow' : 'blue'"
+          :b-color="key % 4 === 0 || (key - 1) % 4 === 0 ? 'yellow' : 'blue'"
           :box-count="key"
         />
       </div>
@@ -26,13 +20,13 @@ import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {Header, Article, Preload},
+  components: { Header, Article, Preload },
   mixins: [PropertyMapping],
-  transition: "swipe",
+  transition: 'swipe',
   data() {
     return {
       loading: true,
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -43,9 +37,9 @@ export default {
       this.passHeaderData(data.Header);
       this.passArticleData(data.Articles);
       this.loading = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

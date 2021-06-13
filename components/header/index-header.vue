@@ -1,45 +1,27 @@
 <template>
   <v-container>
-    <v-row
-      justify="center"
-      align="center"
-      :class="$vuetify.breakpoint.xl ? 'mt-6' : 'mt-0'"
-    >
+    <v-row justify="center" align="center" :class="$vuetify.breakpoint.xl ? 'mt-6' : 'mt-0'">
       <v-col
         cols="12"
         sm="6"
         xl="5"
         class="d-flex flex-column-reverse flex-sm-column pl-12 mb-12 header"
-        :class="{'header-active': isLoaded}"
+        :class="{ 'header-active': isLoaded }"
       >
-        <h1
-          class="font-weight-bold header__headline"
-        >
+        <h1 class="font-weight-bold header__headline">
           {{ content.headline }}
         </h1>
-        <p
-          v-if="content.desc"
-          class="header__subline"
-        >
-          <span
-            v-for="(item, key) of preparedDescription"
-            :key="key"
-            class="word-container"
-          >
+        <p v-if="content.desc" class="header__subline">
+          <span v-for="(item, key) of preparedDescription" :key="key" class="word-container">
             <span
               class="word"
-              :class="[`word-${preparedHeadline.length + 1}`, {'word-active': isLoaded}]"
+              :class="[`word-${preparedHeadline.length + 1}`, { 'word-active': isLoaded }]"
               v-html="item"
             />
           </span>
         </p>
       </v-col>
-      <v-col
-        cols="12"
-        sm="6"
-        xl="5"
-        class="pa-0"
-      >
+      <v-col cols="12" sm="6" xl="5" class="pa-0">
         <v-img
           :src="img.src"
           :alt="img.alt"
@@ -48,10 +30,7 @@
           :max-width="$vuetify.breakpoint.lg ? '330px' : '590px'"
           class="ma-0 pa-0"
         >
-          <div
-            class="image__invisible"
-            :class="{'image__invisible-disable': isLoaded}"
-          />
+          <div class="image__invisible" :class="{ 'image__invisible-disable': isLoaded }" />
         </v-img>
       </v-col>
     </v-row>
@@ -64,18 +43,18 @@ export default {
     isLoaded: {
       type: Boolean,
       required: true,
-      default: false
+      default: false,
     },
     img: {
       type: Object,
       required: true,
-      default: () => {}
+      default: () => {},
     },
     content: {
       type: Object,
       required: true,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   computed: {
     preparedHeadline() {
@@ -83,9 +62,9 @@ export default {
     },
     preparedDescription() {
       return this.content.desc.split(' ').join('&nbsp;,').split(',');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -93,20 +72,20 @@ export default {
 
 .header {
   &__headline {
-      font-size: 3.75rem;
-      font-weight: 300;
-      line-height: 3.75rem;
-      letter-spacing: -0.0083333333em;
-      font-family: "Roboto", sans-serif;
-    }
-    &__subline {
-      font-size: 1.25rem;
-      font-weight: 500;
-      line-height: 1.5rem;
-      letter-spacing: 0.0125em;
-      font-family: "Roboto", sans-serif;
-      margin: 8px 0;
-    }
+    font-size: 3.75rem;
+    font-weight: 300;
+    line-height: 3.75rem;
+    letter-spacing: -0.0083333333em;
+    font-family: 'Roboto', sans-serif;
+  }
+  &__subline {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.0125em;
+    font-family: 'Roboto', sans-serif;
+    margin: 8px 0;
+  }
   @media screen and (min-width: 600px) {
     position: relative;
     left: 140px;
@@ -131,7 +110,7 @@ export default {
       font-size: 5rem;
       line-height: 5.5rem;
 
-      @media screen and (min-width: 1904){
+      @media screen and (min-width: 1904) {
         font-size: 7rem;
         line-height: 6.75rem;
       }
@@ -142,7 +121,7 @@ export default {
       font-size: 1.5rem;
       line-height: 1.7rem;
 
-      @media screen and (min-width: 1904){
+      @media screen and (min-width: 1904) {
         font-size: 1.8rem;
         line-height: 2rem;
       }

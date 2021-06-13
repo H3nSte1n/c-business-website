@@ -2,12 +2,7 @@
   <v-container class="asset_card__wrapper mx-4">
     <v-row class="asset_card__content">
       <v-col>
-        <v-img
-          width="42"
-          class="d-flex mx-auto mb-6"
-          :src="content.icon.src"
-          :alt="content.icon.alt"
-        />
+        <v-img width="42" class="d-flex mx-auto mb-6" :src="content.icon.src" :alt="content.icon.alt" />
         <div class="text-center asset_card__desc mt-6" v-html="content.desc" />
       </v-col>
     </v-row>
@@ -20,9 +15,9 @@ export default {
     content: {
       type: Object,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

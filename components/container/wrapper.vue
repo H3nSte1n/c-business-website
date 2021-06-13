@@ -1,24 +1,14 @@
 <template>
-  <v-container
-    fluid
-    class="wrapper py-12"
-    :class="`wrapper--${color}`"
-  >
+  <v-container fluid class="wrapper py-12" :class="`wrapper--${color}`">
     <v-row justify="center">
-      <v-col
-        cols="12"
-        xl="10"
-      >
+      <v-col cols="12" xl="10">
         <h2 class="wrapper__headline">
           {{ headline }}
         </h2>
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col
-        cols="12"
-        xl="10"
-      >
+      <v-col cols="12" xl="10">
         <slot />
       </v-col>
     </v-row>
@@ -30,15 +20,15 @@ export default {
   props: {
     headline: {
       type: String,
-      required: true
+      required: true,
     },
     color: {
       type: String,
       required: false,
-      default: 'yellow'
-    }
-  }
-}
+      default: 'yellow',
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -46,7 +36,7 @@ export default {
 
 .wrapper {
   &--yellow {
-    background-color: $yellow
+    background-color: $yellow;
   }
   &--light-blue {
     background-color: $light-blue-2;

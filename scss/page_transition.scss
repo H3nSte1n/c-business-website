@@ -1,7 +1,7 @@
 .swipe-enter-active,
 .swipe-leave-active {
   transition-property: all;
-  transition-timing-function: cubic-bezier(.5,0,.5,1);
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
   transition-duration: 500ms;
   position: relative;
   width: 100%;

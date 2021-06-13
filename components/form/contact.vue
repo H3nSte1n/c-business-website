@@ -7,10 +7,7 @@
       :small-headline="smallHeadline"
       @status="updateStatus"
     />
-    <Success
-      v-if="isSuccessfullSendet"
-      :headline="success.headline"
-    />
+    <Success v-if="isSuccessfullSendet" :headline="success.headline" />
   </div>
 </template>
 
@@ -24,36 +21,36 @@ export default {
     content: {
       type: Object,
       required: true,
-      default: () => {}
+      default: () => {},
     },
     centerHeadline: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     smallHeadline: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
   },
   data() {
     return {
       isSuccessfullSendet: null,
       success: {
-        headline: 'Mail erfolgreich abgeschickt.'
+        headline: 'Mail erfolgreich abgeschickt.',
       },
       failed: {
-        headline: 'E-Mail konnte nicht verschickt werden.'
-      }
-    }
+        headline: 'E-Mail konnte nicht verschickt werden.',
+      },
+    };
   },
   methods: {
     updateStatus(status) {
       this.isSuccessfullSendet = status;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">

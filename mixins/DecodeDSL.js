@@ -1,8 +1,8 @@
 export default {
   data() {
     return {
-      colors: ['blue', 'red', 'green', 'white']
-    }
+      colors: ['blue', 'red', 'green', 'white'],
+    };
   },
 
   methods: {
@@ -11,20 +11,20 @@ export default {
       return htmlString.match(contentRe)[0];
     },
 
-    decodeDSLColorTag (value) {
+    decodeDSLColorTag(value) {
       let result = value;
       if (!value) return '';
 
-      this.colors.forEach(color => {
-        const colorRegEx = /(?<=:)(.*?)(?=:)/
+      this.colors.forEach((color) => {
+        const colorRegEx = /(?<=:)(.*?)(?=:)/;
         const regExPattern = `(?<=:${color}:)(.*?)(?=:${color}:)`;
-        const re = new RegExp(`:${color}:.*:${color}:`,'gmi');
+        const re = new RegExp(`:${color}:.*:${color}:`, 'gmi');
 
-        if(!colorRegEx.test(value)||!re.test(value)) return;
+        if (!colorRegEx.test(value) || !re.test(value)) return;
         result = value.replace(re, `<span class="dsl__color--${color}">${this.getContent(value, regExPattern)}</span>`);
       });
 
       return result;
     },
-  }
-}
+  },
+};

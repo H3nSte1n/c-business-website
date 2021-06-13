@@ -1,14 +1,7 @@
 <template>
   <div>
-    <div
-      v-if="loading"
-      class="loader__wrapper"
-    >
-      <img
-        :src="img.src"
-        :alt="img.alt"
-        class="loader"
-      >
+    <div v-if="loading" class="loader__wrapper">
+      <img :src="img.src" :alt="img.alt" class="loader" />
     </div>
     <slot v-else />
   </div>
@@ -20,18 +13,18 @@ export default {
     loading: {
       type: Boolean,
       required: true,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
       img: {
         src: require('../../assets/images/loading.gif'),
         alt: 'loading svg',
-      }
-    }
-  }
-}
+      },
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -1,18 +1,9 @@
 <template>
   <Preload :loading="loading">
     <v-container>
-      <Index-Header
-        :is-loaded="!loading"
-        :img="header.img"
-        :content="header.content"
-      />
+      <Index-Header :is-loaded="!loading" :img="header.img" :content="header.content" />
       <animated-line />
-      <Teaser
-        v-for="(value, key) in teasers"
-        :key="key"
-        :content="value"
-        :class="key !== 0 ? '' : 'mt-12'"
-      />
+      <Teaser v-for="(value, key) in teasers" :key="key" :content="value" :class="key !== 0 ? '' : 'mt-12'" />
     </v-container>
   </Preload>
 </template>
@@ -25,14 +16,14 @@ import ButtonEvents from '@/mixins/buttonEvents';
 import AnimatedLine from '@/components/specific/animatedLine';
 
 export default {
-  components: {IndexHeader, Teaser, AnimatedLine, Preload},
+  components: { IndexHeader, Teaser, AnimatedLine, Preload },
   mixins: [ButtonEvents],
-  data () {
+  data() {
     return {
       loading: true,
       header: {},
       teasers: [],
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -49,13 +40,13 @@ export default {
       this.header = {
         content: {
           headline: headerData.headline,
-          desc: headerData.subline
+          desc: headerData.subline,
         },
         img: {
           src: headerData.image[0].url,
-          alt: headerData.image[0].alternativeText
+          alt: headerData.image[0].alternativeText,
         },
-      }
+      };
     },
 
     passTeaserData(teasersData) {
@@ -70,13 +61,13 @@ export default {
           },
           img: {
             src: item.Image.url,
-            alt: item.Image.alternativeText
+            alt: item.Image.alternativeText,
           },
-          order: index % 2 !== 0 ? 'first' : 'last'
-        }
-        this.teasers.push(teaserItem)
+          order: index % 2 !== 0 ? 'first' : 'last',
+        };
+        this.teasers.push(teaserItem);
       });
-    }
-  }
-}
+    },
+  },
+};
 </script>

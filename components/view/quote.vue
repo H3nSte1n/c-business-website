@@ -2,26 +2,10 @@
   <div class="quote">
     <v-container>
       <v-row justify="center">
-        <v-col
-          cols="11"
-          sm="9"
-          md="8"
-          lg="10"
-        >
-          <div
-            class="quote__content"
-            :class="{'quote__content--left': position === 'left'}"
-          >
-            <div
-              class="quote__headline mb-7"
-              :class="`text-${position}`"
-              v-html="quote"
-            />
-            <div
-              v-if="desc"
-              class="quote__desc"
-              v-html="desc"
-            />
+        <v-col cols="11" sm="9" md="8" lg="10">
+          <div class="quote__content" :class="{ 'quote__content--left': position === 'left' }">
+            <div class="quote__headline mb-7" :class="`text-${position}`" v-html="quote" />
+            <div v-if="desc" class="quote__desc" v-html="desc" />
           </div>
         </v-col>
       </v-row>
@@ -39,15 +23,15 @@ export default {
     desc: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     position: {
       type: String,
       required: false,
-      default: 'center'
-    }
+      default: 'center',
+    },
   },
-}
+};
 </script>
 
 <style lang="scss">

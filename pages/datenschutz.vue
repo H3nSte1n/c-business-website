@@ -4,11 +4,7 @@
       <v-row>
         <v-col>
           <header-lite :content="header" />
-          <content-box-wrapper
-            v-for="(infos, key) of infoBoxSections"
-            :key="key"
-            :content="infos"
-          />
+          <content-box-wrapper v-for="(infos, key) of infoBoxSections" :key="key" :content="infos" />
         </v-col>
       </v-row>
     </v-container>
@@ -23,13 +19,13 @@ import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {HeaderLite, ContentBoxWrapper, Preload},
+  components: { HeaderLite, ContentBoxWrapper, Preload },
   mixins: [ButtonEvents, PropertyMapping],
   data() {
     return {
       loading: true,
       infoBoxSections: [],
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -42,17 +38,17 @@ export default {
       this.loading = false;
     },
     passInfoBoxeSectionsData(InfoBoxSectionData) {
-      InfoBoxSectionData.forEach(async item => {
+      InfoBoxSectionData.forEach(async (item) => {
         console.log(item);
         this.passInfoBoxesData(item.InfoBox);
         let infoBoxSection = {
           headline: item.headline,
-          infoBoxes: this.infoBoxes
-        }
-        this.infoBoxSections.push(infoBoxSection)
+          infoBoxes: this.infoBoxes,
+        };
+        this.infoBoxSections.push(infoBoxSection);
         this.infoBoxes = [];
       });
-    }
-  }
-}
+    },
+  },
+};
 </script>

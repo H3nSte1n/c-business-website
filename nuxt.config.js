@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 export default {
   generate: {
@@ -13,11 +13,11 @@ export default {
     RECAPTCHA_KEY_LOCAL: process.env.RECAPTCHA_KEY_LOCAL,
     BASE_URL_STRAPI: process.env.BASE_URL_STRAPI,
     AUTH_USERNAME: process.env.AUTH_USERNAME,
-    AUTH_PASSWORD: process.env.AUTH_PASSWORD
+    AUTH_PASSWORD: process.env.AUTH_PASSWORD,
   },
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     titleTemplate: 'Claudia Eck',
     title: 'Claudia Eck',
@@ -30,12 +30,20 @@ export default {
       { name: 'msapplication-TileImage', content: '/assets/fav/ms-icon-144x144.png' },
       { name: 'msapplication-TileImage', content: '/assets/fav/ms-icon-150x150.png' },
       { name: 'theme-color', content: '#ffffff' },
-      { name: 'description', content: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit …' },
+      {
+        name: 'description',
+        content:
+          'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit …',
+      },
       { name: 'robots', content: 'index, follow' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Claudia Eck' },
       { property: 'og:title', content: 'Claudia Eck' },
-      { property: 'og:description', content: 'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit und persönliche Entwicklung für einen gesundheitsfördernden Lebens- und Arbeitsstil zusammen.' },
+      {
+        property: 'og:description',
+        content:
+          'Als Systemischer Coach und Diplom-Oecotrophologin verfolge ich einen ganzheitlichen Coaching- und Präventionsansatz. Ich bringe Themen wie Gesundheit und persönliche Entwicklung für einen gesundheitsfördernden Lebens- und Arbeitsstil zusammen.',
+      },
       { property: 'og:image', content: '/assets/claudia-eck-share-image.jpg' },
     ],
     link: [
@@ -57,37 +65,29 @@ export default {
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => ['script', 'style'].includes(type),
-    }
+    },
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Global CSS
+   */
+  css: [],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
   // server middleware
-  serverMiddleware: [
-    '~/api/mailer',
-    'redirect-ssl'
-  ],
+  serverMiddleware: ['~/api/mailer', 'redirect-ssl'],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -100,37 +100,35 @@ export default {
   basic: {
     name: process.env.AUTH_USERNAME,
     pass: process.env.AUTH_PASSWORD,
-    enabled: process.env.NODE_ENV === 'staging'
+    enabled: process.env.NODE_ENV === 'staging',
   },
 
   recaptcha: {
     hideBadge: true, // Hide badge element (v3 & v2 via size=invisible)
     siteKey: process.env.NODE_ENV === 'production' ? process.env.RECAPTCHA_KEY : process.env.RECAPTCHA_KEY_LOCAL, // Site key for requests
     version: 3, // Version
-    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+    size: 'invisible', // Size: 'compact', 'normal', 'invisible' (v2)
   },
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
   },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-   // eslint-disable-next-line no-unused-vars
-   extend(config, {isDev, _isClient}) {
-   }
-  }
-}
+     ** You can extend webpack config here
+     */
+    // eslint-disable-next-line no-unused-vars
+    extend(config, { isDev, _isClient }) {},
+  },
+};

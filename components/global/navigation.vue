@@ -2,12 +2,12 @@
   <v-container>
     <nav
       class="navigation"
-      :class="[{'navigation--mobil-active': isNavigationMobilActive }, $vuetify.breakpoint.mdAndDown ? 'd-flex align-end' : '']"
+      :class="[
+        { 'navigation--mobil-active': isNavigationMobilActive },
+        $vuetify.breakpoint.mdAndDown ? 'd-flex align-end' : '',
+      ]"
     >
-      <v-row
-        justify="space-between"
-        align="center"
-      >
+      <v-row justify="space-between" align="center">
         <v-col
           cols="12"
           lg="2"
@@ -21,19 +21,14 @@
             :max-width="$vuetify.breakpoint.lg ? '80%' : '100%'"
             @click="changeStatusOfNavigationActiveLever"
           >
-            <v-img
-              :src="require('@/assets/images/logo-claudia-eck.svg')"
-            />
+            <v-img :src="require('@/assets/images/logo-claudia-eck.svg')" />
           </router-link>
           <button
             v-show="$vuetify.breakpoint.mdAndDown"
             class="navigation__mobil-opener button my-5 mr-7"
             @click="changeStatusOfNavigationActiveLever"
           >
-            <v-icon
-              class="ml-6"
-              size="28px"
-            >
+            <v-icon class="ml-6" size="28px">
               {{ mdiNavIcon }}
             </v-icon>
           </button>
@@ -43,31 +38,29 @@
           lg="10"
           xl="8"
           class="pa-0 navigation__links-container"
-          :class="[{'navigation__links-container--active': isNavigationMobilActive, 'my-9': !$vuetify.breakpoint.mdAndDown}]"
+          :class="[
+            { 'navigation__links-container--active': isNavigationMobilActive, 'my-9': !$vuetify.breakpoint.mdAndDown },
+          ]"
         >
-          <div
-            class="navigation__links"
-            :class="$vuetify.breakpoint.mdAndDown ? 'py-12 mr-7 align-end' : ''"
-          >
+          <div class="navigation__links" :class="$vuetify.breakpoint.mdAndDown ? 'py-12 mr-7 align-end' : ''">
             <nuxt-link
               v-for="(navItem, key) of navPoints"
               :key="key"
               class="navigation__links-item text-center button"
-              :class="[{'navigation__links-item--active': isNavigationMobilActive}, `navigation__links-item-${key}`]"
+              :class="[{ 'navigation__links-item--active': isNavigationMobilActive }, `navigation__links-item-${key}`]"
               :to="navItem.link"
             >
               {{ navItem.name }}
             </nuxt-link>
             <a
               class="navigation__links-item navigation__links-item text-center d-inline-flex align-center button navigation__links-item-6"
-              :class="{'navigation__links-item--active': isNavigationMobilActive, 'align-end': $vuetify.breakpoint.mdAndDown}"
+              :class="{
+                'navigation__links-item--active': isNavigationMobilActive,
+                'align-end': $vuetify.breakpoint.mdAndDown,
+              }"
               href="tel:01792242543"
             >
-              <img
-                class="mr-2"
-                width="18px"
-                :src="require('assets/images/claudia-eck-kontakt-telefon.svg')"
-              >
+              <img class="mr-2" width="18px" :src="require('assets/images/claudia-eck-kontakt-telefon.svg')" />
               0179 2242543
             </a>
           </div>
@@ -82,55 +75,54 @@ import { mdiClose, mdiFormatAlignLeft } from '@mdi/js';
 
 export default {
   name: 'Navigation',
+  beforeRouteLeave(to, from, next) {
+    if (!this.isNavigationMobilActive) return next();
+    document.querySelector('.navigation').style.transform = `translateY(${this.getTopFromNav}px)`;
+    next();
+  },
   data() {
     return {
       navPoints: [
         {
           name: 'Persönlichkeit entfalten',
-          link: '/persoenlichkeitscoaching'
+          link: '/persoenlichkeitscoaching',
         },
         {
           name: 'Unternehmen beleben',
-          link: '/unternehmenscoaching'
+          link: '/unternehmenscoaching',
         },
         {
           name: 'Über mich',
-          link: '/ueber-mich'
+          link: '/ueber-mich',
         },
         {
           name: 'Kontakt',
-          link: '/kontakt'
+          link: '/kontakt',
         },
       ],
       isNavigationMobilActive: false,
       prevScrollpos: 0,
       getTopFromNav: 0,
-    }
+    };
   },
   computed: {
     mdiNavIcon() {
       return this.isNavigationMobilActive ? mdiClose : mdiFormatAlignLeft;
-    }
+    },
   },
   watch: {
-    $route () {
+    $route() {
       this.isNavigationMobilActive = false;
-      if(!this.isNavigationMobilActive) return false;
-
-    }
-  },
-  beforeRouteLeave(to, from, next) {
-    if(!this.isNavigationMobilActive) return next();
-    document.querySelector(".navigation").style.transform = `translateY(${this.getTopFromNav}px)`;
-    next();
+      if (!this.isNavigationMobilActive) return false;
+    },
   },
   mounted() {
     this.eventsInit();
-    this.getTopFromNav = document.querySelector(".navigation").clientHeight;
-    document.querySelector(".navigation").style.transform = 'translateY(0px)';
+    this.getTopFromNav = document.querySelector('.navigation').clientHeight;
+    document.querySelector('.navigation').style.transform = 'translateY(0px)';
   },
   update() {
-    document.querySelector(".navigation").style.transform = 'translateY(0px)';
+    document.querySelector('.navigation').style.transform = 'translateY(0px)';
   },
   methods: {
     resetNavigationStatus() {
@@ -140,26 +132,22 @@ export default {
       this.isNavigationMobilActive = !this.isNavigationMobilActive;
     },
     detectScrolling() {
-      if(this.isNavigationMobilActive) return false;
+      if (this.isNavigationMobilActive) return false;
       let currentScrollPos = window.pageYOffset;
       if (this.prevScrollpos > currentScrollPos) {
-        document.querySelector(".navigation").style.transform = 'translateY(0px)';
+        document.querySelector('.navigation').style.transform = 'translateY(0px)';
       } else {
-        document.querySelector(".navigation").style.transform = `translateY(${this.getTopFromNav}px)`;
+        document.querySelector('.navigation').style.transform = `translateY(${this.getTopFromNav}px)`;
       }
       this.prevScrollpos = currentScrollPos;
     },
     eventsInit() {
-      if(window.innerWidth < 1264) {
-        document.addEventListener(
-          'scroll',
-          this.detectScrolling,
-          false
-        );
+      if (window.innerWidth < 1264) {
+        document.addEventListener('scroll', this.detectScrolling, false);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -191,7 +179,7 @@ export default {
     position: relative;
     text-align: center;
 
-    @media(min-width: 1264px) {
+    @media (min-width: 1264px) {
       text-align: left;
     }
   }
@@ -244,7 +232,7 @@ export default {
     text-decoration: none;
     flex-direction: column;
 
-    @media(min-width: 1264px) {
+    @media (min-width: 1264px) {
       display: inline-block;
     }
 

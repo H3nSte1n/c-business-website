@@ -1,15 +1,11 @@
 <template>
   <v-container>
-    <v-row
-      align="center"
-      justify="space-around"
-      class="header"
-    >
+    <v-row align="center" justify="space-around" class="header">
       <v-col
         cols="12"
         md="9"
         xl="7"
-        :order="$vuetify.breakpoint.smAndDown ? 'last': 'first'"
+        :order="$vuetify.breakpoint.smAndDown ? 'last' : 'first'"
         :class="$vuetify.breakpoint.smAndDown ? '' : 'pl-12'"
       >
         <h1
@@ -23,24 +19,16 @@
           class="header__desc"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
-          <span
-            v-for="(item, key) of preparedDesc"
-            :key="key"
-            class="word-container"
-          >
+          <span v-for="(item, key) of preparedDesc" :key="key" class="word-container">
             <span
               class="word"
-              :class="[`word-${key + content.headline.split(' ').length}`, {'word-active': isLoaded}]"
+              :class="[`word-${key + content.headline.split(' ').length}`, { 'word-active': isLoaded }]"
               v-html="item"
             />
           </span>
         </p>
       </v-col>
-      <v-col
-        cols="12"
-        md="3"
-        xl="3"
-      >
+      <v-col cols="12" md="3" xl="3">
         <v-img
           :alt="content.img.alt"
           :src="content.img.src"
@@ -58,22 +46,22 @@ export default {
     content: {
       type: Object,
       required: true,
-    }
+    },
   },
   data() {
     return {
-      isLoaded: false
-    }
+      isLoaded: false,
+    };
   },
   computed: {
     preparedDesc() {
       return this.content.desc.split(' ').join('&nbsp;,').split(',');
-    }
+    },
   },
   mounted() {
     this.isLoaded = true;
-  }
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">

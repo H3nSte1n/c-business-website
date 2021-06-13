@@ -1,10 +1,7 @@
 <template>
   <v-container class="contact__container">
     <v-row justify="center">
-      <v-col
-        cols="12"
-        md="12"
-      >
+      <v-col cols="12" md="12">
         <h3 class="text-center contact__headline">
           {{ headline }}
         </h3>
@@ -12,19 +9,11 @@
     </v-row>
     <v-row>
       <v-col class="d-flex justify-center mt-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="122"
-          height="122"
-          viewBox="0 0 192 192"
-        >
-          <g
-            fill="none"
-            fill-rule="evenodd"
-          >
+        <svg xmlns="http://www.w3.org/2000/svg" width="122" height="122" viewBox="0 0 192 192">
+          <g fill="none" fill-rule="evenodd">
             <circle
               class="circle"
-              :class="{'circle--active': isTransmitted}"
+              :class="{ 'circle--active': isTransmitted }"
               cx="96"
               cy="96"
               r="95"
@@ -33,7 +22,7 @@
             />
             <polyline
               class="tick"
-              :class="{'tick--active': isTransmitted}"
+              :class="{ 'tick--active': isTransmitted }"
               stroke="#000"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -54,19 +43,21 @@ export default {
   props: {
     headline: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       mailIcon,
-      isTransmitted: false
-    }
+      isTransmitted: false,
+    };
   },
   mounted() {
-    setTimeout(() => {this.isTransmitted = true}, 2);
-  }
-}
+    setTimeout(() => {
+      this.isTransmitted = true;
+    }, 2);
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -81,8 +72,8 @@ export default {
     transition: all 2s ease-out;
 
     &--active {
-        stroke-dashoffset: 0;
-      }
+      stroke-dashoffset: 0;
+    }
   }
 
   .tick {
@@ -91,8 +82,8 @@ export default {
     transition: all 1s ease-out;
 
     &--active {
-        stroke-dasharray: 350;
-      }
+      stroke-dasharray: 350;
+    }
   }
 }
 </style>

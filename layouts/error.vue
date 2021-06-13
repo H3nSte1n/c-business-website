@@ -4,13 +4,11 @@
       <v-row justify="center">
         <v-col>
           <h1 class="error__headline">404</h1>
-          <p class="error__subline text-center">Die von Ihnen aufgerufene<br> Seite existiert nicht.</p>
-          <router-link
-            to="/"
-            class="button body-1 font-weight-bold text-center"
-          >
-            Zurück zur Startseite
-          </router-link>
+          <p class="error__subline text-center">
+            Die von Ihnen aufgerufene<br />
+            Seite existiert nicht.
+          </p>
+          <router-link to="/" class="button body-1 font-weight-bold text-center"> Zurück zur Startseite </router-link>
         </v-col>
       </v-row>
     </v-container>
@@ -26,23 +24,22 @@ export default {
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
       pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
+      otherError: 'An error occurred',
+    };
   },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+  head() {
+    const title = this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
     return {
-      title
-    }
-  }
-}
+      title,
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -82,7 +79,10 @@ export default {
     opacity: 0.2;
   }
 
-  &:active, &:focus, &:visited, &:hover {
+  &:active,
+  &:focus,
+  &:visited,
+  &:hover {
     color: $black;
     cursor: none;
   }

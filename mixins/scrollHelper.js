@@ -3,7 +3,7 @@ export default {
     return {
       scrollUp: false,
       lastScrollPosition: 0,
-    }
+    };
   },
 
   methods: {
@@ -13,5 +13,5 @@ export default {
 
       this.lastScrollPosition = scrollPosition <= 0 ? 0 : scrollPosition;
     },
-  }
-}
+  },
+};
