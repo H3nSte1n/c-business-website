@@ -39,7 +39,6 @@ export default {
     },
     passInfoBoxeSectionsData(InfoBoxSectionData) {
       InfoBoxSectionData.forEach(async (item) => {
-        console.log(item);
         this.passInfoBoxesData(item.InfoBox);
         let infoBoxSection = {
           headline: item.headline,
