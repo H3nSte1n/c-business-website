@@ -16,17 +16,7 @@
           class="font-weight-medium header__headline"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
-          <span
-            v-for="(item, key) of preparedHeadline"
-            :key="key"
-            class="word-container"
-          >
-            <span
-              class="word"
-              :class="[`word-${key + 1}`, {'word-active': isLoaded}]"
-              v-html="item"
-            />
-          </span>
+          {{ content.headline }}
         </h1>
         <p
           v-if="content.desc"

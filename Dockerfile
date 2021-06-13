@@ -1,4 +1,4 @@
-FROM node:lts-buster-slim
+FROM node:14
 
 COPY package*.json /
 
@@ -10,6 +10,6 @@ RUN npm install
 WORKDIR /src
 RUN ln -sf /node_modules /src/node_modules
 
-# COPY . /
+COPY . /
 
 # RUN npm run build

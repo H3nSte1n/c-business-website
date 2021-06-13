@@ -15,17 +15,7 @@
         <h1
           class="font-weight-bold header__headline"
         >
-          <span
-            v-for="(item, key) of preparedHeadline"
-            :key="key"
-            class="word-container"
-          >
-            <span
-              class="word"
-              :class="[`word-${key}`, {'word-active': isLoaded}]"
-              v-html="item"
-            />
-          </span>
+          {{ content.headline }}
         </h1>
         <p
           v-if="content.desc"
