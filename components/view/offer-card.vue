@@ -2,8 +2,12 @@
   <v-container class="asset_card__wrapper mx-4">
     <v-row class="asset_card__content">
       <v-col>
-        <p class="asset_card__pagination">{{ content.pagination }}</p>
-        <h2 class="asset_card__headline">{{ content.headline }}</h2>
+        <p class="asset_card__pagination">
+          {{ content.pagination }}
+        </p>
+        <h2 class="asset_card__headline">
+          {{ content.headline }}
+        </h2>
         <div class="asset_card__desc mt-6" v-html="content.desc" />
       </v-col>
     </v-row>
@@ -16,9 +20,9 @@ export default {
     content: {
       type: Object,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

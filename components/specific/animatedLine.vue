@@ -1,13 +1,8 @@
 <template>
   <v-container>
     <v-row v-if="$vuetify.breakpoint.mdAndUp">
-      <v-col
-        class="animated pt-7"
-        :class="startScrolling ? 'animated--disable' : ''"
-      >
-        <p class="animated__text">
-          scroll
-        </p>
+      <v-col class="animated pt-7" :class="startScrolling ? 'animated--disable' : ''">
+        <p class="animated__text">scroll</p>
         <div class="animated__line" />
       </v-col>
     </v-row>
@@ -19,7 +14,7 @@ export default {
   data() {
     return {
       startScrolling: false,
-    }
+    };
   },
 
   created() {
@@ -29,9 +24,9 @@ export default {
     disableScrollIndicator() {
       this.startScrolling = true;
       window.removeEventListener('scroll', this.disableScrollIndicator);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -10,8 +10,8 @@ export default {
       presentation: {},
       contact: {},
       slider: [],
-      infoBoxes: []
-    }
+      infoBoxes: [],
+    };
   },
   methods: {
     passHeaderData(HeaderData) {
@@ -19,57 +19,57 @@ export default {
         headline: HeaderData.Headline,
         desc: HeaderData.Subline,
       };
-      if(!HeaderData.Image) return;
+      if (!HeaderData.Image) return;
       this.header.img = {
         src: HeaderData.Image.url,
-        alt: HeaderData.Image.alternativeText
-      }
+        alt: HeaderData.Image.alternativeText,
+      };
     },
     passArticleData(ArticleData) {
-      ArticleData.forEach(item => {
+      ArticleData.forEach((item) => {
         let articleItem = {
           headline: item.Headline,
           desc_1: item.description,
-        }
-        this.article.push(articleItem)
+        };
+        this.article.push(articleItem);
       });
     },
     passInfoBoxesData(InfoBoxData) {
-      InfoBoxData.forEach(item => {
+      InfoBoxData.forEach((item) => {
         let infoBox = {
           headline: item.headline,
           desc: item.infos ? item.infos.replace(/<a/g, '<a class="button button--transition" target="_blank"') : '',
-        }
-        this.infoBoxes.push(infoBox)
+        };
+        this.infoBoxes.push(infoBox);
       });
     },
     passQuoteData(QuoteData) {
       this.quote = this.decodeDSLColorTag(QuoteData) ?? '';
     },
     passPresentationData(PersoenlichkeitscoachingData) {
-        this.presentation = {
-          headline: PersoenlichkeitscoachingData.Presentation.Headline,
-          desc: PersoenlichkeitscoachingData.Presentation.Description,
-      }
+      this.presentation = {
+        headline: PersoenlichkeitscoachingData.Presentation.Headline,
+        desc: PersoenlichkeitscoachingData.Presentation.Description,
+      };
     },
     passContactData(ContactData) {
-        this.contact = {
-          headline: ContactData.headline,
-          desc: ContactData.subline,
-      }
+      this.contact = {
+        headline: ContactData.headline,
+        desc: ContactData.subline,
+      };
     },
     passSliderData(PersoenlichkeitscoachingData) {
-      PersoenlichkeitscoachingData.Slider.forEach(item => {
+      PersoenlichkeitscoachingData.Slider.forEach((item) => {
         let sliderItem = {
           src: item.image.url,
           alt: item.image.alternativeText,
           text: {
             tag: item.headline,
-            content: item.description
-          }
-        }
+            content: item.description,
+          },
+        };
         this.slider.push(sliderItem);
-      })
-    }
-  }
-}
+      });
+    },
+  },
+};

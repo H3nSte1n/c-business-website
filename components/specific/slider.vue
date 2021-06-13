@@ -1,11 +1,7 @@
 <template>
   <v-container class="slider">
     <v-row class="pa-0 ma-0">
-      <v-col
-        cols="12"
-        md="8"
-        class="pa-0"
-      >
+      <v-col cols="12" md="8" class="pa-0">
         <v-carousel
           v-model="currentItem"
           hide-delimiters
@@ -14,38 +10,21 @@
           :inverval="500"
           :cycle="true"
         >
-          <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-            :alt="item.alt"
-          />
+          <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" :alt="item.alt" />
         </v-carousel>
       </v-col>
-      <v-col
-        cols="12"
-        md="4"
-        class="align-self-center pl-6"
-      >
+      <v-col cols="12" md="4" class="align-self-center pl-6">
         <v-row>
           <v-col>
-            <p
-              class="slider__text"
-              :class="{'slider__text-active': opacityStatus }"
-            >
-              <span class="slider__text--bold" v-html="items[currentItem].text.tag" /><br>
+            <p class="slider__text" :class="{ 'slider__text-active': opacityStatus }">
+              <span class="slider__text--bold" v-html="items[currentItem].text.tag" /><br />
               <span v-html="items[currentItem].text.content" />
             </p>
           </v-col>
         </v-row>
         <v-row>
           <v-col class="d-flex align-center">
-            <v-btn
-              :disabled="currentItem < 1"
-              icon
-              class="button"
-              :class="{'button--disabled': currentItem < 1}"
-            >
+            <v-btn :disabled="currentItem < 1" icon class="button" :class="{ 'button--disabled': currentItem < 1 }">
               <v-img
                 alt="arrow backward"
                 :src="require('@/assets/images/slider-backward.svg')"
@@ -57,10 +36,10 @@
             </v-btn>
             {{ `0${currentItem + 1} / 0${items.length}` }}
             <v-btn
-              :disabled="currentItem === items.length-1"
+              :disabled="currentItem === items.length - 1"
               icon
               class="button"
-              :class="{'button--disabled': currentItem === items.length-1}"
+              :class="{ 'button--disabled': currentItem === items.length - 1 }"
             >
               <v-img
                 alt="arrow forward"
@@ -83,19 +62,19 @@ export default {
     items: {
       type: Array,
       required: true,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
       opacityStatus: true,
       currentItem: 0,
-    }
+    };
   },
   watch: {
     opacityStatus() {
       this.reactiveOpacityStatus();
-    }
+    },
   },
   methods: {
     reactiveOpacityStatus() {
@@ -110,9 +89,9 @@ export default {
     },
     navigateBackward() {
       this.currentItem -= 1;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">

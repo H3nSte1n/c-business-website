@@ -1,15 +1,9 @@
 <template>
   <v-container fluid class="wall__container my-4">
-    <h3
-      class="wall__title text-center"
-      v-html="title"
-    />
+    <h3 class="wall__title text-center" v-html="title" />
     <div class="wall__wrapper mt-12">
       <v-row justify="center">
-        <v-col
-          cols="12"
-          xl="10"
-        >
+        <v-col cols="12" xl="10">
           <div class="wall">
             <slot />
           </div>
@@ -24,10 +18,10 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Title'
-    }
-  }
-}
+      default: 'Title',
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

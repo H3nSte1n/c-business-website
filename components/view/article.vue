@@ -1,23 +1,8 @@
 <template>
   <div :class="`article--${bColor}`">
-    <v-container
-      ref="animateBoxHeight"
-      :data-BoxCount="boxCount"
-    >
-      <v-row
-        justify="center"
-        align="center"
-        flex
-        class="py-12 px-3"
-      >
-        <v-col
-          cols="12"
-          sm="12"
-          md="4"
-          lg="4"
-          xl="4"
-          class="d-flex align-self-start mr-9"
-        >
+    <v-container ref="animateBoxHeight" :data-BoxCount="boxCount">
+      <v-row justify="center" align="center" flex class="py-12 px-3">
+        <v-col cols="12" sm="12" md="4" lg="4" xl="4" class="d-flex align-self-start mr-9">
           <h2 class="article__headline">
             {{ content.headline }}
           </h2>
@@ -28,7 +13,7 @@
           md="6"
           lg="6"
           xl="4"
-          :class="{'pl-12': $vuetify.breakpoint.mdAndDown}"
+          :class="{ 'pl-12': $vuetify.breakpoint.mdAndDown }"
           class="article__desc"
           v-html="content.desc_1"
         />
@@ -45,19 +30,19 @@ export default {
   props: {
     bColor: {
       type: String,
-      default: "yellow"
+      default: 'yellow',
     },
     content: {
       type: Object,
-      required: true
+      required: true,
     },
     boxCount: {
       type: Number,
       required: false,
-      default: 1
-    }
-  }
-}
+      default: 1,
+    },
+  },
+};
 </script>
 
 <style lang="scss">

@@ -4,11 +4,7 @@
       <v-row>
         <v-col>
           <header-lite :content="header" />
-          <content-box
-            v-for="(infos, key) of infoBoxes"
-            :key="key"
-            :content="infos"
-          />
+          <content-box v-for="(infos, key) of infoBoxes" :key="key" :content="infos" />
         </v-col>
       </v-row>
     </v-container>
@@ -23,12 +19,12 @@ import Preload from '@/components/global/preloader';
 import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {HeaderLite, ContentBox, Preload},
+  components: { HeaderLite, ContentBox, Preload },
   mixins: [ButtonEvents, PropertyMapping],
   data() {
     return {
       loading: true,
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -39,7 +35,7 @@ export default {
       this.passHeaderData(data.Header);
       this.passInfoBoxesData(data.InfoBox);
       this.loading = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>

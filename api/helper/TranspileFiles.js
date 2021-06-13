@@ -8,10 +8,10 @@ module.exports = class TranspiledFiles {
       module.exports = fs.readFileSync(filename, 'utf8');
     };
 
-    files.forEach(filePath => {
+    files.forEach((filePath) => {
       transpiledFiles.push(require(filePath));
-    })
+    });
 
     return transpiledFiles;
   }
-}
+};

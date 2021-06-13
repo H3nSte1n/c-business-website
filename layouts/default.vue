@@ -1,10 +1,7 @@
 <template>
   <v-app ref="app">
     <v-main>
-      <v-container
-        fluid
-        class="pa-0"
-      >
+      <v-container fluid class="pa-0">
         <Navigation />
         <nuxt />
       </v-container>
@@ -22,7 +19,7 @@ import scrollEvents from '@/mixins/scrollEvents';
 export default {
   components: { Footer, Navigation },
   mixins: [ButtonEvents, scrollEvents],
-}
+};
 </script>
 
 <style lang="scss">
@@ -53,7 +50,10 @@ body {
     cursor: none;
   }
 
-  &:active, &:focus, &:hover, &:visited {
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
     color: $black;
     border-radius: 50%;
     width: 3rem;
@@ -92,7 +92,10 @@ body {
     opacity: 0.2;
   }
 
-  &:active, &:focus, &:visited, &:hover {
+  &:active,
+  &:focus,
+  &:visited,
+  &:hover {
     color: $black;
     cursor: none;
     outline: none;

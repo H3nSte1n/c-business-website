@@ -1,48 +1,20 @@
 <template>
   <v-container class="header">
-    <v-row
-      align="center"
-      justify="space-around"
-      class="my-12 py-12"
-    >
-      <v-col
-        cols="12"
-        md="12"
-        xl="10"
-        class="pl-12"
-      >
+    <v-row align="center" justify="space-around" class="my-12 py-12">
+      <v-col cols="12" md="12" xl="10" class="pl-12">
         <h1
           class="font-weight-medium header__headline"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
-          <span
-            v-for="(item, key) of content.headline.split(' ')"
-            :key="key"
-            class="word-container"
-          >
-            <span
-              class="word"
-              :class="[`word-${key}`, {'word-active': isLoaded}]"
-            >
-              {{ item }}
-            </span>
-          </span>
+          {{ content.headline }}
         </h1>
         <p
           v-if="content.desc"
           class="header__desc"
           :class="`text-${$vuetify.breakpoint.smAndDown ? 'center' : 'left'}`"
         >
-          <span
-            v-for="(item, key) of preparedDesc"
-            :key="key"
-            class="word-container"
-          >
-            <span
-              class="word"
-              :class="[`word-${key + 1}`, {'word-active': isLoaded}]"
-              v-html="item"
-            />
+          <span v-for="(item, key) of preparedDesc" :key="key" class="word-container">
+            <span class="word" :class="[`word-${key + 1}`, { 'word-active': isLoaded }]" v-html="item" />
           </span>
         </p>
       </v-col>
@@ -56,22 +28,22 @@ export default {
     content: {
       type: Object,
       required: true,
-    }
+    },
   },
   data() {
     return {
-      isLoaded: false
-    }
+      isLoaded: false,
+    };
   },
   computed: {
     preparedDesc() {
       return this.content.desc.split(' ').join('&nbsp;,').split(',');
-    }
+    },
   },
   mounted() {
     this.isLoaded = true;
-  }
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">

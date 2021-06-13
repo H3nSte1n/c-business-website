@@ -2,21 +2,10 @@
   <Preload :loading="loading">
     <v-container fluid class="pa-0">
       <Header :content="header" />
-      <Wrapper
-        headline="Rufen Sie mich an"
-        color="light-blue"
-        class="text-center"
-      >
-        <a
-          href="tel: 01792242543"
-          class="kontakt__tel button button--transition"
-        >01792242543</a>
+      <Wrapper headline="Rufen Sie mich an" color="light-blue" class="text-center">
+        <a href="tel: 01792242543" class="kontakt__tel button button--transition">01792242543</a>
       </Wrapper>
-      <Contact
-        :content="contact"
-        :center-headline="true"
-        :small-headline="true"
-      />
+      <Contact :content="contact" :center-headline="true" :small-headline="true" />
     </v-container>
   </Preload>
 </template>
@@ -30,13 +19,13 @@ import ButtonEvents from '@/mixins/buttonEvents';
 import PropertyMapping from '@/mixins/propertyMapping';
 
 export default {
-  components: {Header, Contact, Wrapper, Preload},
+  components: { Header, Contact, Wrapper, Preload },
   mixins: [ButtonEvents, PropertyMapping],
-  transition: "swipe",
+  transition: 'swipe',
   data() {
     return {
       loading: true,
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -47,15 +36,14 @@ export default {
       this.passHeaderData(data.Header);
       this.passContactData(data.Contact);
       this.loading = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
 @import '@/scss/colors.scss';
 @import '@/scss/page_transition.scss';
-
 
 .kontakt {
   &__tel {

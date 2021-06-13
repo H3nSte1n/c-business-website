@@ -1,30 +1,12 @@
 <template>
   <Preload :loading="loading">
-    <v-container
-      fluid
-      class="pa-0"
-    >
+    <v-container fluid class="pa-0">
       <Header :content="header" />
-      <Article
-        :content="article[0]"
-        b-color="yellow"
-        :box-count="0"
-      />
-      <Slider
-        v-if="slider.length > 0"
-        :items="slider"
-      />
+      <Article :content="article[0]" b-color="yellow" :box-count="0" />
+      <Slider v-if="slider.length > 0" :items="slider" />
       <Quote :quote="quote" />
-      <Article
-        :content="article[1]"
-        b-color="blue"
-        :box-count="1"
-      />
-      <Quote
-        :quote="presentation.headline"
-        :desc="presentation.desc"
-        position="left"
-      />
+      <Article :content="article[1]" b-color="blue" :box-count="1" />
+      <Quote :quote="presentation.headline" :desc="presentation.desc" position="left" />
       <Contact :content="contact" />
     </v-container>
   </Preload>
@@ -43,11 +25,11 @@ import Preload from '@/components/global/preloader';
 export default {
   components: { Header, Article, Contact, Quote, Slider, Preload },
   mixins: [ButtonEvents, PropertyMapping],
-  transition: "swipe",
-  data () {
+  transition: 'swipe',
+  data() {
     return {
       loading: true,
-    }
+    };
   },
   mounted() {
     this.loadData();
@@ -62,9 +44,9 @@ export default {
       this.passContactData(data.Contact);
       this.passSliderData(data);
       this.loading = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

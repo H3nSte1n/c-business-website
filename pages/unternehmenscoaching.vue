@@ -1,38 +1,17 @@
 <template>
   <Preload :loading="loading">
-    <v-container
-      fluid
-      class="pa-0"
-    >
+    <v-container fluid class="pa-0">
       <Header :content="header" />
-      <Article
-        :content="article[0]"
-        b-color="blue"
-        :box-count="0"
-      />
-      <Quote
-        :quote="quote"
-      />
+      <Article :content="article[0]" b-color="blue" :box-count="0" />
+      <Quote :quote="quote" />
       <Wall :title="title__asset_card">
-        <asset-card
-          v-for="(value, key) in assetCard"
-          :key="key"
-          :content="value.content"
-        />
+        <asset-card v-for="(value, key) in assetCard" :key="key" :content="value.content" />
       </Wall>
       <Wall :title="title__offer_card">
-        <offer-card
-          v-for="(value, key) in offerCard"
-          :key="key"
-          :content="value.content"
-        />
+        <offer-card v-for="(value, key) in offerCard" :key="key" :content="value.content" />
       </Wall>
       <keywords :keywords="keywords" />
-      <Contact
-        :content="contact"
-        :center-headline="true"
-        :small-headline="true"
-      />
+      <Contact :content="contact" :center-headline="true" :small-headline="true" />
     </v-container>
   </Preload>
 </template>
@@ -53,16 +32,16 @@ import Preload from '@/components/global/preloader';
 export default {
   components: { Header, Wall, AssetCard, OfferCard, Contact, Article, Quote, Keywords, Preload },
   mixins: [ButtonEvents, PropertyMapping],
-  transition: "swipe",
-  data () {
+  transition: 'swipe',
+  data() {
     return {
       loading: true,
       title__asset_card: 'Von mir <nobr>bekommen Sie</nobr>',
       title__offer_card: 'Angebote',
       offerCard: [],
       assetCard: [],
-      keywords: {}
-    }
+      keywords: {},
+    };
   },
   mounted() {
     this.loadData();
@@ -80,41 +59,41 @@ export default {
       this.loading = false;
     },
     passOfferCardItems(OfferCardData) {
-      Array.from(OfferCardData).forEach(item => {
+      Array.from(OfferCardData).forEach((item) => {
         let cardItem = {
           content: {
             pagination: item.pagination,
             headline: item.headline,
-            desc: item.description
-          }
-        }
+            desc: item.description,
+          },
+        };
         this.offerCard.push(cardItem);
-      })
+      });
     },
     passAssetCardItems(AssetCardData) {
-      Array.from(AssetCardData).forEach(item => {
+      Array.from(AssetCardData).forEach((item) => {
         let cardItem = {
           content: {
             desc: item.description,
             icon: {
               src: item.image.url,
-              alt: item.image.alternativeText
-            }
-          }
+              alt: item.image.alternativeText,
+            },
+          },
         };
         this.assetCard.push(cardItem);
-      })
+      });
     },
     passKeywordsData(KeywordsData) {
       this.keywords = {
         desc: KeywordsData.description,
         first: KeywordsData.keyword_1,
         second: KeywordsData.keyword_2,
-        third: KeywordsData.keyword_3
-      }
+        third: KeywordsData.keyword_3,
+      };
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">
