@@ -41,7 +41,7 @@
     "redirect-ssl": "2.0.0",
     "sqip-loader": "1.0.0",
     "tls": "0.0.1",
-    "validator": "13.5.2",
+    "validator": "13.7.0",
     "xss-filters": "1.2.7"
   },
   "devDependencies": {
